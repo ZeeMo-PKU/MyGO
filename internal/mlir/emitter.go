@@ -2792,7 +2792,7 @@ func (e *emitter) rootSignalRef(sig *ir.Signal) string {
 				return ref
 			}
 		}
-		return ""
+		return e.inlineSignalConstRef(sig, "root_const")
 	}
 	if sig.Name == "" {
 		return ""
@@ -2836,9 +2836,28 @@ func (e *emitter) immutableRegConstRef(sig *ir.Signal) string {
 	return ref
 }
 
+func (e *emitter) inlineSignalConstRef(sig *ir.Signal, prefix string) string {
+	if e == nil || sig == nil || sig.Value == nil || sig.Type == nil {
+		return ""
+	}
+	if prefix == "" {
+		prefix = "const"
+	}
+	ref := e.freshValueName(prefix)
+	e.printIndent()
+	fmt.Fprintf(e.w, "%s = hw.constant %s : %s\n", ref, formatHWConstant(sig.Value, sig.Type), typeString(sig.Type))
+	return ref
+}
+
 func (e *emitter) rootRegRef(sig *ir.Signal, prefix string) string {
 	if e == nil || sig == nil || sig.Name == "" || sig.Type == nil {
 		return ""
+	}
+	if sig.Kind != ir.Reg {
+		if constRef := e.inlineSignalConstRef(sig, prefix+"_const"); constRef != "" {
+			return constRef
+		}
+		return e.rootSignalRef(sig)
 	}
 	if constRef := e.immutableRegConstRef(sig); constRef != "" {
 		return constRef
@@ -3521,10 +3540,14 @@ func (e *emitter) emitRootProcess(module *ir.Module, topPorts []ir.Port, info *p
 	}
 	if moduleUsesFSM(module) {
 		if _, ok := portNames["clk"]; !ok {
-			portNames["clk"] = "%clk"
+			if module.Signals == nil || module.Signals["clk"] == nil {
+				portNames["clk"] = "%clk"
+			}
 		}
 		if moduleNeedsSyntheticReset(module) {
-			portNames["rst"] = "%rst"
+			if module.Signals == nil || module.Signals["rst"] == nil {
+				portNames["rst"] = "%rst"
+			}
 		}
 	}
 	portTypes := collectPortTypesFromIRPorts(topPorts)
@@ -4876,6 +4899,7 @@ func (f *fsmBuilder) emitBlockTerminator(block *ir.BasicBlock) {
 	switch term := block.Terminator.(type) {
 	case *ir.BranchTerminator:
 		cond := f.printer.valueRef(term.Cond)
+		cond = f.printer.ensurePlainValueRef(term.Cond, cond)
 		if cond == "%unknown" || cond == "" {
 			cond = f.printer.boolConst(false)
 		}
@@ -5212,8 +5236,6 @@ func normalizeControlPortAliases(portNames map[string]string) {
 	if _, ok := portNames["clk"]; !ok {
 		if value, ok := portNames["clock"]; ok {
 			portNames["clk"] = value
-		} else {
-			portNames["clk"] = "%clk"
 		}
 	}
 	if _, ok := portNames["clock"]; !ok {
@@ -5231,8 +5253,6 @@ func normalizeControlPortAliases(portNames map[string]string) {
 			portNames["rst"] = portNames["resetn"]
 		case portNames["aresetn"] != "":
 			portNames["rst"] = portNames["aresetn"]
-		default:
-			portNames["rst"] = "%rst"
 		}
 	}
 	if _, ok := portNames["reset"]; !ok {
@@ -6222,6 +6242,8 @@ func (p *processPrinter) emitCombinationalRegBlock(block *ir.BasicBlock, active 
 	}
 	active[block] = true
 	defer delete(active, block)
+	p.beginBlockValueScope()
+	defer p.endBlockValueScope()
 
 	for _, op := range block.Ops {
 		assign, ok := op.(*ir.AssignOperation)
@@ -6234,6 +6256,7 @@ func (p *processPrinter) emitCombinationalRegBlock(block *ir.BasicBlock, active 
 	switch term := block.Terminator.(type) {
 	case *ir.BranchTerminator:
 		cond := p.valueRef(term.Cond)
+		cond = p.ensurePlainValueRef(term.Cond, cond)
 		if cond == "" || cond == "%unknown" {
 			cond = p.boolConst(false)
 		}
@@ -6276,6 +6299,56 @@ func (p *processPrinter) emitCombinationalRegAssign(op *ir.AssignOperation) {
 	dest := "%" + sanitize(op.Dest.Name)
 	p.printIndent()
 	fmt.Fprintf(p.w, "sv.bpassign %s, %s : %s\n", dest, value, typeString(op.Dest.Type))
+}
+
+func (p *processPrinter) ensurePlainValueRef(sig *ir.Signal, ref string) string {
+	if p == nil || ref == "" || ref == "%unknown" || p.moduleSignals == nil {
+		return ref
+	}
+	if rawRefNamesModuleReg(p.moduleSignals, ref) {
+		name := strings.TrimPrefix(ref, "%")
+		for sigName, moduleSig := range p.moduleSignals {
+			if moduleSig == nil || moduleSig.Kind != ir.Reg || sanitize(sigName) != name {
+				continue
+			}
+			if p.portNames != nil {
+				if _, isPort := p.portNames[sigName]; isPort {
+					return ref
+				}
+			}
+			if readName, ok := p.internalSignalReads[sigName]; ok && readName != "" {
+				return readName
+			}
+			readName := p.freshValueName("v")
+			p.printIndent()
+			fmt.Fprintf(p.w, "%s = sv.read_inout %s : %s\n", readName, ref, inoutTypeString(moduleSig.Type))
+			p.setScopedInternalRead(sigName, readName)
+			if sig != nil {
+				p.setScopedValueName(sig, readName)
+			}
+			return readName
+		}
+	}
+	if sig == nil {
+		return ref
+	}
+	if p.portNames != nil {
+		if _, isPort := p.portNames[sig.Name]; isPort {
+			return ref
+		}
+	}
+	if moduleSig, ok := p.moduleSignals[sig.Name]; ok && moduleSig != nil && moduleSig.Kind == ir.Reg && ref == "%"+sanitize(sig.Name) {
+		if readName, ok := p.internalSignalReads[sig.Name]; ok && readName != "" {
+			return readName
+		}
+		readName := p.freshValueName("v")
+		p.printIndent()
+		fmt.Fprintf(p.w, "%s = sv.read_inout %s : %s\n", readName, ref, inoutTypeString(sig.Type))
+		p.setScopedInternalRead(sig.Name, readName)
+		p.setScopedValueName(sig, readName)
+		return readName
+	}
+	return ref
 }
 
 func (p *processPrinter) directClockedSensitivity(proc *ir.Process) string {
@@ -6402,6 +6475,7 @@ func (p *processPrinter) emitDirectClockedBlock(block *ir.BasicBlock, active map
 			switch {
 			case trueClocked && falseClocked:
 				cond := p.valueRef(term.Cond)
+				cond = p.ensurePlainValueRef(term.Cond, cond)
 				if cond == "" || cond == "%unknown" {
 					cond = p.boolConst(false)
 				}
@@ -6447,6 +6521,7 @@ func (p *processPrinter) emitDirectClockedBlock(block *ir.BasicBlock, active map
 			return
 		}
 		cond := p.valueRef(term.Cond)
+		cond = p.ensurePlainValueRef(term.Cond, cond)
 		if cond == "" || cond == "%unknown" {
 			cond = p.boolConst(false)
 		}
@@ -6524,6 +6599,7 @@ func (p *processPrinter) emitDirectClockedBlockForEdge(block *ir.BasicBlock, mod
 			return
 		}
 		cond := p.valueRef(term.Cond)
+		cond = p.ensurePlainValueRef(term.Cond, cond)
 		if cond == "" || cond == "%unknown" {
 			cond = p.boolConst(false)
 		}
@@ -7852,10 +7928,19 @@ func (p *processPrinter) valueRef(sig *ir.Signal) string {
 	if sig.Kind == ir.Const {
 		return p.assignConst(sig)
 	}
+	isPort := false
+	if sig.Name != "" && p.portNames != nil {
+		_, isPort = p.portNames[sig.Name]
+	}
 	if p.persistentValues != nil {
 		if value, ok := p.persistentValues[sig]; ok && value != "" {
-			p.setScopedValueName(sig, value)
-			return value
+			rawName := "%" + sanitize(sig.Name)
+			namesModuleReg := moduleSignalKindIs(p.moduleSignals, sig.Name, ir.Reg) || rawRefNamesModuleReg(p.moduleSignals, value)
+			if isPort || value != rawName && !rawRefNamesModuleReg(p.moduleSignals, value) || !namesModuleReg {
+				p.setScopedValueName(sig, value)
+				return value
+			}
+			delete(p.persistentValues, sig)
 		}
 	}
 	if unpacked := p.inputArrayElementRef(sig); unpacked != "" {
@@ -7866,13 +7951,13 @@ func (p *processPrinter) valueRef(sig *ir.Signal) string {
 		p.setScopedValueName(sig, fallback)
 		return fallback
 	}
-	if sig.Name != "" {
+	if isPort {
 		if portName, ok := p.portNames[sig.Name]; ok {
 			p.setScopedValueName(sig, portName)
 			return portName
 		}
 	}
-	if (p.fsm != nil || p.directClocked) && sig.Name != "" && sig.Name != "clk" && sig.Name != "rst" {
+	if (p.fsm != nil || p.directClocked) && sig.Name != "" && !isPort {
 		if sig.Name == "varargs" {
 			if producer, _ := p.signalProducer(sig); producer == nil {
 				zero := p.typedZeroConst(sig.Type)
@@ -7908,16 +7993,28 @@ func (p *processPrinter) valueRef(sig *ir.Signal) string {
 	}
 	if name, ok := p.valueNames[sig]; ok {
 		if p.shouldReuseCachedValueName(sig, name) {
-			return name
+			if sig.Name != "" && !isPort {
+				rawName := "%" + sanitize(sig.Name)
+				if name == rawName || rawRefNamesModuleReg(p.moduleSignals, name) {
+					if moduleSig, ok := p.moduleSignals[sig.Name]; ok && moduleSig != nil && moduleSig.Kind == ir.Reg {
+						delete(p.valueNames, sig)
+					} else if rawRefNamesModuleReg(p.moduleSignals, name) {
+						delete(p.valueNames, sig)
+					} else {
+						return name
+					}
+				} else {
+					return name
+				}
+			} else {
+				return name
+			}
+		} else {
+			delete(p.valueNames, sig)
 		}
-		delete(p.valueNames, sig)
 	}
 
 	// Check if this is an internal signal (not a readable port).
-	isPort := sig.Name == "clk" || sig.Name == "rst"
-	if !isPort && p.portNames != nil {
-		_, isPort = p.portNames[sig.Name]
-	}
 
 	// Check if this is an array element (name_number format)
 	isArrayElement := false
@@ -7936,7 +8033,7 @@ func (p *processPrinter) valueRef(sig *ir.Signal) string {
 		// Check if this is a scalar global register (pre-declared at module level)
 		// All register-kind signals that are not array elements are pre-declared.
 		// In combinational logic they still need a read_inout to produce a plain value.
-		if sig.Kind == ir.Reg {
+		if sig.Kind == ir.Reg || moduleSignalKindIs(p.moduleSignals, sig.Name, ir.Reg) {
 			if constRef := p.immutableRegConstRef(sig); constRef != "" {
 				return constRef
 			}
@@ -8120,6 +8217,27 @@ func arrayElementContainerType(base string, elemWidth int, portTypes map[string]
 	return &ir.SignalType{Width: elemWidth, Signed: false}
 }
 
+func moduleSignalKindIs(signals map[string]*ir.Signal, name string, kind ir.SignalKind) bool {
+	if signals == nil || name == "" {
+		return false
+	}
+	sig, ok := signals[name]
+	return ok && sig != nil && sig.Kind == kind
+}
+
+func rawRefNamesModuleReg(signals map[string]*ir.Signal, ref string) bool {
+	if signals == nil || !strings.HasPrefix(ref, "%") {
+		return false
+	}
+	raw := strings.TrimPrefix(ref, "%")
+	for name, sig := range signals {
+		if sig != nil && sig.Kind == ir.Reg && sanitize(name) == raw {
+			return true
+		}
+	}
+	return false
+}
+
 func collectPortTypesFromIRPorts(ports []ir.Port) map[string]*ir.SignalType {
 	portTypes := make(map[string]*ir.SignalType, len(ports))
 	for _, port := range ports {
@@ -8286,6 +8404,9 @@ func (p *processPrinter) clockPortRef() string {
 
 func (p *processPrinter) resetAssertedRef() string {
 	if !p.hasResetPort {
+		if sig, ok := p.moduleSignals["rst"]; ok && sig != nil && sig.Kind == ir.Reg {
+			return p.ensurePlainValueRef(sig, "%rst")
+		}
 		return p.portRef("rst")
 	}
 	if !p.resetActiveLow {

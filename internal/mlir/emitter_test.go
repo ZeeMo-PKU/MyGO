@@ -949,6 +949,80 @@ func TopModule(a uint8, b uint8, sel bool) (sum uint8, carry bool) {
 	}
 }
 
+func TestNamedReturnDefaultConstantsDoNotReadUndeclaredInouts(t *testing.T) {
+	const source = `
+package main
+
+func TopModule(penable bool, pwrite bool, pwdata uint8) (pready bool, pslverr bool, gpio_out uint8) {
+	var regOut uint8
+	pready = true
+	pslverr = false
+	gpio_out = regOut
+	if penable && pwrite {
+		regOut = pwdata
+		gpio_out = regOut
+	}
+	return
+}
+`
+	design := buildMLIRDesignFromSource(t, source)
+	out := filepath.Join(t.TempDir(), "design.mlir")
+	if err := Emit(design, out); err != nil {
+		t.Fatalf("Emit failed: %v", err)
+	}
+	data, err := os.ReadFile(out)
+	if err != nil {
+		t.Fatalf("read mlir output: %v", err)
+	}
+	text := string(data)
+	if strings.Contains(text, "sv.read_inout %const_") {
+		t.Fatalf("constant-valued named returns must not read undeclared const wires:\n%s", text)
+	}
+}
+
+func TestPackageLevelResetGlobalIsNotAssumedReadablePort(t *testing.T) {
+	const source = `
+package main
+
+var rst bool
+var state uint8
+var ack bool
+var out uint8
+
+func TopModule() (done bool) {
+	if rst {
+		state = 0
+		ack = false
+		done = ack
+		return
+	}
+	ack = true
+	state = 1
+	if state == 1 {
+		out = state
+	}
+	done = ack
+	return
+}
+`
+	design := buildMLIRDesignFromSource(t, source)
+	out := filepath.Join(t.TempDir(), "design.mlir")
+	if err := Emit(design, out); err != nil {
+		t.Fatalf("Emit failed: %v", err)
+	}
+	data, err := os.ReadFile(out)
+	if err != nil {
+		t.Fatalf("read mlir output: %v", err)
+	}
+	text := string(data)
+	if strings.Contains(text, "sv.if %rst") {
+		t.Fatalf("package-level rst must be read from its backing reg, not used as a port SSA value:\n%s", text)
+	}
+	if !strings.Contains(text, "sv.read_inout %rst") {
+		t.Fatalf("expected package-level rst to be read from its backing reg:\n%s", text)
+	}
+}
+
 func TestEmitBranchedDirectClockedOutputsAvoidRawOutputRefs(t *testing.T) {
 	design := buildMLIRDesignFromSource(t, branchedDirectClockedOutputsProgram)
 	out := filepath.Join(t.TempDir(), "design.mlir")

@@ -1,0 +1,103 @@
+﻿index,task_id,difficulty,direct_status,direct_category,direct_evidence,mygo_status,mygo_category,mygo_reason,transition
+1,cvdp_copilot_16qam_mapper_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+2,cvdp_copilot_16qam_mapper_0006,medium,PASS,PASS,,PASS,PASS,,both_pass
+3,cvdp_copilot_64b66b_encoder_0001,easy,PASS,PASS,,FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,direct_only
+4,cvdp_copilot_8x3_priority_encoder_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+5,cvdp_copilot_Carry_Lookahead_Adder_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+6,cvdp_copilot_GFCM_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+7,cvdp_copilot_apb_dsp_unit_0001,medium,FAIL,CVDP_FUNCTION_FAIL,assert 0 == 85,FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,both_failed
+8,cvdp_copilot_apb_gpio_0001,medium,PASS,PASS,,MODEL_OR_MYGO_ERROR,MODEL_OR_MYGO_ERROR,"MyGo compile failed after DeepSeek revision attempts: MyGo verilog FAIL. /home/rongxv/work/mygo_cvdp_work/08_cvdp_copilot_apb_gpio_0001_1780710090540_1866677/.mygo-tmp/.mygo-circt-1057250930/design.mlir:141:37: error: use of undeclared SSA value name
+    %read_pready136 = sv.read_inout %const_51 : !hw.inout<i1>
+                                    ^
+/home/rongxv/work/mygo_cvdp_work/08_cvdp_copilot_apb_gpio_0001_1780710090540_1866677/.mygo-tmp/.mygo-circt-1057250930/design.mlir:142:38: error: use of undeclared SSA value name
+    %read_pslverr137 = sv.read_inout %const_52 : !hw.inout<i1>
+                                     ^
+/home/rongxv/work/mygo_cvdp_work/08_cvdp_copilot_apb_gpio_0001_1780710090540_1866677/.mygo-tmp/.mygo-circt-1057250930/design.mlir:143:39: error: use of undeclared SSA value name
+    %read_gpio_out138 = sv.read_inout %const_39 : !hw.inout<i8>
+                                      ^
+/home/rongxv/work/mygo_cvdp_work/08_cvdp_copilot_apb_gpio_0001_1780710090540_1866677/.mygo-tmp/.mygo-circt-1057250930/design.mlir:144:42: error: use of undeclared SSA value name
+    %read_gpio_enable139 = sv.read_inout %const_42 : !hw.inout<i8>
+                                         ^
+backend: circt-opt --pass-pipeline failed: exit status 1",direct_only
+9,cvdp_copilot_apb_history_shift_register_0001,medium,FAIL,CVDP_FUNCTION_FAIL,"181.00ns WARNING  ..er.test_APBGlobalHistoryRegister control_register readback mismatch: Expected 0xb, got 0x0",FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,both_failed
+10,cvdp_copilot_axi_register_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+11,cvdp_copilot_axi_stream_upscale_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+12,cvdp_copilot_axil_precision_counter_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+13,cvdp_copilot_axis_joiner_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+14,cvdp_copilot_barrel_shifter_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+15,cvdp_copilot_bcd_counter_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+16,cvdp_copilot_bcd_to_excess_3_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+17,cvdp_copilot_binary_to_one_hot_decoder_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+18,cvdp_copilot_caesar_cipher_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+19,cvdp_copilot_car_parking_management_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+20,cvdp_copilot_cascaded_adder_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+21,cvdp_copilot_clock_divider_0003,easy,PASS,PASS,,PASS,PASS,,both_pass
+22,cvdp_copilot_comparator_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+23,cvdp_copilot_complex_multiplier_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+24,cvdp_copilot_concatenate_0001,medium,FAIL,CVDP_FUNCTION_FAIL,"assert LogicArray('10', Range(1, 'downto', 0)) == 1",FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,both_failed
+25,cvdp_copilot_configurable_digital_low_pass_filter_0001,medium,PASS,PASS,,MODEL_OR_MYGO_ERROR,MODEL_OR_MYGO_ERROR,"MyGo compile failed after DeepSeek revision attempts: MyGo ir FAIL. error: /home/rongxv/work/mygo_cvdp_work/25_cvdp_copilot_configurable_digital_low_pass_filter_0001_1780709806034_1866668/main.go:5:107: Port redeclared in this block
+error: /home/rongxv/work/mygo_cvdp_work/25_cvdp_copilot_configurable_digital_low_pass_filter_0001_1780709806034_1866668/main.go:5:22: 	other declaration of Port
+error: /home/rongxv/work/mygo_cvdp_work/25_cvdp_copilot_configurable_digital_low_pass_filter_0001_1780709806034_1866668/main.go:28:2: result parameter Port not in scope at return
+error: /home/rongxv/work/mygo_cvdp_work/25_cvdp_copilot_configurable_digital_low_pass_filter_0001_1780709806034_1866668/main.go:5:22: 	inner declaration of var Port uint64
+package loading failed",direct_only
+26,cvdp_copilot_configurable_digital_low_pass_filter_0004,medium,PASS,PASS,,PASS,PASS,,both_pass
+27,cvdp_copilot_configurable_digital_low_pass_filter_0014,easy,PASS,PASS,,PASS,PASS,,both_pass
+28,cvdp_copilot_convolutional_encoder_0001,easy,FAIL,CVDP_FUNCTION_FAIL,"33.00ns WARNING  ..ding.test_convolutional_encoding Encoded bit1 mismatch at cycle 1: got 0, expected 1",FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,both_failed
+29,cvdp_copilot_data_bus_controller_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+30,cvdp_copilot_data_width_converter_0003,easy,PASS,PASS,,FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,direct_only
+31,cvdp_copilot_dbi_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+32,cvdp_copilot_decode_firstbit_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+33,cvdp_copilot_digital_dice_roller_0001,easy,FAIL,CVDP_FUNCTION_FAIL,"raise AttributeError(f""{self._path} contains no child object named {name}"")",FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,both_failed
+34,cvdp_copilot_digital_stopwatch_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+35,cvdp_copilot_edge_detector_0001,easy,PASS,PASS,,FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,direct_only
+36,cvdp_copilot_ethernet_packet_parser_0001,medium,FAIL,VERILOG_COMPILE_FAIL,"raise CalledProcessError(retcode, process.args,",MODEL_OR_MYGO_ERROR,MODEL_OR_MYGO_ERROR,"MyGo compile failed after DeepSeek revision attempts: MyGo verilog FAIL. /home/rongxv/work/mygo_cvdp_work/36_cvdp_copilot_ethernet_packet_parser_0001_1780712037989_1866677/.mygo-tmp/.mygo-circt-2924727010/design.mlir:76:13: error: use of value '%rst' expects different type than prior uses: 'i1' vs '!hw.inout<i1>'
+      sv.if %rst {
+            ^
+/home/rongxv/work/mygo_cvdp_work/36_cvdp_copilot_ethernet_packet_parser_0001_1780712037989_1866677/.mygo-tmp/.mygo-circt-2924727010/design.mlir:29:5: note: prior use here
+    %rst = sv.reg : !hw.inout<i1>
+    ^
+backend: circt-opt --pass-pipeline failed: exit status 1",both_failed
+37,cvdp_copilot_events_to_apb_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+38,cvdp_copilot_factorial_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+39,cvdp_copilot_fibonacci_series_0001,easy,FAIL,CVDP_FUNCTION_FAIL,assert 2 == 1,FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,both_failed
+40,cvdp_copilot_fifo_async_0001,medium,FAIL,VERILOG_COMPILE_FAIL,/home/rongxv/work/cvdp-runs/direct-deepseek-v4-server-fresh-20260606/40_cvdp_copilot_fifo_async_0001/harness/rtl/fifo_async.sv:91: error: 'w_full' is not a valid l-value for a procedural assignment.,FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,both_failed
+41,cvdp_copilot_filo_0005,medium,PASS,PASS,,PASS,PASS,,both_pass
+42,cvdp_copilot_fsm_seq_detector_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+43,cvdp_copilot_gcd_0001,easy,PASS,PASS,,MODEL_OR_MYGO_ERROR,MODEL_OR_MYGO_ERROR,MyGo compile failed after DeepSeek revision attempts: MyGo compile failed,direct_only
+44,cvdp_copilot_gf_multiplier_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+45,cvdp_copilot_hamming_code_tx_and_rx_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+46,cvdp_copilot_hamming_code_tx_and_rx_0003,easy,PASS,PASS,,PASS,PASS,,both_pass
+47,cvdp_copilot_hebbian_rule_0017,medium,PASS,PASS,,PASS,PASS,,both_pass
+48,cvdp_copilot_hill_cipher_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+49,cvdp_copilot_load_store_unit_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+50,cvdp_copilot_matrix_multiplier_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+51,cvdp_copilot_microcode_sequencer_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+52,cvdp_copilot_morse_code_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+53,cvdp_copilot_moving_average_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+54,cvdp_copilot_nbit_swizzling_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+55,cvdp_copilot_packet_controller_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+56,cvdp_copilot_palindrome_3b_0002,easy,PASS,PASS,,PASS,PASS,,both_pass
+57,cvdp_copilot_perceptron_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+58,cvdp_copilot_perf_counters_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+59,cvdp_copilot_perfect_squares_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+60,cvdp_copilot_piso_0001,easy,PASS,PASS,,FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,direct_only
+61,cvdp_copilot_prbs_gen_0003,medium,PASS,PASS,,PASS,PASS,,both_pass
+62,cvdp_copilot_restoring_division_0001,medium,PASS,PASS,,MODEL_OR_MYGO_ERROR,MODEL_OR_MYGO_ERROR,"MyGo compile failed after DeepSeek revision attempts: MyGo ir FAIL. error: /home/rongxv/work/mygo_cvdp_work/62_cvdp_copilot_restoring_division_0001_1780712342790_1866671/main.go:64:1: missing return
+package loading failed",direct_only
+63,cvdp_copilot_reverse_bits_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+64,cvdp_copilot_secure_read_write_bus_0001,medium,PASS,PASS,,FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,direct_only
+65,cvdp_copilot_secure_read_write_register_bank_0001,medium,FAIL,CVDP_FUNCTION_FAIL,"assert LogicArray('00000010', Range(7, 'downto', 0)) == 0",MODEL_OR_MYGO_ERROR,MODEL_OR_MYGO_ERROR,MyGo compile failed after DeepSeek revision attempts: MyGo compile failed,both_failed
+66,cvdp_copilot_sequencial_binary_to_one_hot_decoder_0001,easy,FAIL,VERILOG_COMPILE_FAIL,"raise CalledProcessError(retcode, process.args,",PASS,PASS,,mygo_improved
+67,cvdp_copilot_serial_in_parallel_out_0004,easy,PASS,PASS,,PASS,PASS,,both_pass
+68,cvdp_copilot_set_bit_calculator_0001,easy,PASS,PASS,,FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,direct_only
+69,cvdp_copilot_sorter_0001,easy,PASS,PASS,,PASS,PASS,,both_pass
+70,cvdp_copilot_static_branch_predict_0001,medium,FAIL,CVDP_FUNCTION_FAIL,"raise AttributeError(f""{self._path} contains no child object named {name}"")",FAIL,CVDP_FUNCTION_FAIL,CVDP cocotb reported failing tests despite zero process return code.,both_failed
+71,cvdp_copilot_sync_lifo_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+72,cvdp_copilot_sync_serial_communication_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+73,cvdp_copilot_thermostat_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+74,cvdp_copilot_ttc_lite_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+75,cvdp_copilot_unpacker_one_hot_0001,easy,PASS,PASS,,MODEL_OR_MYGO_ERROR,MODEL_OR_MYGO_ERROR,MyGo compile failed after DeepSeek revision attempts: MyGo compile failed,direct_only
+76,cvdp_copilot_vending_machine_0001,medium,PASS,PASS,,PASS,PASS,,both_pass
+77,cvdp_copilot_vga_controller_0001,medium,PASS,PASS,,MODEL_OR_MYGO_ERROR,MODEL_OR_MYGO_ERROR,"MyGo compile failed after DeepSeek revision attempts: MyGo ir FAIL. error: /home/rongxv/work/mygo_cvdp_work/77_cvdp_copilot_vga_controller_0001_1780714849469_1866668/main.go:95:1: missing return
+package loading failed",direct_only
+78,cvdp_copilot_wb2ahb_0001,medium,PASS,PASS,,PASS,PASS,,both_pass

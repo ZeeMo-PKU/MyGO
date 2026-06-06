@@ -1,0 +1,7 @@
+DeepSeek V4 direct Verilog CVDP server rerun, 2026-06-06
+Total: 78
+PASS: 67
+FAIL: 11
+MODEL_ERROR: 0
+Pass rate: 85.90%
+Empty Verilog outputs after rerun: 0

@@ -123,6 +123,38 @@ the final score from 37/78 to 56/78 (+19 tasks). Per-task comparison artifacts
 and the rendered report are archived in
 `cvdp-results/deepseek-v4-mygo-server-20260606/`.
 
+### 6. CVDP cid003 direct Verilog server fresh rerun -- 67/78 PASS
+
+This run is a fresh from-scratch direct-output rerun on the same `Trifoliate`
+server environment used for the MyGO server run. It uses the same OpenRouter
+`deepseek/deepseek-v4-pro` model, but asks the model to generate SystemVerilog
+directly and does not use MyGO.
+
+| Suite | Model | Path | Score | Rate |
+|---|---|---|---|---|
+| CVDP cid003 | DeepSeek V4 Pro | prompt -> Verilog -> CVDP harness | 67/78 | 85.90% |
+
+Status breakdown:
+
+| Status | Count | Meaning |
+|---|---:|---|
+| PASS | 67 | Direct-generated HDL passed CVDP cocotb functional judging |
+| FAIL | 11 | Direct-generated HDL reached CVDP judging but failed compile, elaboration, or functional tests |
+| MODEL_ERROR | 0 | The model did not produce valid direct Verilog |
+
+Failure categories:
+
+| Category | Count |
+|---|---:|
+| CVDP_FUNCTION_FAIL | 8 |
+| VERILOG_COMPILE_FAIL | 3 |
+
+Compared with the MyGO server run above, this fresh direct rerun passes 67/78
+while the MyGO route passes 56/78. Per-task comparison has 55 both-pass tasks,
+1 task improved by MyGO, 12 direct-only pass tasks, and 10 both-failed tasks.
+Artifacts are archived in
+`cvdp-results/deepseek-v4-direct-server-fresh-20260606/`.
+
 #### Path B hard floor (4 problems never solved by DeepSeek)
 - Prob092_gatesv100: LLM uses loops instead of BitsHelper for 100-bit vectors
 - Prob144_conwaylife: LLM gets neighbor counting wrong (Kimi solves it)

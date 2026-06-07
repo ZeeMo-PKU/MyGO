@@ -1,0 +1,261 @@
+task_index,task,module,path,status,reason,artifacts
+1,Arithmetic/Accumulator/accu,accu,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:85: $finish called at 150000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/001_Arithmetic_Accumulator_accu/direct_verilog
+1,Arithmetic/Accumulator/accu,accu,mygo,PASS,"===========Your Design Passed===========
+testbench.v:85: $finish called at 150000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/001_Arithmetic_Accumulator_accu/mygo
+2,Arithmetic/Adder/adder_16bit,adder_16bit,direct_verilog,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/002_Arithmetic_Adder_adder_16bit/direct_verilog
+2,Arithmetic/Adder/adder_16bit,adder_16bit,mygo,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/002_Arithmetic_Adder_adder_16bit/mygo
+3,Arithmetic/Adder/adder_32bit,adder_32bit,direct_verilog,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/003_Arithmetic_Adder_adder_32bit/direct_verilog
+3,Arithmetic/Adder/adder_32bit,adder_32bit,mygo,MYGO_COMPILE_ERROR,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/003_Arithmetic_Adder_adder_32bit/mygo/main.go:3:1: expected 'package', found 'func'",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/003_Arithmetic_Adder_adder_32bit/mygo
+4,Arithmetic/Adder/adder_8bit,adder_8bit,direct_verilog,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/004_Arithmetic_Adder_adder_8bit/direct_verilog
+4,Arithmetic/Adder/adder_8bit,adder_8bit,mygo,FAIL,===========Test completed with         100 /100 failures===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/004_Arithmetic_Adder_adder_8bit/mygo
+5,Arithmetic/Adder/adder_bcd,adder_bcd,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:56: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/005_Arithmetic_Adder_adder_bcd/direct_verilog
+5,Arithmetic/Adder/adder_bcd,adder_bcd,mygo,PASS,"=========== Your Design Passed ===========
+testbench.v:56: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/005_Arithmetic_Adder_adder_bcd/mygo
+6,Arithmetic/Adder/adder_pipe_64bit,adder_pipe_64bit,direct_verilog,COMPILE_FAIL,"testbench.v:69: error: Unknown module type: adder_pipe_64bit
+2 error(s) during elaboration.
+*** These modules were missing:
+        adder_pipe_64bit referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/006_Arithmetic_Adder_adder_pipe_64bit/direct_verilog
+6,Arithmetic/Adder/adder_pipe_64bit,adder_pipe_64bit,mygo,COMPILE_FAIL,"testbench.v:66: error: parameter `DATA_WIDTH` not found in `tb_adder64.u_pip_add64`.
+testbench.v:67: error: parameter `STG_WIDTH` not found in `tb_adder64.u_pip_add64`.
+3 error(s) during elaboration.",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/006_Arithmetic_Adder_adder_pipe_64bit/mygo
+7,Arithmetic/Comparator/comparator_3bit,comparator_3bit,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:48: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/007_Arithmetic_Comparator_comparator_3bit/direct_verilog
+7,Arithmetic/Comparator/comparator_3bit,comparator_3bit,mygo,PASS,"=========== Your Design Passed ===========
+testbench.v:48: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/007_Arithmetic_Comparator_comparator_3bit/mygo
+8,Arithmetic/Comparator/comparator_4bit,comparator_4bit,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:48: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/008_Arithmetic_Comparator_comparator_4bit/direct_verilog
+8,Arithmetic/Comparator/comparator_4bit,comparator_4bit,mygo,PASS,"=========== Your Design Passed ===========
+testbench.v:48: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/008_Arithmetic_Comparator_comparator_4bit/mygo
+9,Arithmetic/Divider/div_16bit,div_16bit,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:31: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/009_Arithmetic_Divider_div_16bit/direct_verilog
+9,Arithmetic/Divider/div_16bit,div_16bit,mygo,FAIL,"===========Test completed with         100 /100 failures===========
+testbench.v:31: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/009_Arithmetic_Divider_div_16bit/mygo
+10,Arithmetic/Divider/radix2_div,radix2_div,direct_verilog,COMPILE_FAIL,"testbench.v:14: error: Unknown module type: radix2_div
+2 error(s) during elaboration.
+*** These modules were missing:
+        radix2_div referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/010_Arithmetic_Divider_radix2_div/direct_verilog
+10,Arithmetic/Divider/radix2_div,radix2_div,mygo,MYGO_COMPILE_ERROR,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/010_Arithmetic_Divider_radix2_div/mygo/main.go:3:1: expected 'package', found 'func'",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/010_Arithmetic_Divider_radix2_div/mygo
+11,Arithmetic/Multiplier/multi_16bit,multi_16bit,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:67: $finish called at 47000 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/011_Arithmetic_Multiplier_multi_16bit/direct_verilog
+11,Arithmetic/Multiplier/multi_16bit,multi_16bit,mygo,MYGO_COMPILE_ERROR,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/011_Arithmetic_Multiplier_multi_16bit/mygo/main.go:3:1: expected 'package', found 'func'",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/011_Arithmetic_Multiplier_multi_16bit/mygo
+12,Arithmetic/Multiplier/multi_8bit,multi_8bit,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:45: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/012_Arithmetic_Multiplier_multi_8bit/direct_verilog
+12,Arithmetic/Multiplier/multi_8bit,multi_8bit,mygo,PASS,"=========== Your Design Passed ===========
+testbench.v:45: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/012_Arithmetic_Multiplier_multi_8bit/mygo
+13,Arithmetic/Multiplier/multi_booth_8bit,multi_booth_8bit,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:71: $finish called at 1900 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/013_Arithmetic_Multiplier_multi_booth_8bit/direct_verilog
+13,Arithmetic/Multiplier/multi_booth_8bit,multi_booth_8bit,mygo,PASS,"===========Your Design Passed===========
+testbench.v:71: $finish called at 1800 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/013_Arithmetic_Multiplier_multi_booth_8bit/mygo
+14,Arithmetic/Multiplier/multi_pipe_4bit,multi_pipe_4bit,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:55: $finish called at 3010 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/014_Arithmetic_Multiplier_multi_pipe_4bit/direct_verilog
+14,Arithmetic/Multiplier/multi_pipe_4bit,multi_pipe_4bit,mygo,COMPILE_FAIL,"testbench.v:11: error: parameter `size` not found in `multi_pipe_tb.dut`.
+2 error(s) during elaboration.",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/014_Arithmetic_Multiplier_multi_pipe_4bit/mygo
+15,Arithmetic/Multiplier/multi_pipe_8bit,multi_pipe_8bit,direct_verilog,COMPILE_FAIL,"testbench.v:17: error: Unknown module type: multi_pipe_8bit
+2 error(s) during elaboration.
+*** These modules were missing:
+        multi_pipe_8bit referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/015_Arithmetic_Multiplier_multi_pipe_8bit/direct_verilog
+15,Arithmetic/Multiplier/multi_pipe_8bit,multi_pipe_8bit,mygo,PASS,"===========Your Design Passed===========
+testbench.v:79: $finish called at 72220 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/015_Arithmetic_Multiplier_multi_pipe_8bit/mygo
+16,Arithmetic/Other/fixed_point_adder,fixed_point_adder,direct_verilog,COMPILE_FAIL,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:27: syntax error
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:27: Syntax in assignment statement l-value.
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:38: syntax error
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:38: Syntax in assignment statement l-value.
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:45: syntax error
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:45: Syntax in assignment statement l-value.",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog
+16,Arithmetic/Other/fixed_point_adder,fixed_point_adder,mygo,COMPILE_FAIL,"testbench.v:17: error: parameter `N` not found in `testbench.fp_adder`.
+testbench.v:17: error: parameter `Q` not found in `testbench.fp_adder`.
+3 error(s) during elaboration.",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/mygo
+17,Arithmetic/Other/fixed_point_substractor,fixed_point_subtractor,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:73: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/017_Arithmetic_Other_fixed_point_substractor/direct_verilog
+17,Arithmetic/Other/fixed_point_substractor,fixed_point_subtractor,mygo,MYGO_COMPILE_ERROR,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/017_Arithmetic_Other_fixed_point_substractor/mygo/main.go:3:1: expected 'package', found 'func'",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/017_Arithmetic_Other_fixed_point_substractor/mygo
+18,Arithmetic/Other/float_multi,float_multi,direct_verilog,COMPILE_FAIL,"testbench.v:7: error: Unknown module type: float_multi
+2 error(s) during elaboration.
+*** These modules were missing:
+        float_multi referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/018_Arithmetic_Other_float_multi/direct_verilog
+18,Arithmetic/Other/float_multi,float_multi,mygo,MYGO_COMPILE_ERROR,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/018_Arithmetic_Other_float_multi/mygo/main.go:3:1: expected 'package', found 'func'",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/018_Arithmetic_Other_float_multi/mygo
+19,Arithmetic/Substractor/sub_64bit,sub_64bit,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:48: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/019_Arithmetic_Substractor_sub_64bit/direct_verilog
+19,Arithmetic/Substractor/sub_64bit,sub_64bit,mygo,PASS,"=========== Your Design Passed ===========
+testbench.v:48: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/019_Arithmetic_Substractor_sub_64bit/mygo
+20,Control/Counter/JC_counter,JC_counter,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:59: $finish called at 1310 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/020_Control_Counter_JC_counter/direct_verilog
+20,Control/Counter/JC_counter,JC_counter,mygo,FAIL,"===========Error===========
+testbench.v:59: $finish called at 1310 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/020_Control_Counter_JC_counter/mygo
+21,Control/Counter/counter_12,counter_12,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:49: $finish called at 430000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/021_Control_Counter_counter_12/direct_verilog
+21,Control/Counter/counter_12,counter_12,mygo,PASS,"===========Your Design Passed===========
+testbench.v:49: $finish called at 430000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/021_Control_Counter_counter_12/mygo
+22,Control/Counter/ring_counter,ring_counter,direct_verilog,COMPILE_FAIL,"testbench.v:20: internal error: I don't know how to elaborate(ivl_type_t) this expression: {8'd1, 8'd1, 8'd2, 8'd4, 8'd8, 8'd16, 8'd32, 8'd64, 8'd128, 8'd1}
+Elaboration failed",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/022_Control_Counter_ring_counter/direct_verilog
+22,Control/Counter/ring_counter,ring_counter,mygo,COMPILE_FAIL,"testbench.v:20: internal error: I don't know how to elaborate(ivl_type_t) this expression: {8'd1, 8'd1, 8'd2, 8'd4, 8'd8, 8'd16, 8'd32, 8'd64, 8'd128, 8'd1}
+Elaboration failed",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/022_Control_Counter_ring_counter/mygo
+23,Control/Counter/up_down_counter,up_down_counter,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:53: $finish called at 620 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/023_Control_Counter_up_down_counter/direct_verilog
+23,Control/Counter/up_down_counter,up_down_counter,mygo,PASS,"=========== Your Design Passed ===========
+testbench.v:53: $finish called at 620 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/023_Control_Counter_up_down_counter/mygo
+24,Control/Finite State Machine/fsm,fsm,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:65: $finish called at 158 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/024_Control_Finite_State_Machine_fsm/direct_verilog
+24,Control/Finite State Machine/fsm,fsm,mygo,PASS,"===========Your Design Passed===========
+testbench.v:65: $finish called at 158 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/024_Control_Finite_State_Machine_fsm/mygo
+25,Control/Finite State Machine/sequence_detector,sequence_detector,direct_verilog,COMPILE_FAIL,"testbench.v:8: error: port ``rst_n'' is not a port of dut.
+1 error(s) during elaboration.",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/025_Control_Finite_State_Machine_sequence_detector/direct_verilog
+25,Control/Finite State Machine/sequence_detector,sequence_detector,mygo,COMPILE_FAIL,"testbench.v:8: error: port ``rst_n'' is not a port of dut.
+1 error(s) during elaboration.",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/025_Control_Finite_State_Machine_sequence_detector/mygo
+26,Memory/FIFO/asyn_fifo,asyn_fifo,direct_verilog,FAIL,"WARNING: testbench.v:65: $readmemh(wfull.txt): Not enough words in the file for the requested range [0:50].
+WARNING: testbench.v:66: $readmemh(rempty.txt): Not enough words in the file for the requested range [0:50].
+WARNING: testbench.v:67: $readmemh(tdata.txt): Not enough words in the file for the requested range [0:50].
+===========Error===========
+testbench.v:52: $finish called at 1050 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/026_Memory_FIFO_asyn_fifo/direct_verilog
+26,Memory/FIFO/asyn_fifo,asyn_fifo,mygo,MYGO_COMPILE_ERROR,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/026_Memory_FIFO_asyn_fifo/mygo/main.go:3:1: expected 'package', found 'func'",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/026_Memory_FIFO_asyn_fifo/mygo
+27,Memory/LIFO/LIFObuffer,LIFObuffer,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:70: $finish called at 265000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/027_Memory_LIFO_LIFObuffer/direct_verilog
+27,Memory/LIFO/LIFObuffer,LIFObuffer,mygo,PASS,"=========== Your Design Passed ===========
+testbench.v:70: $finish called at 265000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/027_Memory_LIFO_LIFObuffer/mygo
+28,Memory/Shifter/LFSR,LFSR,direct_verilog,COMPILE_FAIL,"testbench.v:6: warning: Port 1 (clk) of module LFSR expects 1 bit(s), given 4.
+testbench.v:6:        : Pruning 3 high bits of the expression.
+testbench.v:6: warning: Port 3 (out) of module LFSR expects 4 bit(s), given 1.
+testbench.v:6:        : Padding 3 high bits of the port.
+testbench.v:11: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.
+testbench.v:14: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.
+2 error(s) during elaboration.",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/028_Memory_Shifter_LFSR/direct_verilog
+28,Memory/Shifter/LFSR,LFSR,mygo,COMPILE_FAIL,"testbench.v:6: warning: Port 1 (clk) of module LFSR expects 1 bit(s), given 4.
+testbench.v:6:        : Pruning 3 high bits of the expression.
+testbench.v:6: warning: Port 3 (out) of module LFSR expects 8 bit(s), given 1.
+testbench.v:6:        : Padding 7 high bits of the port.
+testbench.v:11: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.
+testbench.v:14: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.
+2 error(s) during elaboration.",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/028_Memory_Shifter_LFSR/mygo
+29,Memory/Shifter/barrel_shifter,barrel_shifter,direct_verilog,FAIL,"=========== Test completed with           3 failures ===========
+testbench.v:31: $finish called at 80 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/029_Memory_Shifter_barrel_shifter/direct_verilog
+29,Memory/Shifter/barrel_shifter,barrel_shifter,mygo,FAIL,"=========== Test completed with           1 failures ===========
+testbench.v:31: $finish called at 80 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/029_Memory_Shifter_barrel_shifter/mygo
+30,Memory/Shifter/right_shifter,right_shifter,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:45: $finish called at 90 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/direct_verilog
+30,Memory/Shifter/right_shifter,right_shifter,mygo,MYGO_COMPILE_ERROR,"error: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo/main.go:28:6: boolToUint redeclared in this block
+error: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo/main.go:23:6: 	other declaration of boolToUint
+error: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo/main.go:24:26: undefined: unsafe
+package loading failed",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo
+31,Miscellaneous/Frequency divider/freq_div,freq_div,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:46: $finish called at 1035 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/031_Miscellaneous_Frequency_divider_freq_div/direct_verilog
+31,Miscellaneous/Frequency divider/freq_div,freq_div,mygo,FAIL,"===========Error===========          5
+testbench.v:46: $finish called at 1035 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/031_Miscellaneous_Frequency_divider_freq_div/mygo
+32,Miscellaneous/Frequency divider/freq_divbyeven,freq_diveven,direct_verilog,COMPILE_FAIL,"testbench.v:10: error: Unknown module type: freq_divbyeven
+2 error(s) during elaboration.
+*** These modules were missing:
+        freq_divbyeven referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/032_Miscellaneous_Frequency_divider_freq_divbyeven/direct_verilog
+32,Miscellaneous/Frequency divider/freq_divbyeven,freq_diveven,mygo,COMPILE_FAIL,"testbench.v:10: error: Unknown module type: freq_divbyeven
+2 error(s) during elaboration.
+*** These modules were missing:
+        freq_divbyeven referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/032_Miscellaneous_Frequency_divider_freq_divbyeven/mygo
+33,Miscellaneous/Frequency divider/freq_divbyfrac,freq_divbyfrac,direct_verilog,COMPILE_FAIL,"testbench.v:10: error: Unknown module type: freq_divbyfrac
+2 error(s) during elaboration.
+*** These modules were missing:
+        freq_divbyfrac referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/033_Miscellaneous_Frequency_divider_freq_divbyfrac/direct_verilog
+33,Miscellaneous/Frequency divider/freq_divbyfrac,freq_divbyfrac,mygo,MYGO_COMPILE_ERROR,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/033_Miscellaneous_Frequency_divider_freq_divbyfrac/mygo/main.go:3:1: expected 'package', found 'func'",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/033_Miscellaneous_Frequency_divider_freq_divbyfrac/mygo
+34,Miscellaneous/Frequency divider/freq_divbyodd,freq_divbyodd,direct_verilog,COMPILE_FAIL,"testbench.v:10: error: Unknown module type: freq_divbyodd
+2 error(s) during elaboration.
+*** These modules were missing:
+        freq_divbyodd referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/034_Miscellaneous_Frequency_divider_freq_divbyodd/direct_verilog
+34,Miscellaneous/Frequency divider/freq_divbyodd,freq_divbyodd,mygo,FAIL,"Failed at          1: clk=1, clk_div=0 (expected           1)
+Failed at          2: clk=0, clk_div=0 (expected           1)
+Failed at          6: clk=0, clk_div=1 (expected           0)
+Failed at          7: clk=1, clk_div=1 (expected           0)
+Failed at         11: clk=1, clk_div=0 (expected           1)
+Failed at         12: clk=0, clk_div=0 (expected           1)
+Failed at         16: clk=0, clk_div=1 (expected           0)
+Failed at         17: clk=1, clk_div=1 (expected           0)
+=========== Test completed with           8/20 failures ===========
+testbench.v:27: $finish called at 130000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/034_Miscellaneous_Frequency_divider_freq_divbyodd/mygo
+35,Miscellaneous/Others/calendar,calendar,direct_verilog,PASS,"WARNING: testbench.v:31: $readmemh(reference.txt): Not enough words in the file for the requested range [0:4000].
+===========Your Design Passed===========
+testbench.v:48: $finish called at 40035000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/035_Miscellaneous_Others_calendar/direct_verilog
+35,Miscellaneous/Others/calendar,calendar,mygo,FAIL,"WARNING: testbench.v:31: $readmemh(reference.txt): Not enough words in the file for the requested range [0:4000].
+===========Error===========
+testbench.v:48: $finish called at 40035000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/035_Miscellaneous_Others_calendar/mygo
+36,Miscellaneous/Others/edge_detect,edge_detect,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:67: $finish called at 85 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/036_Miscellaneous_Others_edge_detect/direct_verilog
+36,Miscellaneous/Others/edge_detect,edge_detect,mygo,PASS,"===========Your Design Passed===========
+testbench.v:67: $finish called at 85 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/036_Miscellaneous_Others_edge_detect/mygo
+37,Miscellaneous/Others/parallel2serial,parallel2serial,direct_verilog,COMPILE_FAIL,"testbench.v:11: error: Unknown module type: parallel2serial
+2 error(s) during elaboration.
+*** These modules were missing:
+        parallel2serial referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/037_Miscellaneous_Others_parallel2serial/direct_verilog
+37,Miscellaneous/Others/parallel2serial,parallel2serial,mygo,PASS,"===========Your Design Passed===========
+testbench.v:63: $finish called at 8005 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/037_Miscellaneous_Others_parallel2serial/mygo
+38,Miscellaneous/Others/pulse_detect,pulse_detect,direct_verilog,FAIL,"===========Error===========
+testbench.v:43: $finish called at 148 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/038_Miscellaneous_Others_pulse_detect/direct_verilog
+38,Miscellaneous/Others/pulse_detect,pulse_detect,mygo,FAIL,"===========Error===========
+testbench.v:43: $finish called at 148 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/038_Miscellaneous_Others_pulse_detect/mygo
+39,Miscellaneous/Others/serial2parallel,serial2parallel,direct_verilog,TIMEOUT,simulation timeout,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/039_Miscellaneous_Others_serial2parallel/direct_verilog
+39,Miscellaneous/Others/serial2parallel,serial2parallel,mygo,TIMEOUT,simulation timeout,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/039_Miscellaneous_Others_serial2parallel/mygo
+40,Miscellaneous/Others/synchronizer,synchronizer,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:74: $finish called at 1005 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/040_Miscellaneous_Others_synchronizer/direct_verilog
+40,Miscellaneous/Others/synchronizer,synchronizer,mygo,PASS,"===========Your Design Passed===========
+testbench.v:74: $finish called at 1005 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/040_Miscellaneous_Others_synchronizer/mygo
+41,Miscellaneous/Others/traffic_light,traffic_light,direct_verilog,COMPILE_FAIL,"testbench.v:14: error: Unknown module type: traffic_light
+2 error(s) during elaboration.
+*** These modules were missing:
+        traffic_light referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/041_Miscellaneous_Others_traffic_light/direct_verilog
+41,Miscellaneous/Others/traffic_light,traffic_light,mygo,MYGO_COMPILE_ERROR,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/041_Miscellaneous_Others_traffic_light/mygo/main.go:3:1: expected 'package', found 'func'",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/041_Miscellaneous_Others_traffic_light/mygo
+42,Miscellaneous/Others/width_8to16,width_8to16,direct_verilog,PASS,"===========Your Design Passed===========
+testbench.v:48: $finish called at 100 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/042_Miscellaneous_Others_width_8to16/direct_verilog
+42,Miscellaneous/Others/width_8to16,width_8to16,mygo,MYGO_COMPILE_ERROR,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/042_Miscellaneous_Others_width_8to16/mygo/main.go:3:1: expected 'package', found 'func'",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/042_Miscellaneous_Others_width_8to16/mygo
+43,Miscellaneous/RISC-V/RAM,RAM,direct_verilog,COMPILE_FAIL,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:11: error: Unable to bind parameter `ADDR_WIDTH' in `tb_RAM.uut'
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:14:      : A symbol with that name was declared here. Check for declaration after use.
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:11: error: Dimensions must be constant.
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:11       : This MSB expression violates the rule: (ADDR_WIDTH)-('sd1)
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:8: error: Unable to bind parameter `ADDR_WIDTH' in `tb_RAM.uut'
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:14:      : A symbol with that name was declared here. Check for declaration after use.
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:8: error: Dimensions must be constant.
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:8       : This MSB expression violates the rule: (ADDR_WIDTH)-('sd1)
+testbench.v:21: warning: Port 4 (write_addr) of module RAM expects 1 bit(s), given 8.
+testbench.v:21:        : Pruning 7 high bits of the expression.
+testbench.v:21: warning: Port 7 (read_addr) of module RAM expects 1 bit(s), given 8.
+testbench.v:21:        : Pruning 7 high bits of the expression.
+4 error(s) during elaboration.",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog
+43,Miscellaneous/RISC-V/RAM,RAM,mygo,PASS,"===========Your Design Passed===========
+testbench.v:79: $finish called at 11000 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/mygo
+44,Miscellaneous/RISC-V/ROM,ROM,direct_verilog,PASS,"Starting ROM Testbench...
+=========== Your Design Passed ===========
+testbench.v:56: $finish called at 40 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/044_Miscellaneous_RISC-V_ROM/direct_verilog
+44,Miscellaneous/RISC-V/ROM,ROM,mygo,PASS,"Starting ROM Testbench...
+=========== Your Design Passed ===========
+testbench.v:56: $finish called at 40 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/044_Miscellaneous_RISC-V_ROM/mygo
+45,Miscellaneous/RISC-V/alu,alu,direct_verilog,COMPILE_FAIL,"testbench.v:16: error: Unknown module type: alu
+2 error(s) during elaboration.
+*** These modules were missing:
+        alu referenced 1 times.
+***",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/045_Miscellaneous_RISC-V_alu/direct_verilog
+45,Miscellaneous/RISC-V/alu,alu,mygo,FAIL,"WARNING: testbench.v:43: $readmemh(reference.dat): Not enough words in the file for the requested range [0:31].
+===========Error===========
+testbench.v:86: $finish called at 175000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/045_Miscellaneous_RISC-V_alu/mygo
+46,Miscellaneous/RISC-V/clkgenerator,clkgenerator,direct_verilog,FAIL,"=========== Test completed with          20 failures ===========
+testbench.v:29: $finish called at 100 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/046_Miscellaneous_RISC-V_clkgenerator/direct_verilog
+46,Miscellaneous/RISC-V/clkgenerator,clkgenerator,mygo,FAIL,"=========== Test completed with          10 failures ===========
+testbench.v:29: $finish called at 100 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/046_Miscellaneous_RISC-V_clkgenerator/mygo
+47,Miscellaneous/RISC-V/instr_reg,instr_reg,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:78: $finish called at 135000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/047_Miscellaneous_RISC-V_instr_reg/direct_verilog
+47,Miscellaneous/RISC-V/instr_reg,instr_reg,mygo,PASS,"=========== Your Design Passed ===========
+testbench.v:78: $finish called at 135000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/047_Miscellaneous_RISC-V_instr_reg/mygo
+48,Miscellaneous/RISC-V/pe,pe,direct_verilog,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/048_Miscellaneous_RISC-V_pe/direct_verilog
+48,Miscellaneous/RISC-V/pe,pe,mygo,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/048_Miscellaneous_RISC-V_pe/mygo
+49,Miscellaneous/Signal generation/signal_generator,signal_generator,direct_verilog,FAIL,"===========Error===========
+testbench.v:39: $finish called at 1010 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/049_Miscellaneous_Signal_generation_signal_generator/direct_verilog
+49,Miscellaneous/Signal generation/signal_generator,signal_generator,mygo,FAIL,"===========Error===========
+testbench.v:39: $finish called at 1010 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/049_Miscellaneous_Signal_generation_signal_generator/mygo
+50,Miscellaneous/Signal generation/square_wave,square_wave,direct_verilog,PASS,"=========== Your Design Passed ===========
+testbench.v:36: $finish called at 1000 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/050_Miscellaneous_Signal_generation_square_wave/direct_verilog
+50,Miscellaneous/Signal generation/square_wave,square_wave,mygo,PASS,"=========== Your Design Passed ===========
+testbench.v:36: $finish called at 1000 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/050_Miscellaneous_Signal_generation_square_wave/mygo

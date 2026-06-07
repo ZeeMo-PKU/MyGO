@@ -1,0 +1,2579 @@
+{
+  "model": "deepseek/deepseek-v4-pro",
+  "rtllm_root": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/RTLLM-41b2689",
+  "rtllm_commit": "41b26896e33b536940116a975626455eed3de65e",
+  "mygo_commit": "9699ebdf84ace8daa67388d8197099d7d12c044b",
+  "counts": {
+    "direct_verilog": {
+      "PASS": 29,
+      "COMPILE_FAIL": 15,
+      "FAIL": 5,
+      "TIMEOUT": 1
+    },
+    "mygo": {
+      "PASS": 21,
+      "MYGO_COMPILE_ERROR": 10,
+      "FAIL": 11,
+      "COMPILE_FAIL": 7,
+      "TIMEOUT": 1
+    }
+  },
+  "results": [
+    {
+      "task_index": 1,
+      "task": "Arithmetic/Accumulator/accu",
+      "module": "accu",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:85: $finish called at 150000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/001_Arithmetic_Accumulator_accu/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01160120964050293,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:85: $finish called at 150000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005278348922729492,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 1,
+      "task": "Arithmetic/Accumulator/accu",
+      "module": "accu",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:85: $finish called at 150000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/001_Arithmetic_Accumulator_accu/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:26: warning: Port 6 (data_out) of module accu expects 16 bit(s), given 10.\ntestbench.v:26:        : Padding 6 high bits of the port.\n",
+          "elapsed_seconds": 0.008646488189697266,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:85: $finish called at 150000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005342721939086914,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.08988785743713379,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 2,
+      "task": "Arithmetic/Adder/adder_16bit",
+      "module": "adder_16bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/002_Arithmetic_Adder_adder_16bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.010222196578979492,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.006909370422363281,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 2,
+      "task": "Arithmetic/Adder/adder_16bit",
+      "module": "adder_16bit",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/002_Arithmetic_Adder_adder_16bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.007576465606689453,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.006484031677246094,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.08983254432678223,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 3,
+      "task": "Arithmetic/Adder/adder_32bit",
+      "module": "adder_32bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/003_Arithmetic_Adder_adder_32bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013425350189208984,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.023717880249023438,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 3,
+      "task": "Arithmetic/Adder/adder_32bit",
+      "module": "adder_32bit",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/003_Arithmetic_Adder_adder_32bit/mygo/main.go:3:1: expected 'package', found 'func'",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/003_Arithmetic_Adder_adder_32bit/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/003_Arithmetic_Adder_adder_32bit/mygo/main.go:3:1: expected 'package', found 'func'\n",
+          "elapsed_seconds": 0.006035566329956055,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 4,
+      "task": "Arithmetic/Adder/adder_8bit",
+      "module": "adder_8bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/004_Arithmetic_Adder_adder_8bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.008356332778930664,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.012592792510986328,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 4,
+      "task": "Arithmetic/Adder/adder_8bit",
+      "module": "adder_8bit",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "===========Test completed with         100 /100 failures===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/004_Arithmetic_Adder_adder_8bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.007337331771850586,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Test completed with         100 /100 failures===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005737781524658203,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.08602142333984375,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 5,
+      "task": "Arithmetic/Adder/adder_bcd",
+      "module": "adder_bcd",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/005_Arithmetic_Adder_adder_bcd/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.007616758346557617,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005296230316162109,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 5,
+      "task": "Arithmetic/Adder/adder_bcd",
+      "module": "adder_bcd",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/005_Arithmetic_Adder_adder_bcd/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:16: warning: Port 1 (A) of module adder_bcd expects 8 bit(s), given 4.\ntestbench.v:16:        : Padding 4 high bits of the port.\ntestbench.v:16: warning: Port 2 (B) of module adder_bcd expects 8 bit(s), given 4.\ntestbench.v:16:        : Padding 4 high bits of the port.\ntestbench.v:16: warning: Port 4 (Sum) of module adder_bcd expects 8 bit(s), given 4.\ntestbench.v:16:        : Padding 4 high bits of the port.\n",
+          "elapsed_seconds": 0.006885528564453125,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005967617034912109,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.08522224426269531,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 6,
+      "task": "Arithmetic/Adder/adder_pipe_64bit",
+      "module": "adder_pipe_64bit",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:69: error: Unknown module type: adder_pipe_64bit\n2 error(s) during elaboration.\n*** These modules were missing:\n        adder_pipe_64bit referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/006_Arithmetic_Adder_adder_pipe_64bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:69: error: Unknown module type: adder_pipe_64bit\n2 error(s) during elaboration.\n*** These modules were missing:\n        adder_pipe_64bit referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.0061185359954833984,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 6,
+      "task": "Arithmetic/Adder/adder_pipe_64bit",
+      "module": "adder_pipe_64bit",
+      "path": "mygo",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:66: error: parameter `DATA_WIDTH` not found in `tb_adder64.u_pip_add64`.\ntestbench.v:67: error: parameter `STG_WIDTH` not found in `tb_adder64.u_pip_add64`.\n3 error(s) during elaboration.",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/006_Arithmetic_Adder_adder_pipe_64bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 3,
+          "stdout": "",
+          "stderr": "testbench.v:66: error: parameter `DATA_WIDTH` not found in `tb_adder64.u_pip_add64`.\ntestbench.v:67: error: parameter `STG_WIDTH` not found in `tb_adder64.u_pip_add64`.\n3 error(s) during elaboration.\n",
+          "elapsed_seconds": 0.006166219711303711,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0820772647857666,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 7,
+      "task": "Arithmetic/Comparator/comparator_3bit",
+      "module": "comparator_3bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/007_Arithmetic_Comparator_comparator_3bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.007224559783935547,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005764961242675781,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 7,
+      "task": "Arithmetic/Comparator/comparator_3bit",
+      "module": "comparator_3bit",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/007_Arithmetic_Comparator_comparator_3bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:13: warning: Port 1 (A) of module comparator_3bit expects 8 bit(s), given 3.\ntestbench.v:13:        : Padding 5 high bits of the port.\ntestbench.v:13: warning: Port 2 (B) of module comparator_3bit expects 8 bit(s), given 3.\ntestbench.v:13:        : Padding 5 high bits of the port.\n",
+          "elapsed_seconds": 0.007544517517089844,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.00542449951171875,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.08311319351196289,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 8,
+      "task": "Arithmetic/Comparator/comparator_4bit",
+      "module": "comparator_4bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/008_Arithmetic_Comparator_comparator_4bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.008301496505737305,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005948066711425781,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 8,
+      "task": "Arithmetic/Comparator/comparator_4bit",
+      "module": "comparator_4bit",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/008_Arithmetic_Comparator_comparator_4bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:13: warning: Port 1 (A) of module comparator_4bit expects 8 bit(s), given 4.\ntestbench.v:13:        : Padding 4 high bits of the port.\ntestbench.v:13: warning: Port 2 (B) of module comparator_4bit expects 8 bit(s), given 4.\ntestbench.v:13:        : Padding 4 high bits of the port.\n",
+          "elapsed_seconds": 0.008042573928833008,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.00619816780090332,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.08010482788085938,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 9,
+      "task": "Arithmetic/Divider/div_16bit",
+      "module": "div_16bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:31: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/009_Arithmetic_Divider_div_16bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.006949186325073242,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:31: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.007435798645019531,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 9,
+      "task": "Arithmetic/Divider/div_16bit",
+      "module": "div_16bit",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "===========Test completed with         100 /100 failures===========\ntestbench.v:31: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/009_Arithmetic_Divider_div_16bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.009425640106201172,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Test completed with         100 /100 failures===========\ntestbench.v:31: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.007627964019775391,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.09908103942871094,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 10,
+      "task": "Arithmetic/Divider/radix2_div",
+      "module": "radix2_div",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:14: error: Unknown module type: radix2_div\n2 error(s) during elaboration.\n*** These modules were missing:\n        radix2_div referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/010_Arithmetic_Divider_radix2_div/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:14: error: Unknown module type: radix2_div\n2 error(s) during elaboration.\n*** These modules were missing:\n        radix2_div referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.005864620208740234,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 10,
+      "task": "Arithmetic/Divider/radix2_div",
+      "module": "radix2_div",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/010_Arithmetic_Divider_radix2_div/mygo/main.go:3:1: expected 'package', found 'func'",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/010_Arithmetic_Divider_radix2_div/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/010_Arithmetic_Divider_radix2_div/mygo/main.go:3:1: expected 'package', found 'func'\n",
+          "elapsed_seconds": 0.002763509750366211,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 11,
+      "task": "Arithmetic/Multiplier/multi_16bit",
+      "module": "multi_16bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 47000 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/011_Arithmetic_Multiplier_multi_16bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.008515596389770508,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 47000 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.0106658935546875,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 11,
+      "task": "Arithmetic/Multiplier/multi_16bit",
+      "module": "multi_16bit",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/011_Arithmetic_Multiplier_multi_16bit/mygo/main.go:3:1: expected 'package', found 'func'",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/011_Arithmetic_Multiplier_multi_16bit/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/011_Arithmetic_Multiplier_multi_16bit/mygo/main.go:3:1: expected 'package', found 'func'\n",
+          "elapsed_seconds": 0.003384113311767578,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 12,
+      "task": "Arithmetic/Multiplier/multi_8bit",
+      "module": "multi_8bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:45: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/012_Arithmetic_Multiplier_multi_8bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0068476200103759766,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:45: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005957841873168945,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 12,
+      "task": "Arithmetic/Multiplier/multi_8bit",
+      "module": "multi_8bit",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:45: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/012_Arithmetic_Multiplier_multi_8bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.007787466049194336,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:45: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.008510589599609375,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.08358168601989746,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 13,
+      "task": "Arithmetic/Multiplier/multi_booth_8bit",
+      "module": "multi_booth_8bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:71: $finish called at 1900 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/013_Arithmetic_Multiplier_multi_booth_8bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.006928205490112305,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:71: $finish called at 1900 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.0053980350494384766,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 13,
+      "task": "Arithmetic/Multiplier/multi_booth_8bit",
+      "module": "multi_booth_8bit",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:71: $finish called at 1800 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/013_Arithmetic_Multiplier_multi_booth_8bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.00834035873413086,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:71: $finish called at 1800 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.008940696716308594,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.08398127555847168,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 14,
+      "task": "Arithmetic/Multiplier/multi_pipe_4bit",
+      "module": "multi_pipe_4bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:55: $finish called at 3010 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/014_Arithmetic_Multiplier_multi_pipe_4bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.007267951965332031,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:55: $finish called at 3010 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005745649337768555,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 14,
+      "task": "Arithmetic/Multiplier/multi_pipe_4bit",
+      "module": "multi_pipe_4bit",
+      "path": "mygo",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:11: error: parameter `size` not found in `multi_pipe_tb.dut`.\n2 error(s) during elaboration.",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/014_Arithmetic_Multiplier_multi_pipe_4bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:11: error: parameter `size` not found in `multi_pipe_tb.dut`.\n2 error(s) during elaboration.\n",
+          "elapsed_seconds": 0.007247447967529297,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.08389520645141602,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 15,
+      "task": "Arithmetic/Multiplier/multi_pipe_8bit",
+      "module": "multi_pipe_8bit",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:17: error: Unknown module type: multi_pipe_8bit\n2 error(s) during elaboration.\n*** These modules were missing:\n        multi_pipe_8bit referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/015_Arithmetic_Multiplier_multi_pipe_8bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:17: error: Unknown module type: multi_pipe_8bit\n2 error(s) during elaboration.\n*** These modules were missing:\n        multi_pipe_8bit referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.010267019271850586,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 15,
+      "task": "Arithmetic/Multiplier/multi_pipe_8bit",
+      "module": "multi_pipe_8bit",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:79: $finish called at 72220 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/015_Arithmetic_Multiplier_multi_pipe_8bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 1.3053736686706543,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:79: $finish called at 72220 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.2734498977661133,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 2.8468825817108154,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 16,
+      "task": "Arithmetic/Other/fixed_point_adder",
+      "module": "fixed_point_adder",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:27: syntax error\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:27: Syntax in assignment statement l-value.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:38: syntax error\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:38: Syntax in assignment statement l-value.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:45: syntax error\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:45: Syntax in assignment statement l-value.",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 6,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:27: syntax error\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:27: Syntax in assignment statement l-value.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:38: syntax error\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:38: Syntax in assignment statement l-value.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:45: syntax error\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/direct_verilog/fixed_point_adder.v:45: Syntax in assignment statement l-value.\n",
+          "elapsed_seconds": 0.012205839157104492,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 16,
+      "task": "Arithmetic/Other/fixed_point_adder",
+      "module": "fixed_point_adder",
+      "path": "mygo",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:17: error: parameter `N` not found in `testbench.fp_adder`.\ntestbench.v:17: error: parameter `Q` not found in `testbench.fp_adder`.\n3 error(s) during elaboration.",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/016_Arithmetic_Other_fixed_point_adder/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 3,
+          "stdout": "",
+          "stderr": "testbench.v:17: error: parameter `N` not found in `testbench.fp_adder`.\ntestbench.v:17: error: parameter `Q` not found in `testbench.fp_adder`.\n3 error(s) during elaboration.\n",
+          "elapsed_seconds": 0.01138925552368164,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.2733170986175537,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 17,
+      "task": "Arithmetic/Other/fixed_point_substractor",
+      "module": "fixed_point_subtractor",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:73: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/017_Arithmetic_Other_fixed_point_substractor/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.008241653442382812,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:73: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.006000041961669922,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 17,
+      "task": "Arithmetic/Other/fixed_point_substractor",
+      "module": "fixed_point_subtractor",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/017_Arithmetic_Other_fixed_point_substractor/mygo/main.go:3:1: expected 'package', found 'func'",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/017_Arithmetic_Other_fixed_point_substractor/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/017_Arithmetic_Other_fixed_point_substractor/mygo/main.go:3:1: expected 'package', found 'func'\n",
+          "elapsed_seconds": 0.006413698196411133,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 18,
+      "task": "Arithmetic/Other/float_multi",
+      "module": "float_multi",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:7: error: Unknown module type: float_multi\n2 error(s) during elaboration.\n*** These modules were missing:\n        float_multi referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/018_Arithmetic_Other_float_multi/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:7: error: Unknown module type: float_multi\n2 error(s) during elaboration.\n*** These modules were missing:\n        float_multi referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.011562585830688477,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 18,
+      "task": "Arithmetic/Other/float_multi",
+      "module": "float_multi",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/018_Arithmetic_Other_float_multi/mygo/main.go:3:1: expected 'package', found 'func'",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/018_Arithmetic_Other_float_multi/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/018_Arithmetic_Other_float_multi/mygo/main.go:3:1: expected 'package', found 'func'\n",
+          "elapsed_seconds": 0.006919145584106445,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 19,
+      "task": "Arithmetic/Substractor/sub_64bit",
+      "module": "sub_64bit",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/019_Arithmetic_Substractor_sub_64bit/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01368403434753418,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.006653785705566406,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 19,
+      "task": "Arithmetic/Substractor/sub_64bit",
+      "module": "sub_64bit",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/019_Arithmetic_Substractor_sub_64bit/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012972116470336914,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010791778564453125,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.34619784355163574,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 20,
+      "task": "Control/Counter/JC_counter",
+      "module": "JC_counter",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:59: $finish called at 1310 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/020_Control_Counter_JC_counter/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013595342636108398,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:59: $finish called at 1310 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010475873947143555,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 20,
+      "task": "Control/Counter/JC_counter",
+      "module": "JC_counter",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "===========Error===========\ntestbench.v:59: $finish called at 1310 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/020_Control_Counter_JC_counter/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01081085205078125,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Error===========\ntestbench.v:59: $finish called at 1310 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.006957292556762695,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.27037906646728516,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 21,
+      "task": "Control/Counter/counter_12",
+      "module": "counter_12",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:49: $finish called at 430000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/021_Control_Counter_counter_12/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012620210647583008,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:49: $finish called at 430000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010233402252197266,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 21,
+      "task": "Control/Counter/counter_12",
+      "module": "counter_12",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:49: $finish called at 430000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/021_Control_Counter_counter_12/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:7: warning: Port 4 (out) of module counter_12 expects 8 bit(s), given 4.\ntestbench.v:7:        : Padding 4 high bits of the port.\n",
+          "elapsed_seconds": 0.013937234878540039,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:49: $finish called at 430000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009783267974853516,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.3360764980316162,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 22,
+      "task": "Control/Counter/ring_counter",
+      "module": "ring_counter",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:20: internal error: I don't know how to elaborate(ivl_type_t) this expression: {8'd1, 8'd1, 8'd2, 8'd4, 8'd8, 8'd16, 8'd32, 8'd64, 8'd128, 8'd1}\nElaboration failed",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/022_Control_Counter_ring_counter/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "testbench.v:20: internal error: I don't know how to elaborate(ivl_type_t) this expression: {8'd1, 8'd1, 8'd2, 8'd4, 8'd8, 8'd16, 8'd32, 8'd64, 8'd128, 8'd1}\nElaboration failed\n",
+          "elapsed_seconds": 0.012240886688232422,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 22,
+      "task": "Control/Counter/ring_counter",
+      "module": "ring_counter",
+      "path": "mygo",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:20: internal error: I don't know how to elaborate(ivl_type_t) this expression: {8'd1, 8'd1, 8'd2, 8'd4, 8'd8, 8'd16, 8'd32, 8'd64, 8'd128, 8'd1}\nElaboration failed",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/022_Control_Counter_ring_counter/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "testbench.v:20: internal error: I don't know how to elaborate(ivl_type_t) this expression: {8'd1, 8'd1, 8'd2, 8'd4, 8'd8, 8'd16, 8'd32, 8'd64, 8'd128, 8'd1}\nElaboration failed\n",
+          "elapsed_seconds": 0.011255264282226562,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.32386255264282227,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 23,
+      "task": "Control/Counter/up_down_counter",
+      "module": "up_down_counter",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:53: $finish called at 620 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/023_Control_Counter_up_down_counter/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013239145278930664,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:53: $finish called at 620 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009979009628295898,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 23,
+      "task": "Control/Counter/up_down_counter",
+      "module": "up_down_counter",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:53: $finish called at 620 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/023_Control_Counter_up_down_counter/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01274728775024414,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:53: $finish called at 620 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.008878946304321289,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.3211357593536377,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 24,
+      "task": "Control/Finite State Machine/fsm",
+      "module": "fsm",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:65: $finish called at 158 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/024_Control_Finite_State_Machine_fsm/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.014390707015991211,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:65: $finish called at 158 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010591506958007812,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 24,
+      "task": "Control/Finite State Machine/fsm",
+      "module": "fsm",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:65: $finish called at 158 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/024_Control_Finite_State_Machine_fsm/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013866424560546875,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:65: $finish called at 158 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010483264923095703,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.30695176124572754,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 25,
+      "task": "Control/Finite State Machine/sequence_detector",
+      "module": "sequence_detector",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:8: error: port ``rst_n'' is not a port of dut.\n1 error(s) during elaboration.",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/025_Control_Finite_State_Machine_sequence_detector/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "testbench.v:8: error: port ``rst_n'' is not a port of dut.\n1 error(s) during elaboration.\n",
+          "elapsed_seconds": 0.01222085952758789,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 25,
+      "task": "Control/Finite State Machine/sequence_detector",
+      "module": "sequence_detector",
+      "path": "mygo",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:8: error: port ``rst_n'' is not a port of dut.\n1 error(s) during elaboration.",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/025_Control_Finite_State_Machine_sequence_detector/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "testbench.v:8: error: port ``rst_n'' is not a port of dut.\n1 error(s) during elaboration.\n",
+          "elapsed_seconds": 0.019200563430786133,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 1.7920517921447754,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 26,
+      "task": "Memory/FIFO/asyn_fifo",
+      "module": "asyn_fifo",
+      "path": "direct_verilog",
+      "status": "FAIL",
+      "reason": "WARNING: testbench.v:65: $readmemh(wfull.txt): Not enough words in the file for the requested range [0:50].\nWARNING: testbench.v:66: $readmemh(rempty.txt): Not enough words in the file for the requested range [0:50].\nWARNING: testbench.v:67: $readmemh(tdata.txt): Not enough words in the file for the requested range [0:50].\n===========Error===========\ntestbench.v:52: $finish called at 1050 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/026_Memory_FIFO_asyn_fifo/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01518392562866211,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "WARNING: testbench.v:65: $readmemh(wfull.txt): Not enough words in the file for the requested range [0:50].\nWARNING: testbench.v:66: $readmemh(rempty.txt): Not enough words in the file for the requested range [0:50].\nWARNING: testbench.v:67: $readmemh(tdata.txt): Not enough words in the file for the requested range [0:50].\n===========Error===========\ntestbench.v:52: $finish called at 1050 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010522127151489258,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 26,
+      "task": "Memory/FIFO/asyn_fifo",
+      "module": "asyn_fifo",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/026_Memory_FIFO_asyn_fifo/mygo/main.go:3:1: expected 'package', found 'func'",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/026_Memory_FIFO_asyn_fifo/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/026_Memory_FIFO_asyn_fifo/mygo/main.go:3:1: expected 'package', found 'func'\n",
+          "elapsed_seconds": 0.006468534469604492,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 27,
+      "task": "Memory/LIFO/LIFObuffer",
+      "module": "LIFObuffer",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:70: $finish called at 265000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/027_Memory_LIFO_LIFObuffer/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01380300521850586,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:70: $finish called at 265000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010394096374511719,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 27,
+      "task": "Memory/LIFO/LIFObuffer",
+      "module": "LIFObuffer",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:70: $finish called at 265000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/027_Memory_LIFO_LIFObuffer/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:18: warning: Port 2 (dataIn) of module LIFObuffer expects 8 bit(s), given 4.\ntestbench.v:18:        : Padding 4 high bits of the port.\ntestbench.v:18: warning: Port 9 (dataOut) of module LIFObuffer expects 8 bit(s), given 4.\ntestbench.v:18:        : Padding 4 high bits of the port.\n",
+          "elapsed_seconds": 0.01401519775390625,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:70: $finish called at 265000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.01032876968383789,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.31856393814086914,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 28,
+      "task": "Memory/Shifter/LFSR",
+      "module": "LFSR",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:6: warning: Port 1 (clk) of module LFSR expects 1 bit(s), given 4.\ntestbench.v:6:        : Pruning 3 high bits of the expression.\ntestbench.v:6: warning: Port 3 (out) of module LFSR expects 4 bit(s), given 1.\ntestbench.v:6:        : Padding 3 high bits of the port.\ntestbench.v:11: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.\ntestbench.v:14: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.\n2 error(s) during elaboration.",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/028_Memory_Shifter_LFSR/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:6: warning: Port 1 (clk) of module LFSR expects 1 bit(s), given 4.\ntestbench.v:6:        : Pruning 3 high bits of the expression.\ntestbench.v:6: warning: Port 3 (out) of module LFSR expects 4 bit(s), given 1.\ntestbench.v:6:        : Padding 3 high bits of the port.\ntestbench.v:11: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.\ntestbench.v:14: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.\n2 error(s) during elaboration.\n",
+          "elapsed_seconds": 0.011871576309204102,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 28,
+      "task": "Memory/Shifter/LFSR",
+      "module": "LFSR",
+      "path": "mygo",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:6: warning: Port 1 (clk) of module LFSR expects 1 bit(s), given 4.\ntestbench.v:6:        : Pruning 3 high bits of the expression.\ntestbench.v:6: warning: Port 3 (out) of module LFSR expects 8 bit(s), given 1.\ntestbench.v:6:        : Padding 7 high bits of the port.\ntestbench.v:11: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.\ntestbench.v:14: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.\n2 error(s) during elaboration.",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/028_Memory_Shifter_LFSR/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:6: warning: Port 1 (clk) of module LFSR expects 1 bit(s), given 4.\ntestbench.v:6:        : Pruning 3 high bits of the expression.\ntestbench.v:6: warning: Port 3 (out) of module LFSR expects 8 bit(s), given 1.\ntestbench.v:6:        : Padding 7 high bits of the port.\ntestbench.v:11: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.\ntestbench.v:14: error: Cannot perform procedural assignment to variable 'rst_tb' because it is also continuously assigned.\n2 error(s) during elaboration.\n",
+          "elapsed_seconds": 0.01096653938293457,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.2926003932952881,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 29,
+      "task": "Memory/Shifter/barrel_shifter",
+      "module": "barrel_shifter",
+      "path": "direct_verilog",
+      "status": "FAIL",
+      "reason": "=========== Test completed with           3 failures ===========\ntestbench.v:31: $finish called at 80 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/029_Memory_Shifter_barrel_shifter/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.016196727752685547,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Test completed with           3 failures ===========\ntestbench.v:31: $finish called at 80 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.011798381805419922,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 29,
+      "task": "Memory/Shifter/barrel_shifter",
+      "module": "barrel_shifter",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "=========== Test completed with           1 failures ===========\ntestbench.v:31: $finish called at 80 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/029_Memory_Shifter_barrel_shifter/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:6: warning: Port 2 (ctrl) of module barrel_shifter expects 8 bit(s), given 3.\ntestbench.v:6:        : Padding 5 high bits of the port.\n",
+          "elapsed_seconds": 0.013558626174926758,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Test completed with           1 failures ===========\ntestbench.v:31: $finish called at 80 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010071277618408203,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.32658863067626953,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 30,
+      "task": "Memory/Shifter/right_shifter",
+      "module": "right_shifter",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:45: $finish called at 90 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013170480728149414,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:45: $finish called at 90 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010222673416137695,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 30,
+      "task": "Memory/Shifter/right_shifter",
+      "module": "right_shifter",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "error: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo/main.go:28:6: boolToUint redeclared in this block\nerror: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo/main.go:23:6: \tother declaration of boolToUint\nerror: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo/main.go:24:26: undefined: unsafe\npackage loading failed",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "error: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo/main.go:28:6: boolToUint redeclared in this block\nerror: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo/main.go:23:6: \tother declaration of boolToUint\nerror: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/030_Memory_Shifter_right_shifter/mygo/main.go:24:26: undefined: unsafe\npackage loading failed\n",
+          "elapsed_seconds": 0.2996864318847656,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 31,
+      "task": "Miscellaneous/Frequency divider/freq_div",
+      "module": "freq_div",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:46: $finish called at 1035 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/031_Miscellaneous_Frequency_divider_freq_div/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.014588594436645508,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:46: $finish called at 1035 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.01045083999633789,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 31,
+      "task": "Miscellaneous/Frequency divider/freq_div",
+      "module": "freq_div",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "===========Error===========          5\ntestbench.v:46: $finish called at 1035 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/031_Miscellaneous_Frequency_divider_freq_div/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01326298713684082,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Error===========          5\ntestbench.v:46: $finish called at 1035 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010522842407226562,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.30370450019836426,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 32,
+      "task": "Miscellaneous/Frequency divider/freq_divbyeven",
+      "module": "freq_diveven",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:10: error: Unknown module type: freq_divbyeven\n2 error(s) during elaboration.\n*** These modules were missing:\n        freq_divbyeven referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/032_Miscellaneous_Frequency_divider_freq_divbyeven/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:10: error: Unknown module type: freq_divbyeven\n2 error(s) during elaboration.\n*** These modules were missing:\n        freq_divbyeven referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.006396293640136719,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 32,
+      "task": "Miscellaneous/Frequency divider/freq_divbyeven",
+      "module": "freq_diveven",
+      "path": "mygo",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:10: error: Unknown module type: freq_divbyeven\n2 error(s) during elaboration.\n*** These modules were missing:\n        freq_divbyeven referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/032_Miscellaneous_Frequency_divider_freq_divbyeven/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:10: error: Unknown module type: freq_divbyeven\n2 error(s) during elaboration.\n*** These modules were missing:\n        freq_divbyeven referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.011573076248168945,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.342698335647583,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 33,
+      "task": "Miscellaneous/Frequency divider/freq_divbyfrac",
+      "module": "freq_divbyfrac",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:10: error: Unknown module type: freq_divbyfrac\n2 error(s) during elaboration.\n*** These modules were missing:\n        freq_divbyfrac referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/033_Miscellaneous_Frequency_divider_freq_divbyfrac/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:10: error: Unknown module type: freq_divbyfrac\n2 error(s) during elaboration.\n*** These modules were missing:\n        freq_divbyfrac referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.0077168941497802734,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 33,
+      "task": "Miscellaneous/Frequency divider/freq_divbyfrac",
+      "module": "freq_divbyfrac",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/033_Miscellaneous_Frequency_divider_freq_divbyfrac/mygo/main.go:3:1: expected 'package', found 'func'",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/033_Miscellaneous_Frequency_divider_freq_divbyfrac/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/033_Miscellaneous_Frequency_divider_freq_divbyfrac/mygo/main.go:3:1: expected 'package', found 'func'\n",
+          "elapsed_seconds": 0.00605463981628418,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 34,
+      "task": "Miscellaneous/Frequency divider/freq_divbyodd",
+      "module": "freq_divbyodd",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:10: error: Unknown module type: freq_divbyodd\n2 error(s) during elaboration.\n*** These modules were missing:\n        freq_divbyodd referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/034_Miscellaneous_Frequency_divider_freq_divbyodd/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:10: error: Unknown module type: freq_divbyodd\n2 error(s) during elaboration.\n*** These modules were missing:\n        freq_divbyodd referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.011021852493286133,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 34,
+      "task": "Miscellaneous/Frequency divider/freq_divbyodd",
+      "module": "freq_divbyodd",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "Failed at          1: clk=1, clk_div=0 (expected           1)\nFailed at          2: clk=0, clk_div=0 (expected           1)\nFailed at          6: clk=0, clk_div=1 (expected           0)\nFailed at          7: clk=1, clk_div=1 (expected           0)\nFailed at         11: clk=1, clk_div=0 (expected           1)\nFailed at         12: clk=0, clk_div=0 (expected           1)\nFailed at         16: clk=0, clk_div=1 (expected           0)\nFailed at         17: clk=1, clk_div=1 (expected           0)\n=========== Test completed with           8/20 failures ===========\ntestbench.v:27: $finish called at 130000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/034_Miscellaneous_Frequency_divider_freq_divbyodd/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013013124465942383,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "Failed at          1: clk=1, clk_div=0 (expected           1)\nFailed at          2: clk=0, clk_div=0 (expected           1)\nFailed at          6: clk=0, clk_div=1 (expected           0)\nFailed at          7: clk=1, clk_div=1 (expected           0)\nFailed at         11: clk=1, clk_div=0 (expected           1)\nFailed at         12: clk=0, clk_div=0 (expected           1)\nFailed at         16: clk=0, clk_div=1 (expected           0)\nFailed at         17: clk=1, clk_div=1 (expected           0)\n=========== Test completed with           8/20 failures ===========\ntestbench.v:27: $finish called at 130000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.011039495468139648,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.34270572662353516,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 35,
+      "task": "Miscellaneous/Others/calendar",
+      "module": "calendar",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "WARNING: testbench.v:31: $readmemh(reference.txt): Not enough words in the file for the requested range [0:4000].\n===========Your Design Passed===========\ntestbench.v:48: $finish called at 40035000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/035_Miscellaneous_Others_calendar/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013824224472045898,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "WARNING: testbench.v:31: $readmemh(reference.txt): Not enough words in the file for the requested range [0:4000].\n===========Your Design Passed===========\ntestbench.v:48: $finish called at 40035000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.031923770904541016,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 35,
+      "task": "Miscellaneous/Others/calendar",
+      "module": "calendar",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "WARNING: testbench.v:31: $readmemh(reference.txt): Not enough words in the file for the requested range [0:4000].\n===========Error===========\ntestbench.v:48: $finish called at 40035000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/035_Miscellaneous_Others_calendar/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:7: warning: Port 4 (Hours) of module calendar expects 8 bit(s), given 6.\ntestbench.v:7:        : Padding 2 high bits of the port.\ntestbench.v:7: warning: Port 5 (Mins) of module calendar expects 8 bit(s), given 6.\ntestbench.v:7:        : Padding 2 high bits of the port.\ntestbench.v:7: warning: Port 6 (Secs) of module calendar expects 8 bit(s), given 6.\ntestbench.v:7:        : Padding 2 high bits of the port.\n",
+          "elapsed_seconds": 0.040592193603515625,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "WARNING: testbench.v:31: $readmemh(reference.txt): Not enough words in the file for the requested range [0:4000].\n===========Error===========\ntestbench.v:48: $finish called at 40035000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.04127168655395508,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.36612439155578613,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 36,
+      "task": "Miscellaneous/Others/edge_detect",
+      "module": "edge_detect",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 85 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/036_Miscellaneous_Others_edge_detect/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013508796691894531,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 85 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010068655014038086,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 36,
+      "task": "Miscellaneous/Others/edge_detect",
+      "module": "edge_detect",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 85 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/036_Miscellaneous_Others_edge_detect/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01163792610168457,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 85 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.007589578628540039,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.2712819576263428,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 37,
+      "task": "Miscellaneous/Others/parallel2serial",
+      "module": "parallel2serial",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:11: error: Unknown module type: parallel2serial\n2 error(s) during elaboration.\n*** These modules were missing:\n        parallel2serial referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/037_Miscellaneous_Others_parallel2serial/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:11: error: Unknown module type: parallel2serial\n2 error(s) during elaboration.\n*** These modules were missing:\n        parallel2serial referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.008420467376708984,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 37,
+      "task": "Miscellaneous/Others/parallel2serial",
+      "module": "parallel2serial",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:63: $finish called at 8005 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/037_Miscellaneous_Others_parallel2serial/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:11: warning: Port 3 (d) of module parallel2serial expects 8 bit(s), given 4.\ntestbench.v:11:        : Padding 4 high bits of the port.\n",
+          "elapsed_seconds": 0.009433507919311523,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:63: $finish called at 8005 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010882854461669922,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.247694730758667,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 38,
+      "task": "Miscellaneous/Others/pulse_detect",
+      "module": "pulse_detect",
+      "path": "direct_verilog",
+      "status": "FAIL",
+      "reason": "===========Error===========\ntestbench.v:43: $finish called at 148 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/038_Miscellaneous_Others_pulse_detect/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013605833053588867,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Error===========\ntestbench.v:43: $finish called at 148 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010291814804077148,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 38,
+      "task": "Miscellaneous/Others/pulse_detect",
+      "module": "pulse_detect",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "===========Error===========\ntestbench.v:43: $finish called at 148 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/038_Miscellaneous_Others_pulse_detect/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012774229049682617,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Error===========\ntestbench.v:43: $finish called at 148 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.008731603622436523,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.31487512588500977,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 39,
+      "task": "Miscellaneous/Others/serial2parallel",
+      "module": "serial2parallel",
+      "path": "direct_verilog",
+      "status": "TIMEOUT",
+      "reason": "simulation timeout",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/039_Miscellaneous_Others_serial2parallel/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013453245162963867,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": null,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 60.06159806251526,
+          "timeout": true
+        }
+      }
+    },
+    {
+      "task_index": 39,
+      "task": "Miscellaneous/Others/serial2parallel",
+      "module": "serial2parallel",
+      "path": "mygo",
+      "status": "TIMEOUT",
+      "reason": "simulation timeout",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/039_Miscellaneous_Others_serial2parallel/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01436924934387207,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": null,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 60.0069375038147,
+          "timeout": true
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.31152844429016113,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 40,
+      "task": "Miscellaneous/Others/synchronizer",
+      "module": "synchronizer",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:74: $finish called at 1005 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/040_Miscellaneous_Others_synchronizer/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01360321044921875,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:74: $finish called at 1005 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010409355163574219,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 40,
+      "task": "Miscellaneous/Others/synchronizer",
+      "module": "synchronizer",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:74: $finish called at 1005 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/040_Miscellaneous_Others_synchronizer/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:16: warning: Port 5 (data_in) of module synchronizer expects 8 bit(s), given 4.\ntestbench.v:16:        : Padding 4 high bits of the port.\ntestbench.v:16: warning: Port 7 (dataout) of module synchronizer expects 8 bit(s), given 4.\ntestbench.v:16:        : Padding 4 high bits of the port.\n",
+          "elapsed_seconds": 0.011074304580688477,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:74: $finish called at 1005 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.005953073501586914,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.2916529178619385,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 41,
+      "task": "Miscellaneous/Others/traffic_light",
+      "module": "traffic_light",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:14: error: Unknown module type: traffic_light\n2 error(s) during elaboration.\n*** These modules were missing:\n        traffic_light referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/041_Miscellaneous_Others_traffic_light/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:14: error: Unknown module type: traffic_light\n2 error(s) during elaboration.\n*** These modules were missing:\n        traffic_light referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.011733531951904297,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 41,
+      "task": "Miscellaneous/Others/traffic_light",
+      "module": "traffic_light",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/041_Miscellaneous_Others_traffic_light/mygo/main.go:3:1: expected 'package', found 'func'",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/041_Miscellaneous_Others_traffic_light/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/041_Miscellaneous_Others_traffic_light/mygo/main.go:3:1: expected 'package', found 'func'\n",
+          "elapsed_seconds": 0.00522923469543457,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 42,
+      "task": "Miscellaneous/Others/width_8to16",
+      "module": "width_8to16",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:48: $finish called at 100 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/042_Miscellaneous_Others_width_8to16/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01341390609741211,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:48: $finish called at 100 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009894609451293945,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 42,
+      "task": "Miscellaneous/Others/width_8to16",
+      "module": "width_8to16",
+      "path": "mygo",
+      "status": "MYGO_COMPILE_ERROR",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/042_Miscellaneous_Others_width_8to16/mygo/main.go:3:1: expected 'package', found 'func'",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/042_Miscellaneous_Others_width_8to16/mygo",
+      "detail": {
+        "mygo_compile": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/042_Miscellaneous_Others_width_8to16/mygo/main.go:3:1: expected 'package', found 'func'\n",
+          "elapsed_seconds": 0.006253480911254883,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 43,
+      "task": "Miscellaneous/RISC-V/RAM",
+      "module": "RAM",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:11: error: Unable to bind parameter `ADDR_WIDTH' in `tb_RAM.uut'\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:14:      : A symbol with that name was declared here. Check for declaration after use.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:11: error: Dimensions must be constant.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:11       : This MSB expression violates the rule: (ADDR_WIDTH)-('sd1)\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:8: error: Unable to bind parameter `ADDR_WIDTH' in `tb_RAM.uut'\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:14:      : A symbol with that name was declared here. Check for declaration after use.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:8: error: Dimensions must be constant.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:8       : This MSB expression violates the rule: (ADDR_WIDTH)-('sd1)\ntestbench.v:21: warning: Port 4 (write_addr) of module RAM expects 1 bit(s), given 8.\ntestbench.v:21:        : Pruning 7 high bits of the expression.\ntestbench.v:21: warning: Port 7 (read_addr) of module RAM expects 1 bit(s), given 8.\ntestbench.v:21:        : Pruning 7 high bits of the expression.\n4 error(s) during elaboration.",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 4,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:11: error: Unable to bind parameter `ADDR_WIDTH' in `tb_RAM.uut'\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:14:      : A symbol with that name was declared here. Check for declaration after use.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:11: error: Dimensions must be constant.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:11       : This MSB expression violates the rule: (ADDR_WIDTH)-('sd1)\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:8: error: Unable to bind parameter `ADDR_WIDTH' in `tb_RAM.uut'\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:14:      : A symbol with that name was declared here. Check for declaration after use.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:8: error: Dimensions must be constant.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/direct_verilog/RAM.v:8       : This MSB expression violates the rule: (ADDR_WIDTH)-('sd1)\ntestbench.v:21: warning: Port 4 (write_addr) of module RAM expects 1 bit(s), given 8.\ntestbench.v:21:        : Pruning 7 high bits of the expression.\ntestbench.v:21: warning: Port 7 (read_addr) of module RAM expects 1 bit(s), given 8.\ntestbench.v:21:        : Pruning 7 high bits of the expression.\n4 error(s) during elaboration.\n",
+          "elapsed_seconds": 0.01231527328491211,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 43,
+      "task": "Miscellaneous/RISC-V/RAM",
+      "module": "RAM",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:79: $finish called at 11000 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/043_Miscellaneous_RISC-V_RAM/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:21: warning: Port 5 (write_data) of module RAM expects 8 bit(s), given 6.\ntestbench.v:21:        : Padding 2 high bits of the port.\ntestbench.v:21: warning: Port 8 (read_data) of module RAM expects 8 bit(s), given 6.\ntestbench.v:21:        : Padding 2 high bits of the port.\n",
+          "elapsed_seconds": 0.01927638053894043,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:79: $finish called at 11000 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.00832819938659668,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.35306262969970703,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 44,
+      "task": "Miscellaneous/RISC-V/ROM",
+      "module": "ROM",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "Starting ROM Testbench...\n=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 40 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/044_Miscellaneous_RISC-V_ROM/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013316869735717773,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "Starting ROM Testbench...\n=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 40 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.01177978515625,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 44,
+      "task": "Miscellaneous/RISC-V/ROM",
+      "module": "ROM",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "Starting ROM Testbench...\n=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 40 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/044_Miscellaneous_RISC-V_ROM/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012809276580810547,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "Starting ROM Testbench...\n=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 40 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010114669799804688,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.32227158546447754,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 45,
+      "task": "Miscellaneous/RISC-V/alu",
+      "module": "alu",
+      "path": "direct_verilog",
+      "status": "COMPILE_FAIL",
+      "reason": "testbench.v:16: error: Unknown module type: alu\n2 error(s) during elaboration.\n*** These modules were missing:\n        alu referenced 1 times.\n***",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/045_Miscellaneous_RISC-V_alu/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "testbench.v:16: error: Unknown module type: alu\n2 error(s) during elaboration.\n*** These modules were missing:\n        alu referenced 1 times.\n***\n",
+          "elapsed_seconds": 0.011709213256835938,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 45,
+      "task": "Miscellaneous/RISC-V/alu",
+      "module": "alu",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "WARNING: testbench.v:43: $readmemh(reference.dat): Not enough words in the file for the requested range [0:31].\n===========Error===========\ntestbench.v:86: $finish called at 175000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/045_Miscellaneous_RISC-V_alu/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:16: warning: Port 3 (aluc) of module alu expects 8 bit(s), given 6.\ntestbench.v:16:        : Padding 2 high bits of the port.\n",
+          "elapsed_seconds": 0.021695375442504883,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "WARNING: testbench.v:43: $readmemh(reference.dat): Not enough words in the file for the requested range [0:31].\n===========Error===========\ntestbench.v:86: $finish called at 175000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.019730329513549805,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.3415508270263672,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 46,
+      "task": "Miscellaneous/RISC-V/clkgenerator",
+      "module": "clkgenerator",
+      "path": "direct_verilog",
+      "status": "FAIL",
+      "reason": "=========== Test completed with          20 failures ===========\ntestbench.v:29: $finish called at 100 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/046_Miscellaneous_RISC-V_clkgenerator/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013021230697631836,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Test completed with          20 failures ===========\ntestbench.v:29: $finish called at 100 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009818792343139648,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 46,
+      "task": "Miscellaneous/RISC-V/clkgenerator",
+      "module": "clkgenerator",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "=========== Test completed with          10 failures ===========\ntestbench.v:29: $finish called at 100 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/046_Miscellaneous_RISC-V_clkgenerator/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.009642601013183594,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Test completed with          10 failures ===========\ntestbench.v:29: $finish called at 100 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009824037551879883,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.2286224365234375,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 47,
+      "task": "Miscellaneous/RISC-V/instr_reg",
+      "module": "instr_reg",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:78: $finish called at 135000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/047_Miscellaneous_RISC-V_instr_reg/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013392210006713867,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:78: $finish called at 135000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009988784790039062,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 47,
+      "task": "Miscellaneous/RISC-V/instr_reg",
+      "module": "instr_reg",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:78: $finish called at 135000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/047_Miscellaneous_RISC-V_instr_reg/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:14: warning: Port 3 (fetch) of module instr_reg expects 8 bit(s), given 2.\ntestbench.v:14:        : Padding 6 high bits of the port.\ntestbench.v:14: warning: Port 5 (ins) of module instr_reg expects 8 bit(s), given 3.\ntestbench.v:14:        : Padding 5 high bits of the port.\ntestbench.v:14: warning: Port 6 (ad1) of module instr_reg expects 8 bit(s), given 5.\ntestbench.v:14:        : Padding 3 high bits of the port.\n",
+          "elapsed_seconds": 0.012862920761108398,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:78: $finish called at 135000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.00741887092590332,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.2433915138244629,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 48,
+      "task": "Miscellaneous/RISC-V/pe",
+      "module": "pe",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/048_Miscellaneous_RISC-V_pe/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012690067291259766,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009688377380371094,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 48,
+      "task": "Miscellaneous/RISC-V/pe",
+      "module": "pe",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/048_Miscellaneous_RISC-V_pe/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012340545654296875,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.007798671722412109,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.27094125747680664,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 49,
+      "task": "Miscellaneous/Signal generation/signal_generator",
+      "module": "signal_generator",
+      "path": "direct_verilog",
+      "status": "FAIL",
+      "reason": "===========Error===========\ntestbench.v:39: $finish called at 1010 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/049_Miscellaneous_Signal_generation_signal_generator/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013136863708496094,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Error===========\ntestbench.v:39: $finish called at 1010 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010385990142822266,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 49,
+      "task": "Miscellaneous/Signal generation/signal_generator",
+      "module": "signal_generator",
+      "path": "mygo",
+      "status": "FAIL",
+      "reason": "===========Error===========\ntestbench.v:39: $finish called at 1010 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/049_Miscellaneous_Signal_generation_signal_generator/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:5: warning: Port 3 (wave) of module signal_generator expects 8 bit(s), given 5.\ntestbench.v:5:        : Padding 3 high bits of the port.\n",
+          "elapsed_seconds": 0.013947486877441406,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Error===========\ntestbench.v:39: $finish called at 1010 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.006861448287963867,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.34833836555480957,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 50,
+      "task": "Miscellaneous/Signal generation/square_wave",
+      "module": "square_wave",
+      "path": "direct_verilog",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:36: $finish called at 1000 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/050_Miscellaneous_Signal_generation_square_wave/direct_verilog",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:9: warning: Port 2 (freq) of module square_wave expects 8 bit(s), given 9.\ntestbench.v:9:        : Pruning 1 high bits of the expression.\n",
+          "elapsed_seconds": 0.013338088989257812,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:36: $finish called at 1000 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010499954223632812,
+          "timeout": false
+        }
+      }
+    },
+    {
+      "task_index": 50,
+      "task": "Miscellaneous/Signal generation/square_wave",
+      "module": "square_wave",
+      "path": "mygo",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:36: $finish called at 1000 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/full/050_Miscellaneous_Signal_generation_square_wave/mygo",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:9: warning: Port 2 (freq) of module square_wave expects 8 bit(s), given 9.\ntestbench.v:9:        : Pruning 1 high bits of the expression.\n",
+          "elapsed_seconds": 0.014194011688232422,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:36: $finish called at 1000 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.01023411750793457,
+          "timeout": false
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.3462796211242676,
+          "timeout": false
+        }
+      }
+    }
+  ]
+}

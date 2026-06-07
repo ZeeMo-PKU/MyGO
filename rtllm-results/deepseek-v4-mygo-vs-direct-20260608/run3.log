@@ -1,0 +1,100 @@
+[1/100] mygo Arithmetic/Adder/adder_32bit -> MYGO_COMPILE_ERROR
+[2/100] direct_verilog Arithmetic/Accumulator/accu -> PASS
+[3/100] direct_verilog Arithmetic/Adder/adder_16bit -> PASS
+[4/100] direct_verilog Arithmetic/Adder/adder_8bit -> PASS
+[5/100] direct_verilog Arithmetic/Adder/adder_bcd -> PASS
+[6/100] direct_verilog Arithmetic/Adder/adder_32bit -> PASS
+[7/100] direct_verilog Arithmetic/Adder/adder_pipe_64bit -> COMPILE_FAIL
+[8/100] direct_verilog Arithmetic/Comparator/comparator_3bit -> PASS
+[9/100] mygo Arithmetic/Accumulator/accu -> PASS
+[10/100] mygo Arithmetic/Adder/adder_16bit -> PASS
+[11/100] direct_verilog Arithmetic/Comparator/comparator_4bit -> PASS
+[12/100] mygo Arithmetic/Adder/adder_8bit -> FAIL
+[13/100] mygo Arithmetic/Adder/adder_pipe_64bit -> COMPILE_FAIL
+[14/100] mygo Arithmetic/Adder/adder_bcd -> PASS
+[15/100] mygo Arithmetic/Divider/radix2_div -> MYGO_COMPILE_ERROR
+[16/100] direct_verilog Arithmetic/Divider/div_16bit -> PASS
+[17/100] direct_verilog Arithmetic/Divider/radix2_div -> COMPILE_FAIL
+[18/100] mygo Arithmetic/Multiplier/multi_16bit -> MYGO_COMPILE_ERROR
+[19/100] mygo Arithmetic/Comparator/comparator_3bit -> PASS
+[20/100] direct_verilog Arithmetic/Multiplier/multi_8bit -> PASS
+[21/100] direct_verilog Arithmetic/Multiplier/multi_16bit -> PASS
+[22/100] direct_verilog Arithmetic/Multiplier/multi_booth_8bit -> PASS
+[23/100] direct_verilog Arithmetic/Multiplier/multi_pipe_4bit -> PASS
+[24/100] mygo Arithmetic/Comparator/comparator_4bit -> PASS
+[25/100] mygo Arithmetic/Divider/div_16bit -> FAIL
+[26/100] mygo Arithmetic/Multiplier/multi_8bit -> PASS
+[27/100] mygo Arithmetic/Multiplier/multi_booth_8bit -> PASS
+[28/100] mygo Arithmetic/Multiplier/multi_pipe_4bit -> COMPILE_FAIL
+[29/100] direct_verilog Arithmetic/Other/fixed_point_substractor -> PASS
+[30/100] mygo Arithmetic/Other/fixed_point_adder -> COMPILE_FAIL
+[31/100] direct_verilog Arithmetic/Other/fixed_point_adder -> COMPILE_FAIL
+[32/100] direct_verilog Arithmetic/Substractor/sub_64bit -> PASS
+[33/100] mygo Arithmetic/Substractor/sub_64bit -> PASS
+[34/100] direct_verilog Arithmetic/Multiplier/multi_pipe_8bit -> COMPILE_FAIL
+[35/100] mygo Arithmetic/Multiplier/multi_pipe_8bit -> PASS
+[36/100] direct_verilog Control/Counter/JC_counter -> PASS
+[37/100] direct_verilog Control/Counter/counter_12 -> PASS
+[38/100] mygo Arithmetic/Other/fixed_point_substractor -> MYGO_COMPILE_ERROR
+[39/100] mygo Control/Counter/counter_12 -> PASS
+[40/100] direct_verilog Control/Counter/ring_counter -> COMPILE_FAIL
+[41/100] direct_verilog Arithmetic/Other/float_multi -> COMPILE_FAIL
+[42/100] direct_verilog Control/Counter/up_down_counter -> PASS
+[43/100] mygo Control/Counter/JC_counter -> FAIL
+[44/100] mygo Control/Counter/ring_counter -> COMPILE_FAIL
+[45/100] mygo Control/Counter/up_down_counter -> PASS
+[46/100] mygo Arithmetic/Other/float_multi -> MYGO_COMPILE_ERROR
+[47/100] direct_verilog Control/Finite State Machine/sequence_detector -> COMPILE_FAIL
+[48/100] direct_verilog Control/Finite State Machine/fsm -> PASS
+[49/100] mygo Control/Finite State Machine/fsm -> PASS
+[50/100] mygo Control/Finite State Machine/sequence_detector -> COMPILE_FAIL
+[51/100] direct_verilog Memory/Shifter/LFSR -> COMPILE_FAIL
+[52/100] direct_verilog Memory/LIFO/LIFObuffer -> PASS
+[53/100] direct_verilog Memory/FIFO/asyn_fifo -> FAIL
+[54/100] direct_verilog Memory/Shifter/right_shifter -> PASS
+[55/100] mygo Memory/LIFO/LIFObuffer -> PASS
+[56/100] mygo Memory/Shifter/LFSR -> COMPILE_FAIL
+[57/100] direct_verilog Miscellaneous/Frequency divider/freq_div -> PASS
+[58/100] direct_verilog Memory/Shifter/barrel_shifter -> FAIL
+[59/100] mygo Memory/Shifter/barrel_shifter -> FAIL
+[60/100] direct_verilog Miscellaneous/Frequency divider/freq_divbyeven -> COMPILE_FAIL
+[61/100] mygo Memory/FIFO/asyn_fifo -> MYGO_COMPILE_ERROR
+[62/100] mygo Miscellaneous/Frequency divider/freq_div -> FAIL
+[63/100] mygo Memory/Shifter/right_shifter -> MYGO_COMPILE_ERROR
+[64/100] mygo Miscellaneous/Frequency divider/freq_divbyeven -> COMPILE_FAIL
+[65/100] direct_verilog Miscellaneous/Others/calendar -> PASS
+[66/100] mygo Miscellaneous/Frequency divider/freq_divbyodd -> FAIL
+[67/100] mygo Miscellaneous/Others/edge_detect -> PASS
+[68/100] mygo Miscellaneous/Others/calendar -> FAIL
+[69/100] direct_verilog Miscellaneous/Others/edge_detect -> PASS
+[70/100] direct_verilog Miscellaneous/Frequency divider/freq_divbyfrac -> COMPILE_FAIL
+[71/100] direct_verilog Miscellaneous/Frequency divider/freq_divbyodd -> COMPILE_FAIL
+[72/100] mygo Miscellaneous/Frequency divider/freq_divbyfrac -> MYGO_COMPILE_ERROR
+[73/100] direct_verilog Miscellaneous/Others/pulse_detect -> FAIL
+[74/100] mygo Miscellaneous/Others/pulse_detect -> FAIL
+[75/100] direct_verilog Miscellaneous/Others/synchronizer -> PASS
+[76/100] mygo Miscellaneous/Others/synchronizer -> PASS
+[77/100] mygo Miscellaneous/Others/parallel2serial -> PASS
+[78/100] direct_verilog Miscellaneous/Others/parallel2serial -> COMPILE_FAIL
+[79/100] direct_verilog Miscellaneous/Others/serial2parallel -> TIMEOUT
+[80/100] direct_verilog Miscellaneous/Others/width_8to16 -> PASS
+[81/100] mygo Miscellaneous/Others/serial2parallel -> TIMEOUT
+[82/100] direct_verilog Miscellaneous/RISC-V/RAM -> COMPILE_FAIL
+[83/100] direct_verilog Miscellaneous/RISC-V/ROM -> PASS
+[84/100] direct_verilog Miscellaneous/Others/traffic_light -> COMPILE_FAIL
+[85/100] mygo Miscellaneous/RISC-V/ROM -> PASS
+[86/100] mygo Miscellaneous/RISC-V/RAM -> PASS
+[87/100] direct_verilog Miscellaneous/RISC-V/clkgenerator -> FAIL
+[88/100] mygo Miscellaneous/Others/traffic_light -> MYGO_COMPILE_ERROR
+[89/100] direct_verilog Miscellaneous/RISC-V/instr_reg -> PASS
+[90/100] mygo Miscellaneous/Others/width_8to16 -> MYGO_COMPILE_ERROR
+[91/100] direct_verilog Miscellaneous/RISC-V/pe -> PASS
+[92/100] direct_verilog Miscellaneous/Signal generation/signal_generator -> FAIL
+[93/100] mygo Miscellaneous/RISC-V/instr_reg -> PASS
+[94/100] mygo Miscellaneous/RISC-V/clkgenerator -> FAIL
+[95/100] direct_verilog Miscellaneous/Signal generation/square_wave -> PASS
+[96/100] mygo Miscellaneous/RISC-V/pe -> PASS
+[97/100] mygo Miscellaneous/RISC-V/alu -> FAIL
+[98/100] direct_verilog Miscellaneous/RISC-V/alu -> COMPILE_FAIL
+[99/100] mygo Miscellaneous/Signal generation/square_wave -> PASS
+[100/100] mygo Miscellaneous/Signal generation/signal_generator -> FAIL

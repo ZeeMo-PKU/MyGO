@@ -1,0 +1,15 @@
+{
+  "direct_verilog": {
+    "PASS": 29,
+    "COMPILE_FAIL": 15,
+    "FAIL": 5,
+    "TIMEOUT": 1
+  },
+  "mygo": {
+    "PASS": 21,
+    "MYGO_COMPILE_ERROR": 10,
+    "FAIL": 11,
+    "COMPILE_FAIL": 7,
+    "TIMEOUT": 1
+  }
+}

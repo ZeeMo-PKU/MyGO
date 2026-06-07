@@ -429,6 +429,32 @@ func TopModule(clk bool, load bool, data uint8) {
 }
 `
 
+const packageWireStateReadBeforeWriteProgram = `
+package main
+
+var state uint8
+var out uint8
+
+func TopModule(clk bool, rst bool, input bool) {
+	next := state
+	if state == 0 {
+		if input {
+			next = 1
+		}
+	} else {
+		next = 0
+	}
+	if clk {
+		if rst {
+			state = 0
+		} else {
+			state = next
+		}
+	}
+	out = state
+}
+`
+
 const directClockedClockLeakProgram = `
 package main
 
@@ -1053,6 +1079,25 @@ func TestEmitDirectClockedUsesUpdatedPromotedStateValue(t *testing.T) {
 	if strings.Contains(text, "sv.passign %out_q, %__mygo_state_TopModule_reg") ||
 		strings.Contains(text, "sv.passign %out_q_0, %__mygo_state_TopModule_reg") {
 		t.Fatalf("expected direct-clocked output to use the updated promoted state value:\n%s", text)
+	}
+}
+
+func TestPackageWireStateReadBeforeWriteGetsBackingStorage(t *testing.T) {
+	design := buildMLIRDesignFromSource(t, packageWireStateReadBeforeWriteProgram)
+	out := filepath.Join(t.TempDir(), "design.mlir")
+	if err := Emit(design, out); err != nil {
+		t.Fatalf("Emit failed: %v", err)
+	}
+	data, err := os.ReadFile(out)
+	if err != nil {
+		t.Fatalf("read mlir output: %v", err)
+	}
+	text := string(data)
+	if !strings.Contains(text, "%state = sv.reg : !hw.inout<i8>") {
+		t.Fatalf("package-level state that is read before being rewritten needs backing storage:\n%s", text)
+	}
+	if !strings.Contains(text, "sv.read_inout %state : !hw.inout<i8>") {
+		t.Fatalf("expected package-level state reads to use backing storage:\n%s", text)
 	}
 }
 

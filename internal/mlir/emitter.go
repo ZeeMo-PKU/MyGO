@@ -1209,6 +1209,114 @@ func signalReadOnRHS(proc *ir.Process, target *ir.Signal) bool {
 	return false
 }
 
+func signalUsedAsInput(proc *ir.Process, target *ir.Signal) bool {
+	if proc == nil || target == nil {
+		return false
+	}
+	seen := make(map[*ir.Signal]bool)
+	var usesSignal func(sig *ir.Signal) bool
+	usesSignal = func(sig *ir.Signal) bool {
+		if sig == nil {
+			return false
+		}
+		if emitterSameSignal(sig, target) {
+			return true
+		}
+		if seen[sig] {
+			return false
+		}
+		seen[sig] = true
+		producer, _ := findSignalProducer(proc, sig)
+		switch op := producer.(type) {
+		case *ir.AssignOperation:
+			return usesSignal(op.Value)
+		case *ir.NotOperation:
+			return usesSignal(op.Value)
+		case *ir.BinOperation:
+			return usesSignal(op.Left) || usesSignal(op.Right)
+		case *ir.CompareOperation:
+			return usesSignal(op.Left) || usesSignal(op.Right)
+		case *ir.MuxOperation:
+			return usesSignal(op.Cond) || usesSignal(op.TrueValue) || usesSignal(op.FalseValue)
+		case *ir.ConvertOperation:
+			return usesSignal(op.Value)
+		case *ir.PhiOperation:
+			for _, incoming := range op.Incomings {
+				if usesSignal(incoming.Value) {
+					return true
+				}
+			}
+		}
+		return false
+	}
+
+	for _, block := range proc.Blocks {
+		if block == nil {
+			continue
+		}
+		for _, raw := range block.Ops {
+			switch op := raw.(type) {
+			case *ir.AssignOperation:
+				if usesSignal(op.Value) {
+					return true
+				}
+			case *ir.NotOperation:
+				if usesSignal(op.Value) {
+					return true
+				}
+			case *ir.BinOperation:
+				if usesSignal(op.Left) || usesSignal(op.Right) {
+					return true
+				}
+			case *ir.CompareOperation:
+				if usesSignal(op.Left) || usesSignal(op.Right) {
+					return true
+				}
+			case *ir.MuxOperation:
+				if usesSignal(op.Cond) || usesSignal(op.TrueValue) || usesSignal(op.FalseValue) {
+					return true
+				}
+			case *ir.ConvertOperation:
+				if usesSignal(op.Value) {
+					return true
+				}
+			case *ir.PhiOperation:
+				for _, incoming := range op.Incomings {
+					if usesSignal(incoming.Value) {
+						return true
+					}
+				}
+			case *ir.PrintOperation:
+				for _, segment := range op.Segments {
+					if usesSignal(segment.Value) {
+						return true
+					}
+				}
+			case *ir.SendOperation:
+				if usesSignal(op.Value) {
+					return true
+				}
+			case *ir.CallOperation:
+				for _, arg := range op.Args {
+					if usesSignal(arg) {
+						return true
+					}
+				}
+			case *ir.SpawnOperation:
+				for _, arg := range op.Args {
+					if usesSignal(arg) {
+						return true
+					}
+				}
+			}
+		}
+		if term, ok := block.Terminator.(*ir.BranchTerminator); ok && usesSignal(term.Cond) {
+			return true
+		}
+	}
+	return false
+}
+
 func signalInt64Value(sig *ir.Signal) (int64, bool) {
 	if sig == nil || sig.Kind != ir.Const {
 		return 0, false
@@ -3265,7 +3373,7 @@ func (e *emitter) emitInternalSignals(module *ir.Module, topPorts []ir.Port, use
 				fmt.Fprintln(e.w, "}")
 			}
 			// For combinational logic, don't emit register declarations
-		} else if sig.Kind == ir.Reg || (useInoutRegs && e.moduleSignalNeedsStorage(module, sig)) {
+		} else if sig.Kind == ir.Reg || e.moduleSignalNeedsStorage(module, sig) {
 			// All register-kind signals that are not array elements
 			// This includes scalar globals like xout1, xout2, nbl, dlt, dec_plt1, etc.
 			e.printIndent()
@@ -3308,7 +3416,7 @@ func (e *emitter) moduleSignalNeedsStorage(module *ir.Module, sig *ir.Signal) bo
 		if proc == nil {
 			continue
 		}
-		if signalReadOnRHS(proc, sig) {
+		if signalReadOnRHS(proc, sig) || signalUsedAsInput(proc, sig) {
 			return true
 		}
 	}
@@ -6009,7 +6117,7 @@ func (p *processPrinter) moduleSignalNeedsStorage(name string) bool {
 	if !p.signalAssignedAnywhere(name) {
 		return false
 	}
-	return signalReadOnRHS(p.proc, sig)
+	return signalReadOnRHS(p.proc, sig) || signalUsedAsInput(p.proc, sig)
 }
 
 func (p *processPrinter) isImmutableRegSignal(sig *ir.Signal) bool {

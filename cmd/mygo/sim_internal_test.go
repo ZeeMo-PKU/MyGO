@@ -38,25 +38,56 @@ func TestDefaultSimExpectPathDirectoryInput(t *testing.T) {
 	}
 }
 
-func TestDetectTopModuleClockReset(t *testing.T) {
+func TestDetectVerilatorTopInfo(t *testing.T) {
 	t.Parallel()
 	tests := []struct {
-		name    string
-		verilog string
-		wantClk bool
-		wantRst bool
+		name      string
+		verilog   string
+		wantTop   string
+		wantClock string
+		wantReset string
+		wantLow   bool
 	}{
 		{
-			name:    "clocked top",
-			verilog: "module main(\n  input clk,\n        rst\n);\nendmodule\n",
-			wantClk: true,
-			wantRst: true,
+			name:      "clocked main",
+			verilog:   "module main(\n  input clk,\n        rst\n);\nendmodule\n",
+			wantTop:   "main",
+			wantClock: "clk",
+			wantReset: "rst",
 		},
 		{
-			name:    "combinational top",
+			name:    "combinational main",
 			verilog: "module main();\nendmodule\n",
-			wantClk: false,
-			wantRst: false,
+			wantTop: "main",
+		},
+		{
+			name: "prefers TopModule wrapper",
+			verilog: `module TopModule__impl(input clk, input reset);
+endmodule
+module TopModule(
+  input clk,
+  input reset,
+  output out
+);
+endmodule
+`,
+			wantTop:   "TopModule",
+			wantClock: "clk",
+			wantReset: "reset",
+		},
+		{
+			name: "detects active-low reset alias",
+			verilog: `module TopModule(
+  input clock,
+  input resetn,
+  output [3:0] out
+);
+endmodule
+`,
+			wantTop:   "TopModule",
+			wantClock: "clock",
+			wantReset: "resetn",
+			wantLow:   true,
 		},
 	}
 	for _, tc := range tests {
@@ -67,14 +98,41 @@ func TestDetectTopModuleClockReset(t *testing.T) {
 			if err := os.WriteFile(path, []byte(tc.verilog), 0o644); err != nil {
 				t.Fatalf("write verilog: %v", err)
 			}
-			gotClk, gotRst, err := detectTopModuleClockReset(path)
+			got, err := detectVerilatorTopInfo(path)
 			if err != nil {
-				t.Fatalf("detectTopModuleClockReset error: %v", err)
+				t.Fatalf("detectVerilatorTopInfo error: %v", err)
 			}
-			if gotClk != tc.wantClk || gotRst != tc.wantRst {
-				t.Fatalf("detectTopModuleClockReset()=(%t,%t), want (%t,%t)", gotClk, gotRst, tc.wantClk, tc.wantRst)
+			if got.ModuleName != tc.wantTop || got.ClockPort != tc.wantClock || got.ResetPort != tc.wantReset || got.ResetLow != tc.wantLow {
+				t.Fatalf("detectVerilatorTopInfo()=%+v, want top=%q clock=%q reset=%q low=%t", got, tc.wantTop, tc.wantClock, tc.wantReset, tc.wantLow)
 			}
 		})
+	}
+}
+
+func TestRenderVerilatorDriverUsesDetectedTopAndReset(t *testing.T) {
+	t.Parallel()
+	driver, err := renderVerilatorDriver(8, 2, verilatorTopInfo{
+		ModuleName: "TopModule",
+		ClockPort:  "clk",
+		ResetPort:  "resetn",
+		ResetLow:   true,
+	}, nil)
+	if err != nil {
+		t.Fatalf("renderVerilatorDriver error: %v", err)
+	}
+	for _, want := range []string{
+		`#include "VTopModule.h"`,
+		`VTopModule top;`,
+		`top.clk = 0;`,
+		`top.resetn = 0;`,
+		`top.resetn = 1;`,
+	} {
+		if !strings.Contains(driver, want) {
+			t.Fatalf("driver missing %q:\n%s", want, driver)
+		}
+	}
+	if strings.Contains(driver, "Vmain") || strings.Contains(driver, "top.rst") {
+		t.Fatalf("driver still contains hard-coded main/rst:\n%s", driver)
 	}
 }
 

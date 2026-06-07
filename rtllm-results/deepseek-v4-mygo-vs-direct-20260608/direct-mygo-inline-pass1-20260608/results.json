@@ -1,0 +1,2577 @@
+{
+  "model": "deepseek/deepseek-v4-pro",
+  "rtllm_root": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/RTLLM-41b2689",
+  "rtllm_commit": "41b26896e33b536940116a975626455eed3de65e",
+  "mygo_commit": "9699ebdf84ace8daa67388d8197099d7d12c044b",
+  "counts": {
+    "direct_mygo_inline": {
+      "PASS": 32,
+      "FAIL": 14,
+      "TIMEOUT": 3,
+      "COMPILE_FAIL": 1
+    }
+  },
+  "results": [
+    {
+      "task_index": 1,
+      "task": "Arithmetic/Accumulator/accu",
+      "module": "accu",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:85: $finish called at 150000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/001_Arithmetic_Accumulator_accu/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.009599924087524414,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:85: $finish called at 150000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.0047338008880615234,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.002994060516357422,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 2,
+      "task": "Arithmetic/Adder/adder_16bit",
+      "module": "adder_16bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/002_Arithmetic_Adder_adder_16bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.016089916229248047,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.01606273651123047,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.00567626953125,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 3,
+      "task": "Arithmetic/Adder/adder_32bit",
+      "module": "adder_32bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/003_Arithmetic_Adder_adder_32bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.03010082244873047,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.04557156562805176,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.00616765022277832,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 4,
+      "task": "Arithmetic/Adder/adder_8bit",
+      "module": "adder_8bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/004_Arithmetic_Adder_adder_8bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013996362686157227,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.012136459350585938,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005633831024169922,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 5,
+      "task": "Arithmetic/Adder/adder_bcd",
+      "module": "adder_bcd",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/005_Arithmetic_Adder_adder_bcd/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.014052629470825195,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010559797286987305,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005829334259033203,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 6,
+      "task": "Arithmetic/Adder/adder_pipe_64bit",
+      "module": "adder_pipe_64bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:47: $finish called at 2800 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/006_Arithmetic_Adder_adder_pipe_64bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.014339447021484375,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:47: $finish called at 2800 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.015445232391357422,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0057735443115234375,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "adder_pipe_64bit",
+          "wrapper_module": "adder_pipe_64bit",
+          "params": [
+            {
+              "name": "DATA_WIDTH",
+              "default": "64"
+            },
+            {
+              "name": "STG_WIDTH",
+              "default": "16"
+            }
+          ],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "rst_n",
+              "wrapper": "rst_n"
+            },
+            {
+              "inner": "i_en",
+              "wrapper": "i_en"
+            },
+            {
+              "inner": "adda",
+              "wrapper": "adda"
+            },
+            {
+              "inner": "addb",
+              "wrapper": "addb"
+            },
+            {
+              "inner": "result",
+              "wrapper": "result"
+            },
+            {
+              "inner": "o_en",
+              "wrapper": "o_en"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 7,
+      "task": "Arithmetic/Comparator/comparator_3bit",
+      "module": "comparator_3bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/007_Arithmetic_Comparator_comparator_3bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013004302978515625,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010500431060791016,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0053098201751708984,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 8,
+      "task": "Arithmetic/Comparator/comparator_4bit",
+      "module": "comparator_4bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/008_Arithmetic_Comparator_comparator_4bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.014757871627807617,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.012236595153808594,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.006318092346191406,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 9,
+      "task": "Arithmetic/Divider/div_16bit",
+      "module": "div_16bit",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "===========Test completed with         100 /100 failures===========\ntestbench.v:31: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/009_Arithmetic_Divider_div_16bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.00920414924621582,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Test completed with         100 /100 failures===========\ntestbench.v:31: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.011255264282226562,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0030364990234375,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 10,
+      "task": "Arithmetic/Divider/radix2_div",
+      "module": "radix2_div",
+      "path": "direct_mygo_inline",
+      "status": "TIMEOUT",
+      "reason": "simulation timeout",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/010_Arithmetic_Divider_radix2_div/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:21: warning: input port res_valid is coerced to inout.\n",
+          "elapsed_seconds": 0.015298604965209961,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": null,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 60.06099724769592,
+          "timeout": true
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005308628082275391,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "radix2_div",
+          "wrapper_module": "radix2_div",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "rst",
+              "wrapper": "rst"
+            },
+            {
+              "inner": "dividend",
+              "wrapper": "dividend"
+            },
+            {
+              "inner": "divisor",
+              "wrapper": "divisor"
+            },
+            {
+              "inner": "sign",
+              "wrapper": "sign"
+            },
+            {
+              "inner": "opn_valid",
+              "wrapper": "opn_valid"
+            },
+            {
+              "inner": "res_valid",
+              "wrapper": "res_valid"
+            },
+            {
+              "inner": "result",
+              "wrapper": "result"
+            }
+          ],
+          "unmapped_inputs": [
+            "res_ready"
+          ]
+        }
+      }
+    },
+    {
+      "task_index": 11,
+      "task": "Arithmetic/Multiplier/multi_16bit",
+      "module": "multi_16bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 47000 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/011_Arithmetic_Multiplier_multi_16bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01413273811340332,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 47000 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.024597644805908203,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005232572555541992,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 12,
+      "task": "Arithmetic/Multiplier/multi_8bit",
+      "module": "multi_8bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:45: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/012_Arithmetic_Multiplier_multi_8bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012876749038696289,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:45: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.01174616813659668,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005068302154541016,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 13,
+      "task": "Arithmetic/Multiplier/multi_booth_8bit",
+      "module": "multi_booth_8bit",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "=========== Failed ===========\ntestbench.v:71: $finish called at 1900 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline/multi_booth_8bit.v:40: warning: macro width undefined (and assumed null) at this point.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline/multi_booth_8bit.v:41: warning: macro width undefined (and assumed null) at this point.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline/multi_booth_8bit.v:42: warning: macro width undefined (and assumed null) at this point.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline/multi_booth_8bit.v:45: warning: Port 3 (a) of module multi_booth_8bit__mygo_impl expects 8 bit(s), given 2.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline/multi_booth_8bit.v:45:        : Padding 6 high bits of the port.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline/multi_booth_8bit.v:45: warning: Port 4 (b) of module multi_booth_8bit__mygo_impl expects 8 bit(s), given 2.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline/multi_booth_8bit.v:45:        : Padding 6 high bits of the port.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline/multi_booth_8bit.v:45: warning: Port 5 (p) of module multi_booth_8bit__mygo_impl expects 16 bit(s), given 3.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline/multi_booth_8bit.v:45:        : Padding 13 high bits of the port.\ntestbench.v:17: warning: Port 3 (a) of module multi_booth_8bit expects 2 bit(s), given 8.\ntestbench.v:17:        : Pruning (signed) 6 high bits of the expression.\ntestbench.v:17: warning: Port 4 (b) of module multi_booth_8bit expects 2 bit(s), given 8.\ntestbench.v:17:        : Pruning (signed) 6 high bits of the expression.\ntestbench.v:17: warning: Port 5 (p) of module multi_booth_8bit expects 3 bit(s), given 16.\ntestbench.v:17:        : Padding 13 high bits of the expression.\ntestbench.v:22: warning: input port rdy is coerced to inout.\n",
+          "elapsed_seconds": 0.01343536376953125,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Failed ===========\ntestbench.v:71: $finish called at 1900 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009109973907470703,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0035266876220703125,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "multi_booth_8bit",
+          "wrapper_module": "multi_booth_8bit",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "reset",
+              "wrapper": "reset"
+            },
+            {
+              "inner": "a",
+              "wrapper": "a"
+            },
+            {
+              "inner": "b",
+              "wrapper": "b"
+            },
+            {
+              "inner": "p",
+              "wrapper": "p"
+            },
+            {
+              "inner": "rdy",
+              "wrapper": "rdy"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 14,
+      "task": "Arithmetic/Multiplier/multi_pipe_4bit",
+      "module": "multi_pipe_4bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:55: $finish called at 3010 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/014_Arithmetic_Multiplier_multi_pipe_4bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.014152050018310547,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:55: $finish called at 3010 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.011240720748901367,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005662202835083008,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "multi_pipe_4bit",
+          "wrapper_module": "multi_pipe_4bit",
+          "params": [
+            {
+              "name": "size",
+              "default": "4"
+            }
+          ],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "rst_n",
+              "wrapper": "rst_n"
+            },
+            {
+              "inner": "mul_a",
+              "wrapper": "mul_a"
+            },
+            {
+              "inner": "mul_b",
+              "wrapper": "mul_b"
+            },
+            {
+              "inner": "mul_out",
+              "wrapper": "mul_out"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 15,
+      "task": "Arithmetic/Multiplier/multi_pipe_8bit",
+      "module": "multi_pipe_8bit",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "===========Test completed with          99 /100 failures===========\ntestbench.v:79: $finish called at 80220 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/015_Arithmetic_Multiplier_multi_pipe_8bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.014529705047607422,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Test completed with          99 /100 failures===========\ntestbench.v:79: $finish called at 80220 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.03049015998840332,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005626201629638672,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 16,
+      "task": "Arithmetic/Other/fixed_point_adder",
+      "module": "fixed_point_adder",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n=========== Test completed with         100 /100 failures ===========\ntestbench.v:55: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:31: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'sum_abs[15:0]').\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:36: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'diff_abs[15:0]').\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:39: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'diff_abs[15:0]').\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:40: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'diff_abs[15:0]').\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:42: sorry: constant selects in always_* processes are not fully supported (the process will be sensitive to all bits in 'diff_abs[15:0]').\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:59: warning: Port 1 (a) of module fixed_point_adder__mygo_impl expects 16 bit(s), given 32.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:59:        : Pruning 16 high bits of the expression.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:59: warning: Port 2 (b) of module fixed_point_adder__mygo_impl expects 16 bit(s), given 32.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:59:        : Pruning 16 high bits of the expression.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:59: warning: Port 3 (c) of module fixed_point_adder__mygo_impl expects 16 bit(s), given 32.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline/fixed_point_adder.v:59:        : Padding 16 high bits of the expression.\n",
+          "elapsed_seconds": 0.014762401580810547,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nTest failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n=========== Test completed with         100 /100 failures ===========\ntestbench.v:55: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.01085519790649414,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.006064414978027344,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "fixed_point_adder",
+          "wrapper_module": "fixed_point_adder",
+          "params": [
+            {
+              "name": "Q",
+              "default": "15"
+            },
+            {
+              "name": "N",
+              "default": "32"
+            }
+          ],
+          "connections": [
+            {
+              "inner": "a",
+              "wrapper": "a"
+            },
+            {
+              "inner": "b",
+              "wrapper": "b"
+            },
+            {
+              "inner": "c",
+              "wrapper": "c"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 17,
+      "task": "Arithmetic/Other/fixed_point_substractor",
+      "module": "fixed_point_subtractor",
+      "path": "direct_mygo_inline",
+      "status": "COMPILE_FAIL",
+      "reason": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/017_Arithmetic_Other_fixed_point_substractor/direct_mygo_inline/fixed_point_subtractor.v:19: syntax error\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/017_Arithmetic_Other_fixed_point_substractor/direct_mygo_inline/fixed_point_subtractor.v:19: error: Malformed statement",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/017_Arithmetic_Other_fixed_point_substractor/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/017_Arithmetic_Other_fixed_point_substractor/direct_mygo_inline/fixed_point_subtractor.v:19: syntax error\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/017_Arithmetic_Other_fixed_point_substractor/direct_mygo_inline/fixed_point_subtractor.v:19: error: Malformed statement\n",
+          "elapsed_seconds": 0.011477470397949219,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005279064178466797,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "fixed_point_subtractor",
+          "wrapper_module": "fixed_point_subtractor",
+          "params": [
+            {
+              "name": "Q",
+              "default": "15"
+            },
+            {
+              "name": "N",
+              "default": "32"
+            }
+          ],
+          "connections": [
+            {
+              "inner": "a",
+              "wrapper": "a"
+            },
+            {
+              "inner": "b",
+              "wrapper": "b"
+            },
+            {
+              "inner": "c",
+              "wrapper": "c"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 18,
+      "task": "Arithmetic/Other/float_multi",
+      "module": "float_multi",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "=========== Test completed with           1/20 failures ===========\ntestbench.v:35: $finish called at 243 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/018_Arithmetic_Other_float_multi/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.015213966369628906,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Test completed with           1/20 failures ===========\ntestbench.v:35: $finish called at 243 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010942935943603516,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005635499954223633,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "float_multi",
+          "wrapper_module": "float_multi",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "rst",
+              "wrapper": "rst"
+            },
+            {
+              "inner": "a",
+              "wrapper": "a"
+            },
+            {
+              "inner": "b",
+              "wrapper": "b"
+            },
+            {
+              "inner": "z",
+              "wrapper": "z"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 19,
+      "task": "Arithmetic/Substractor/sub_64bit",
+      "module": "sub_64bit",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/019_Arithmetic_Substractor_sub_64bit/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013103246688842773,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:48: $finish called at 1000000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010721683502197266,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005415678024291992,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 20,
+      "task": "Control/Counter/JC_counter",
+      "module": "JC_counter",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:59: $finish called at 1310 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/020_Control_Counter_JC_counter/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012837409973144531,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:59: $finish called at 1310 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009598970413208008,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.00544428825378418,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 21,
+      "task": "Control/Counter/counter_12",
+      "module": "counter_12",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:49: $finish called at 430000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/021_Control_Counter_counter_12/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012558460235595703,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:49: $finish called at 430000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009193897247314453,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005274295806884766,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 22,
+      "task": "Control/Counter/ring_counter",
+      "module": "ring_counter",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "testbench.v:59: $finish called at 100 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/022_Control_Counter_ring_counter/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0071868896484375,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "testbench.v:59: $finish called at 100 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.0066738128662109375,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": true,
+          "changes": [
+            "array_init:data"
+          ]
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0038204193115234375,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 23,
+      "task": "Control/Counter/up_down_counter",
+      "module": "up_down_counter",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:53: $finish called at 620 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/023_Control_Counter_up_down_counter/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012741565704345703,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:53: $finish called at 620 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009850740432739258,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.006294727325439453,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 24,
+      "task": "Control/Finite State Machine/fsm",
+      "module": "fsm",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:65: $finish called at 158 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/024_Control_Finite_State_Machine_fsm/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.014277219772338867,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:65: $finish called at 158 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010028839111328125,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0050470829010009766,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 25,
+      "task": "Control/Finite State Machine/sequence_detector",
+      "module": "sequence_detector",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:50: $finish called at 108000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/025_Control_Finite_State_Machine_sequence_detector/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013611316680908203,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:50: $finish called at 108000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010157108306884766,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0053484439849853516,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "sequence_detector",
+          "wrapper_module": "sequence_detector",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "reset_n",
+              "wrapper": "rst_n"
+            },
+            {
+              "inner": "data_in",
+              "wrapper": "data_in"
+            },
+            {
+              "inner": "sequence_detected",
+              "wrapper": "sequence_detected"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 26,
+      "task": "Memory/FIFO/asyn_fifo",
+      "module": "asyn_fifo",
+      "path": "direct_mygo_inline",
+      "status": "TIMEOUT",
+      "reason": "simulation timeout",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/026_Memory_FIFO_asyn_fifo/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:19: warning: input port rempty is coerced to inout.\ntestbench.v:20: warning: input port rdata is coerced to inout.\n",
+          "elapsed_seconds": 0.015502691268920898,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": null,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 60.06161117553711,
+          "timeout": true
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.006077766418457031,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "asyn_fifo",
+          "wrapper_module": "asyn_fifo",
+          "params": [
+            {
+              "name": "WIDTH",
+              "default": "8"
+            },
+            {
+              "name": "DEPTH",
+              "default": "16"
+            }
+          ],
+          "connections": [
+            {
+              "inner": "wclk",
+              "wrapper": "wclk"
+            },
+            {
+              "inner": "rclk",
+              "wrapper": "rclk"
+            },
+            {
+              "inner": "wrstn",
+              "wrapper": "wrstn"
+            },
+            {
+              "inner": "rrstn",
+              "wrapper": "rrstn"
+            },
+            {
+              "inner": "winc",
+              "wrapper": "winc"
+            },
+            {
+              "inner": "rinc",
+              "wrapper": "rinc"
+            },
+            {
+              "inner": "wdata",
+              "wrapper": "wdata"
+            },
+            {
+              "inner": "wfull",
+              "wrapper": "wfull"
+            },
+            {
+              "inner": "rempty",
+              "wrapper": "rempty"
+            },
+            {
+              "inner": "rdata",
+              "wrapper": "rdata"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 27,
+      "task": "Memory/LIFO/LIFObuffer",
+      "module": "LIFObuffer",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "=========== Test completed with           1/20 failures ===========\ntestbench.v:70: $finish called at 265000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/027_Memory_LIFO_LIFObuffer/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:24: warning: input port EMPTY is coerced to inout.\n",
+          "elapsed_seconds": 0.012054443359375,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Test completed with           1/20 failures ===========\ntestbench.v:70: $finish called at 265000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009999513626098633,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0053141117095947266,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "LIFObuffer",
+          "wrapper_module": "LIFObuffer",
+          "params": [],
+          "connections": [
+            {
+              "inner": "dataIn",
+              "wrapper": "dataIn"
+            },
+            {
+              "inner": "dataOut",
+              "wrapper": "dataOut"
+            },
+            {
+              "inner": "RW",
+              "wrapper": "RW"
+            },
+            {
+              "inner": "EN",
+              "wrapper": "EN"
+            },
+            {
+              "inner": "Rst",
+              "wrapper": "Rst"
+            },
+            {
+              "inner": "EMPTY",
+              "wrapper": "EMPTY"
+            },
+            {
+              "inner": "FULL",
+              "wrapper": "FULL"
+            },
+            {
+              "inner": "Clk",
+              "wrapper": "Clk"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 28,
+      "task": "Memory/Shifter/LFSR",
+      "module": "LFSR",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:23: $finish called at 215 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/028_Memory_Shifter_LFSR/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013027429580688477,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:23: $finish called at 215 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009493827819824219,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005896806716918945,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "LFSR",
+          "wrapper_module": "LFSR",
+          "params": [],
+          "connections": [
+            {
+              "inner": "out",
+              "wrapper": "out_tb"
+            },
+            {
+              "inner": "clk",
+              "wrapper": "clk_tb"
+            },
+            {
+              "inner": "rst",
+              "wrapper": "rst_tb"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 29,
+      "task": "Memory/Shifter/barrel_shifter",
+      "module": "barrel_shifter",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "=========== Test completed with           1 failures ===========\ntestbench.v:31: $finish called at 80 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/029_Memory_Shifter_barrel_shifter/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.014957904815673828,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Test completed with           1 failures ===========\ntestbench.v:31: $finish called at 80 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.011086463928222656,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005364894866943359,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 30,
+      "task": "Memory/Shifter/right_shifter",
+      "module": "right_shifter",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:45: $finish called at 90 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/030_Memory_Shifter_right_shifter/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0063936710357666016,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:45: $finish called at 90 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.006285190582275391,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.002841949462890625,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 31,
+      "task": "Miscellaneous/Frequency divider/freq_div",
+      "module": "freq_div",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:46: $finish called at 1035 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/031_Miscellaneous_Frequency_divider_freq_div/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:9: warning: input port CLK_50 is coerced to inout.\ntestbench.v:9: warning: input port CLK_10 is coerced to inout.\ntestbench.v:9: warning: input port CLK_1 is coerced to inout.\n",
+          "elapsed_seconds": 0.01378321647644043,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:46: $finish called at 1035 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010589838027954102,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.006178617477416992,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "freq_div",
+          "wrapper_module": "freq_div",
+          "params": [],
+          "connections": [
+            {
+              "inner": "CLK_in",
+              "wrapper": "CLK_in"
+            },
+            {
+              "inner": "RST",
+              "wrapper": "RST"
+            },
+            {
+              "inner": "CLK_50",
+              "wrapper": "CLK_50"
+            },
+            {
+              "inner": "CLK_10",
+              "wrapper": "CLK_10"
+            },
+            {
+              "inner": "CLK_1",
+              "wrapper": "CLK_1"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 32,
+      "task": "Miscellaneous/Frequency divider/freq_divbyeven",
+      "module": "freq_diveven",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "Failed at          5: clk=0, clk_div=1 (expected           0)\nFailed at          6: clk=1, clk_div=1 (expected           0)\nFailed at          9: clk=0, clk_div=0 (expected           1)\nFailed at         10: clk=1, clk_div=0 (expected           1)\nFailed at         11: clk=0, clk_div=0 (expected           1)\nFailed at         12: clk=1, clk_div=0 (expected           1)\nFailed at         13: clk=0, clk_div=1 (expected           0)\nFailed at         14: clk=1, clk_div=1 (expected           0)\nFailed at         15: clk=0, clk_div=1 (expected           0)\nFailed at         16: clk=1, clk_div=1 (expected           0)\nFailed at         19: clk=0, clk_div=0 (expected           1)\n=========== Test completed with          11/20 failures ===========\ntestbench.v:27: $finish called at 110000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/032_Miscellaneous_Frequency_divider_freq_divbyeven/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012659788131713867,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "Failed at          5: clk=0, clk_div=1 (expected           0)\nFailed at          6: clk=1, clk_div=1 (expected           0)\nFailed at          9: clk=0, clk_div=0 (expected           1)\nFailed at         10: clk=1, clk_div=0 (expected           1)\nFailed at         11: clk=0, clk_div=0 (expected           1)\nFailed at         12: clk=1, clk_div=0 (expected           1)\nFailed at         13: clk=0, clk_div=1 (expected           0)\nFailed at         14: clk=1, clk_div=1 (expected           0)\nFailed at         15: clk=0, clk_div=1 (expected           0)\nFailed at         16: clk=1, clk_div=1 (expected           0)\nFailed at         19: clk=0, clk_div=0 (expected           1)\n=========== Test completed with          11/20 failures ===========\ntestbench.v:27: $finish called at 110000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009482860565185547,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005395412445068359,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "freq_diveven",
+          "wrapper_module": "freq_divbyeven",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "rst_n",
+              "wrapper": "rst_n"
+            },
+            {
+              "inner": "clk_div",
+              "wrapper": "clk_div"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 33,
+      "task": "Miscellaneous/Frequency divider/freq_divbyfrac",
+      "module": "freq_divbyfrac",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "Failed at          0: clk=1, clk_div=0 (expected           1)\nFailed at          3: clk=0, clk_div=1 (expected           0)\nFailed at          4: clk=1, clk_div=1 (expected           0)\nFailed at          5: clk=0, clk_div=1 (expected           0)\nFailed at          6: clk=1, clk_div=1 (expected           0)\nFailed at         10: clk=1, clk_div=1 (expected           0)\nFailed at         11: clk=0, clk_div=1 (expected           0)\nFailed at         14: clk=1, clk_div=0 (expected           1)\nFailed at         17: clk=0, clk_div=1 (expected           0)\nFailed at         18: clk=1, clk_div=1 (expected           0)\nFailed at         19: clk=0, clk_div=1 (expected           0)\n=========== Test completed with          11/20 failures ===========\ntestbench.v:27: $finish called at 130000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/033_Miscellaneous_Frequency_divider_freq_divbyfrac/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013600587844848633,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "Failed at          0: clk=1, clk_div=0 (expected           1)\nFailed at          3: clk=0, clk_div=1 (expected           0)\nFailed at          4: clk=1, clk_div=1 (expected           0)\nFailed at          5: clk=0, clk_div=1 (expected           0)\nFailed at          6: clk=1, clk_div=1 (expected           0)\nFailed at         10: clk=1, clk_div=1 (expected           0)\nFailed at         11: clk=0, clk_div=1 (expected           0)\nFailed at         14: clk=1, clk_div=0 (expected           1)\nFailed at         17: clk=0, clk_div=1 (expected           0)\nFailed at         18: clk=1, clk_div=1 (expected           0)\nFailed at         19: clk=0, clk_div=1 (expected           0)\n=========== Test completed with          11/20 failures ===========\ntestbench.v:27: $finish called at 130000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010251998901367188,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0060651302337646484,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 34,
+      "task": "Miscellaneous/Frequency divider/freq_divbyodd",
+      "module": "freq_divbyodd",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:27: $finish called at 130000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/034_Miscellaneous_Frequency_divider_freq_divbyodd/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013903141021728516,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:27: $finish called at 130000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009787559509277344,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005047798156738281,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 35,
+      "task": "Miscellaneous/Others/calendar",
+      "module": "calendar",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "WARNING: testbench.v:31: $readmemh(reference.txt): Not enough words in the file for the requested range [0:4000].\n===========Your Design Passed===========\ntestbench.v:48: $finish called at 40035000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/035_Miscellaneous_Others_calendar/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013217449188232422,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "WARNING: testbench.v:31: $readmemh(reference.txt): Not enough words in the file for the requested range [0:4000].\n===========Your Design Passed===========\ntestbench.v:48: $finish called at 40035000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.0318906307220459,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0054819583892822266,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 36,
+      "task": "Miscellaneous/Others/edge_detect",
+      "module": "edge_detect",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 85 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/036_Miscellaneous_Others_edge_detect/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012881994247436523,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:67: $finish called at 85 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.00974416732788086,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005653858184814453,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 37,
+      "task": "Miscellaneous/Others/parallel2serial",
+      "module": "parallel2serial",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:63: $finish called at 10005 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/037_Miscellaneous_Others_parallel2serial/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.00852513313293457,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:63: $finish called at 10005 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.008959293365478516,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.004374027252197266,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 38,
+      "task": "Miscellaneous/Others/pulse_detect",
+      "module": "pulse_detect",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "===========Error===========\ntestbench.v:43: $finish called at 148 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/038_Miscellaneous_Others_pulse_detect/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01239013671875,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Error===========\ntestbench.v:43: $finish called at 148 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009986639022827148,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.003406047821044922,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 39,
+      "task": "Miscellaneous/Others/serial2parallel",
+      "module": "serial2parallel",
+      "path": "direct_mygo_inline",
+      "status": "TIMEOUT",
+      "reason": "simulation timeout",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/039_Miscellaneous_Others_serial2parallel/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013491153717041016,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": null,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 60.00737643241882,
+          "timeout": true
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.00548863410949707,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 40,
+      "task": "Miscellaneous/Others/synchronizer",
+      "module": "synchronizer",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:74: $finish called at 1005 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/040_Miscellaneous_Others_synchronizer/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.013080835342407227,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:74: $finish called at 1005 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010103940963745117,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0055310726165771484,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 41,
+      "task": "Miscellaneous/Others/traffic_light",
+      "module": "traffic_light",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "At time                   40, clock =  10, red = 1, yellow = 0, green = 0\nAt time                  140, clock =   0, red = 1, yellow = 0, green = 0\nAt time                  740, clock =   3, red = 0, yellow = 0, green = 1\nAt time                  890, clock =   9, red = 1, yellow = 0, green = 0\nAt time                  920, clock =   6, red = 1, yellow = 0, green = 0\nAt time                  930, clock =   5, red = 1, yellow = 0, green = 0\n===========Failed===========          3\ntestbench.v:78: $finish called at 930 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/041_Miscellaneous_Others_traffic_light/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:18: warning: input port clock is coerced to inout.\ntestbench.v:21: warning: input port green is coerced to inout.\n",
+          "elapsed_seconds": 0.014485597610473633,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "At time                   40, clock =  10, red = 1, yellow = 0, green = 0\nAt time                  140, clock =   0, red = 1, yellow = 0, green = 0\nAt time                  740, clock =   3, red = 0, yellow = 0, green = 1\nAt time                  890, clock =   9, red = 1, yellow = 0, green = 0\nAt time                  920, clock =   6, red = 1, yellow = 0, green = 0\nAt time                  930, clock =   5, red = 1, yellow = 0, green = 0\n===========Failed===========          3\ntestbench.v:78: $finish called at 930 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.011029958724975586,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.006276369094848633,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "traffic_light",
+          "wrapper_module": "traffic_light",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "rst_n",
+              "wrapper": "rst_n"
+            },
+            {
+              "inner": "pass_request",
+              "wrapper": "pass_request"
+            },
+            {
+              "inner": "clock",
+              "wrapper": "clock"
+            },
+            {
+              "inner": "red",
+              "wrapper": "red"
+            },
+            {
+              "inner": "yellow",
+              "wrapper": "yellow"
+            },
+            {
+              "inner": "green",
+              "wrapper": "green"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 42,
+      "task": "Miscellaneous/Others/width_8to16",
+      "module": "width_8to16",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:48: $finish called at 100 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/042_Miscellaneous_Others_width_8to16/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.01305532455444336,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:48: $finish called at 100 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.00985574722290039,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005373477935791016,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 43,
+      "task": "Miscellaneous/RISC-V/RAM",
+      "module": "RAM",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========\ntestbench.v:79: $finish called at 11000 (1ns)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/043_Miscellaneous_RISC-V_RAM/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/043_Miscellaneous_RISC-V_RAM/direct_mygo_inline/RAM.v:53: warning: Port 4 (write_addr) of module RAM__mygo_impl expects 6 bit(s), given 8.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/043_Miscellaneous_RISC-V_RAM/direct_mygo_inline/RAM.v:53:        : Pruning 2 high bits of the expression.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/043_Miscellaneous_RISC-V_RAM/direct_mygo_inline/RAM.v:53: warning: Port 7 (read_addr) of module RAM__mygo_impl expects 6 bit(s), given 8.\n/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/043_Miscellaneous_RISC-V_RAM/direct_mygo_inline/RAM.v:53:        : Pruning 2 high bits of the expression.\ntestbench.v:29: warning: input port read_data is coerced to inout.\n",
+          "elapsed_seconds": 0.014011383056640625,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\ntestbench.v:79: $finish called at 11000 (1ns)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.015494108200073242,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005397319793701172,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "RAM",
+          "wrapper_module": "RAM",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "rst_n",
+              "wrapper": "rst_n"
+            },
+            {
+              "inner": "write_en",
+              "wrapper": "write_en"
+            },
+            {
+              "inner": "write_addr",
+              "wrapper": "write_addr"
+            },
+            {
+              "inner": "write_data",
+              "wrapper": "write_data"
+            },
+            {
+              "inner": "read_en",
+              "wrapper": "read_en"
+            },
+            {
+              "inner": "read_addr",
+              "wrapper": "read_addr"
+            },
+            {
+              "inner": "read_data",
+              "wrapper": "read_data"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 44,
+      "task": "Miscellaneous/RISC-V/ROM",
+      "module": "ROM",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "Starting ROM Testbench...\n=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 40 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/044_Miscellaneous_RISC-V_ROM/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.016396284103393555,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "Starting ROM Testbench...\n=========== Your Design Passed ===========\ntestbench.v:56: $finish called at 40 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.012833595275878906,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005812406539916992,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 45,
+      "task": "Miscellaneous/RISC-V/alu",
+      "module": "alu",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "WARNING: testbench.v:43: $readmemh(reference.dat): Not enough words in the file for the requested range [0:31].\n===========Your Design Passed===========\ntestbench.v:86: $finish called at 175000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/045_Miscellaneous_RISC-V_alu/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.015066385269165039,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "WARNING: testbench.v:43: $readmemh(reference.dat): Not enough words in the file for the requested range [0:31].\n===========Your Design Passed===========\ntestbench.v:86: $finish called at 175000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.010838031768798828,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0062143802642822266,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "alu",
+          "wrapper_module": "alu",
+          "params": [],
+          "connections": [
+            {
+              "inner": "a",
+              "wrapper": "a"
+            },
+            {
+              "inner": "b",
+              "wrapper": "b"
+            },
+            {
+              "inner": "aluc",
+              "wrapper": "aluc"
+            },
+            {
+              "inner": "r",
+              "wrapper": "r"
+            },
+            {
+              "inner": "zero",
+              "wrapper": "zero"
+            },
+            {
+              "inner": "carry",
+              "wrapper": "carry"
+            },
+            {
+              "inner": "negative",
+              "wrapper": "negative"
+            },
+            {
+              "inner": "overflow",
+              "wrapper": "overflow"
+            },
+            {
+              "inner": "flag",
+              "wrapper": "flag"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 46,
+      "task": "Miscellaneous/RISC-V/clkgenerator",
+      "module": "clkgenerator",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "=========== Test completed with           x failures ===========\ntestbench.v:29: $finish called at 100 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/046_Miscellaneous_RISC-V_clkgenerator/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012735366821289062,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Test completed with           x failures ===========\ntestbench.v:29: $finish called at 100 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009597539901733398,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005327701568603516,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "clkgenerator",
+          "wrapper_module": "clkgenerator",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 47,
+      "task": "Miscellaneous/RISC-V/instr_reg",
+      "module": "instr_reg",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:78: $finish called at 135000 (1ps)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/047_Miscellaneous_RISC-V_instr_reg/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:19: warning: input port ins is coerced to inout.\n",
+          "elapsed_seconds": 0.007339000701904297,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:78: $finish called at 135000 (1ps)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.0050754547119140625,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0034394264221191406,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "instr_reg",
+          "wrapper_module": "instr_reg",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "rst",
+              "wrapper": "rst"
+            },
+            {
+              "inner": "fetch",
+              "wrapper": "fetch"
+            },
+            {
+              "inner": "data",
+              "wrapper": "data"
+            },
+            {
+              "inner": "ins",
+              "wrapper": "ins"
+            },
+            {
+              "inner": "ad1",
+              "wrapper": "ad1"
+            },
+            {
+              "inner": "ad2",
+              "wrapper": "ad2"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 48,
+      "task": "Miscellaneous/RISC-V/pe",
+      "module": "pe",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "===========Your Design Passed===========",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/048_Miscellaneous_RISC-V_pe/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0127105712890625,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Your Design Passed===========\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009756088256835938,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005535602569580078,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": true,
+          "inner_module": "pe",
+          "wrapper_module": "pe",
+          "params": [],
+          "connections": [
+            {
+              "inner": "clk",
+              "wrapper": "clk"
+            },
+            {
+              "inner": "rst",
+              "wrapper": "rst"
+            },
+            {
+              "inner": "a",
+              "wrapper": "a"
+            },
+            {
+              "inner": "b",
+              "wrapper": "b"
+            },
+            {
+              "inner": "c",
+              "wrapper": "c"
+            }
+          ],
+          "unmapped_inputs": []
+        }
+      }
+    },
+    {
+      "task_index": 49,
+      "task": "Miscellaneous/Signal generation/signal_generator",
+      "module": "signal_generator",
+      "path": "direct_mygo_inline",
+      "status": "FAIL",
+      "reason": "===========Error===========\ntestbench.v:39: $finish called at 1010 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/049_Miscellaneous_Signal_generation_signal_generator/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.012662410736083984,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "===========Error===========\ntestbench.v:39: $finish called at 1010 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009521722793579102,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.0054132938385009766,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    },
+    {
+      "task_index": 50,
+      "task": "Miscellaneous/Signal generation/square_wave",
+      "module": "square_wave",
+      "path": "direct_mygo_inline",
+      "status": "PASS",
+      "reason": "=========== Your Design Passed ===========\ntestbench.v:36: $finish called at 1000 (1s)",
+      "artifacts": "/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/050_Miscellaneous_Signal_generation_square_wave/direct_mygo_inline",
+      "detail": {
+        "compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "testbench.v:9: warning: Port 2 (freq) of module square_wave expects 8 bit(s), given 9.\ntestbench.v:9:        : Pruning 1 high bits of the expression.\n",
+          "elapsed_seconds": 0.013106107711791992,
+          "timeout": false
+        },
+        "simulation": {
+          "returncode": 0,
+          "stdout": "=========== Your Design Passed ===========\ntestbench.v:36: $finish called at 1000 (1s)\n",
+          "stderr": "",
+          "elapsed_seconds": 0.009945392608642578,
+          "timeout": false
+        },
+        "testbench_normalize": {
+          "changed": false,
+          "changes": []
+        },
+        "mygo_compile": {
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "elapsed_seconds": 0.005507946014404297,
+          "timeout": false
+        },
+        "compat_wrapper": {
+          "wrapped": false,
+          "reason": "already compatible"
+        }
+      }
+    }
+  ]
+}

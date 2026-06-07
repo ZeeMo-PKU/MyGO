@@ -1,0 +1,10 @@
+{
+  "model_calls": 50,
+  "totals": {
+    "prompt_tokens": 22722,
+    "completion_tokens": 27164,
+    "total_tokens": 49886,
+    "reasoning_tokens": 0,
+    "cost": 0.038226192
+  }
+}

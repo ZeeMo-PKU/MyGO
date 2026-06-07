@@ -1,9 +1,9 @@
 #include "verilated.h"
-#include "Vmain.h"
+#include "{{ .TopHeader }}"
 
 int main(int argc, char** argv) {
   Verilated::commandArgs(argc, argv);
-  Vmain top;
+  {{ .TopClass }} top;
   const vluint64_t kMaxCycles = {{ .MaxCycles }}ULL;
   const vluint64_t kResetCycles = {{ .ResetCycles }}ULL;
 
@@ -15,19 +15,19 @@ int main(int argc, char** argv) {
   {{ end }}
   {{ end }}
 
-  {{ if .HasClock }}top.clk = 0;
-  {{ end }}{{ if .HasReset }}top.rst = 1;
+  {{ if .HasClock }}top.{{ .ClockPort }} = 0;
+  {{ end }}{{ if .HasReset }}top.{{ .ResetPort }} = {{ .ResetAssertValue }};
   {{ end }}
   for (vluint64_t cycle = 0; cycle < kMaxCycles; ++cycle) {
-    {{ if .HasClock }}top.clk = 0;
+    {{ if .HasClock }}top.{{ .ClockPort }} = 0;
     {{ end }}
     top.eval();
     if ({{ if .HasReset }}cycle >= kResetCycles{{ else }}false{{ end }}) {
       {{ if .HasReset }}
-      top.rst = 0;
+      top.{{ .ResetPort }} = {{ .ResetReleaseValue }};
       {{ end }}
     }
-    {{ if .HasClock }}top.clk = 1;
+    {{ if .HasClock }}top.{{ .ClockPort }} = 1;
     {{ end }}
     top.eval();
     if (Verilated::gotFinish()) {

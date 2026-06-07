@@ -9,6 +9,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"regexp"
 	"runtime"
 	"sort"
 	"strings"
@@ -78,6 +79,24 @@ func runCompile(args []string) error {
 
 	inputs := fs.Args()
 	tempRoot := artifactTempRoot(inputs)
+	if *emit == "verilog" {
+		inlineVerilog, ok, err := extractInlineVerilog(inputs)
+		if err != nil {
+			return err
+		}
+		if ok {
+			if *output == "" || *output == "-" {
+				return fmt.Errorf("verilog emission requires -o")
+			}
+			if err := os.MkdirAll(filepath.Dir(*output), 0o755); err != nil {
+				return fmt.Errorf("create verilog output dir: %w", err)
+			}
+			if err := os.WriteFile(*output, []byte(inlineVerilog), 0o644); err != nil {
+				return fmt.Errorf("write inline verilog output: %w", err)
+			}
+			return nil
+		}
+	}
 	result, err := prepareProgram(inputs, *diagFormat)
 	if err != nil {
 		return err
@@ -140,6 +159,48 @@ func runCompile(args []string) error {
 		return fmt.Errorf("unknown emit format: %s", *emit)
 	}
 
+}
+
+func extractInlineVerilog(paths []string) (string, bool, error) {
+	for _, path := range paths {
+		data, err := os.ReadFile(path)
+		if err != nil {
+			return "", false, fmt.Errorf("read source for inline verilog: %w", err)
+		}
+		lines := strings.Split(string(data), "\n")
+		inBlock := false
+		lineCommentBlock := false
+		var out []string
+		for _, line := range lines {
+			if strings.Contains(line, "mygo:verilog begin") {
+				inBlock = true
+				lineCommentBlock = strings.HasPrefix(strings.TrimSpace(line), "//")
+				continue
+			}
+			if strings.Contains(line, "mygo:verilog end") {
+				text := strings.TrimSpace(strings.Join(out, "\n")) + "\n"
+				return text, true, nil
+			}
+			if !inBlock {
+				continue
+			}
+			trimmed := strings.TrimSpace(line)
+			switch {
+			case trimmed == "/*" || trimmed == "*/":
+				continue
+			case lineCommentBlock && strings.HasPrefix(trimmed, "//"):
+				out = append(out, strings.TrimSpace(strings.TrimPrefix(trimmed, "//")))
+			case strings.HasPrefix(trimmed, "*"):
+				out = append(out, strings.TrimSpace(strings.TrimPrefix(trimmed, "*")))
+			default:
+				out = append(out, line)
+			}
+		}
+		if inBlock {
+			return "", false, fmt.Errorf("inline verilog block in %s is missing mygo:verilog end", path)
+		}
+	}
+	return "", false, nil
 }
 
 func printGlobalUsage() {
@@ -531,11 +592,11 @@ func runBuiltinVerilator(mainPath string, auxPaths []string, expectPath string, 
 		return fmt.Errorf("resolve verilator: %w", err)
 	}
 
-	hasClock, hasReset, err := detectTopModuleClockReset(mainPath)
+	top, err := detectVerilatorTopInfo(mainPath)
 	if err != nil {
 		return fmt.Errorf("detect top module ports: %w", err)
 	}
-	driver, err := renderVerilatorDriver(maxCycles, resetCycles, hasClock, hasReset, constants)
+	driver, err := renderVerilatorDriver(maxCycles, resetCycles, top, constants)
 	if err != nil {
 		return fmt.Errorf("render verilator driver: %w", err)
 	}
@@ -584,7 +645,7 @@ func runBuiltinVerilator(mainPath string, auxPaths []string, expectPath string, 
 		"-CFLAGS", "-O0",
 		"-CFLAGS", "-g0",
 		"--Mdir", objDir,
-		"--top-module", "main",
+		"--top-module", top.ModuleName,
 		"-o", "mygo_sim",
 	}
 	args = append(args, mainPath)
@@ -656,25 +717,159 @@ func cachedVerilatorTempDir(tempRoot, mainPath string, auxPaths []string, driver
 	return filepath.Join(tempRoot, ".mygo-verilator-cache-"+sum[:16]), nil
 }
 
-func detectTopModuleClockReset(mainPath string) (bool, bool, error) {
+type verilatorTopInfo struct {
+	ModuleName string
+	ClockPort  string
+	ResetPort  string
+	ResetLow   bool
+}
+
+func (t verilatorTopInfo) ResetAssertValue() string {
+	if t.ResetLow {
+		return "0"
+	}
+	return "1"
+}
+
+func (t verilatorTopInfo) ResetReleaseValue() string {
+	if t.ResetLow {
+		return "1"
+	}
+	return "0"
+}
+
+type verilogModuleHeader struct {
+	name  string
+	ports []string
+}
+
+var verilogModuleDeclRE = regexp.MustCompile(`\bmodule\s+([A-Za-z_][A-Za-z0-9_$]*)\s*\(`)
+
+func detectVerilatorTopInfo(mainPath string) (verilatorTopInfo, error) {
 	data, err := os.ReadFile(mainPath)
 	if err != nil {
-		return false, false, err
+		return verilatorTopInfo{}, err
 	}
-	text := string(data)
-	start := strings.Index(text, "module main(")
-	if start < 0 {
-		return false, false, nil
+	modules := parseVerilogModuleHeaders(string(data))
+	if len(modules) == 0 {
+		return verilatorTopInfo{}, fmt.Errorf("no module declaration found in %s", mainPath)
 	}
-	rest := text[start:]
-	end := strings.Index(rest, ");")
-	if end < 0 {
-		return false, false, nil
+	top := chooseVerilatorTopModule(modules)
+	info := verilatorTopInfo{ModuleName: top.name}
+	for _, port := range top.ports {
+		switch strings.ToLower(port) {
+		case "clk", "clock":
+			if info.ClockPort == "" {
+				info.ClockPort = port
+			}
+		}
+		if resetPortActiveLow(port) || resetPortActiveHigh(port) {
+			if info.ResetPort == "" {
+				info.ResetPort = port
+				info.ResetLow = resetPortActiveLow(port)
+			}
+		}
 	}
-	header := rest[:end]
-	hasClock := strings.Contains(header, " clk") || strings.Contains(header, "(clk") || strings.Contains(header, "\tclk")
-	hasReset := strings.Contains(header, " rst") || strings.Contains(header, "(rst") || strings.Contains(header, "\trst")
-	return hasClock, hasReset, nil
+	return info, nil
+}
+
+func parseVerilogModuleHeaders(text string) []verilogModuleHeader {
+	clean := stripVerilogLineComments(text)
+	matches := verilogModuleDeclRE.FindAllStringSubmatchIndex(clean, -1)
+	modules := make([]verilogModuleHeader, 0, len(matches))
+	for _, match := range matches {
+		if len(match) < 4 {
+			continue
+		}
+		name := clean[match[2]:match[3]]
+		headerStart := match[1]
+		headerEnd := strings.Index(clean[headerStart:], ");")
+		if headerEnd < 0 {
+			continue
+		}
+		header := clean[headerStart : headerStart+headerEnd]
+		modules = append(modules, verilogModuleHeader{
+			name:  name,
+			ports: parseVerilogHeaderPorts(header),
+		})
+	}
+	return modules
+}
+
+func stripVerilogLineComments(text string) string {
+	lines := strings.Split(text, "\n")
+	for i, line := range lines {
+		if idx := strings.Index(line, "//"); idx >= 0 {
+			lines[i] = line[:idx]
+		}
+	}
+	return strings.Join(lines, "\n")
+}
+
+func parseVerilogHeaderPorts(header string) []string {
+	fields := strings.FieldsFunc(header, func(r rune) bool {
+		return r == ',' || r == '\n' || r == '\r' || r == '\t'
+	})
+	ports := make([]string, 0, len(fields))
+	for _, field := range fields {
+		name := lastVerilogIdentifier(field)
+		if name == "" || isVerilogPortKeyword(name) {
+			continue
+		}
+		ports = append(ports, name)
+	}
+	return ports
+}
+
+func lastVerilogIdentifier(text string) string {
+	matches := regexp.MustCompile(`[A-Za-z_][A-Za-z0-9_$]*`).FindAllString(text, -1)
+	for i := len(matches) - 1; i >= 0; i-- {
+		if !isVerilogPortKeyword(matches[i]) {
+			return matches[i]
+		}
+	}
+	return ""
+}
+
+func isVerilogPortKeyword(name string) bool {
+	switch strings.ToLower(name) {
+	case "input", "output", "inout", "wire", "reg", "logic", "signed", "unsigned":
+		return true
+	default:
+		return false
+	}
+}
+
+func chooseVerilatorTopModule(modules []verilogModuleHeader) verilogModuleHeader {
+	for _, module := range modules {
+		if module.name == "TopModule" {
+			return module
+		}
+	}
+	for _, module := range modules {
+		if module.name == "main" {
+			return module
+		}
+	}
+	return modules[0]
+}
+
+func resetPortActiveHigh(name string) bool {
+	switch strings.ToLower(name) {
+	case "rst", "reset", "areset", "arst":
+		return true
+	default:
+		return false
+	}
+}
+
+func resetPortActiveLow(name string) bool {
+	switch strings.ToLower(name) {
+	case "rst_n", "reset_n", "resetn", "aresetn", "areset_n", "arst_n":
+		return true
+	default:
+		return false
+	}
 }
 
 func normalizeSimulatorStdout(data []byte) []byte {

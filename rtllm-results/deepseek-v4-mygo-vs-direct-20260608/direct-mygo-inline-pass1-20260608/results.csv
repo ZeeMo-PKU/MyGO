@@ -1,0 +1,224 @@
+task_index,task,module,path,status,reason,artifacts
+1,Arithmetic/Accumulator/accu,accu,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:85: $finish called at 150000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/001_Arithmetic_Accumulator_accu/direct_mygo_inline
+2,Arithmetic/Adder/adder_16bit,adder_16bit,direct_mygo_inline,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/002_Arithmetic_Adder_adder_16bit/direct_mygo_inline
+3,Arithmetic/Adder/adder_32bit,adder_32bit,direct_mygo_inline,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/003_Arithmetic_Adder_adder_32bit/direct_mygo_inline
+4,Arithmetic/Adder/adder_8bit,adder_8bit,direct_mygo_inline,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/004_Arithmetic_Adder_adder_8bit/direct_mygo_inline
+5,Arithmetic/Adder/adder_bcd,adder_bcd,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:56: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/005_Arithmetic_Adder_adder_bcd/direct_mygo_inline
+6,Arithmetic/Adder/adder_pipe_64bit,adder_pipe_64bit,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:47: $finish called at 2800 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/006_Arithmetic_Adder_adder_pipe_64bit/direct_mygo_inline
+7,Arithmetic/Comparator/comparator_3bit,comparator_3bit,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:48: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/007_Arithmetic_Comparator_comparator_3bit/direct_mygo_inline
+8,Arithmetic/Comparator/comparator_4bit,comparator_4bit,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:48: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/008_Arithmetic_Comparator_comparator_4bit/direct_mygo_inline
+9,Arithmetic/Divider/div_16bit,div_16bit,direct_mygo_inline,FAIL,"===========Test completed with         100 /100 failures===========
+testbench.v:31: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/009_Arithmetic_Divider_div_16bit/direct_mygo_inline
+10,Arithmetic/Divider/radix2_div,radix2_div,direct_mygo_inline,TIMEOUT,simulation timeout,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/010_Arithmetic_Divider_radix2_div/direct_mygo_inline
+11,Arithmetic/Multiplier/multi_16bit,multi_16bit,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:67: $finish called at 47000 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/011_Arithmetic_Multiplier_multi_16bit/direct_mygo_inline
+12,Arithmetic/Multiplier/multi_8bit,multi_8bit,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:45: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/012_Arithmetic_Multiplier_multi_8bit/direct_mygo_inline
+13,Arithmetic/Multiplier/multi_booth_8bit,multi_booth_8bit,direct_mygo_inline,FAIL,"=========== Failed ===========
+testbench.v:71: $finish called at 1900 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/013_Arithmetic_Multiplier_multi_booth_8bit/direct_mygo_inline
+14,Arithmetic/Multiplier/multi_pipe_4bit,multi_pipe_4bit,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:55: $finish called at 3010 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/014_Arithmetic_Multiplier_multi_pipe_4bit/direct_mygo_inline
+15,Arithmetic/Multiplier/multi_pipe_8bit,multi_pipe_8bit,direct_mygo_inline,FAIL,"===========Test completed with          99 /100 failures===========
+testbench.v:79: $finish called at 80220 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/015_Arithmetic_Multiplier_multi_pipe_8bit/direct_mygo_inline
+16,Arithmetic/Other/fixed_point_adder,fixed_point_adder,direct_mygo_inline,FAIL,"Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Test failed: a = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, b = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, c = 00000000000000001xxxxxxxxxxxxxxx, expected_result = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+=========== Test completed with         100 /100 failures ===========
+testbench.v:55: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/016_Arithmetic_Other_fixed_point_adder/direct_mygo_inline
+17,Arithmetic/Other/fixed_point_substractor,fixed_point_subtractor,direct_mygo_inline,COMPILE_FAIL,"/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/017_Arithmetic_Other_fixed_point_substractor/direct_mygo_inline/fixed_point_subtractor.v:19: syntax error
+/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/017_Arithmetic_Other_fixed_point_substractor/direct_mygo_inline/fixed_point_subtractor.v:19: error: Malformed statement",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/017_Arithmetic_Other_fixed_point_substractor/direct_mygo_inline
+18,Arithmetic/Other/float_multi,float_multi,direct_mygo_inline,FAIL,"=========== Test completed with           1/20 failures ===========
+testbench.v:35: $finish called at 243 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/018_Arithmetic_Other_float_multi/direct_mygo_inline
+19,Arithmetic/Substractor/sub_64bit,sub_64bit,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:48: $finish called at 1000000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/019_Arithmetic_Substractor_sub_64bit/direct_mygo_inline
+20,Control/Counter/JC_counter,JC_counter,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:59: $finish called at 1310 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/020_Control_Counter_JC_counter/direct_mygo_inline
+21,Control/Counter/counter_12,counter_12,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:49: $finish called at 430000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/021_Control_Counter_counter_12/direct_mygo_inline
+22,Control/Counter/ring_counter,ring_counter,direct_mygo_inline,FAIL,testbench.v:59: $finish called at 100 (1s),/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/022_Control_Counter_ring_counter/direct_mygo_inline
+23,Control/Counter/up_down_counter,up_down_counter,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:53: $finish called at 620 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/023_Control_Counter_up_down_counter/direct_mygo_inline
+24,Control/Finite State Machine/fsm,fsm,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:65: $finish called at 158 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/024_Control_Finite_State_Machine_fsm/direct_mygo_inline
+25,Control/Finite State Machine/sequence_detector,sequence_detector,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:50: $finish called at 108000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/025_Control_Finite_State_Machine_sequence_detector/direct_mygo_inline
+26,Memory/FIFO/asyn_fifo,asyn_fifo,direct_mygo_inline,TIMEOUT,simulation timeout,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/026_Memory_FIFO_asyn_fifo/direct_mygo_inline
+27,Memory/LIFO/LIFObuffer,LIFObuffer,direct_mygo_inline,FAIL,"=========== Test completed with           1/20 failures ===========
+testbench.v:70: $finish called at 265000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/027_Memory_LIFO_LIFObuffer/direct_mygo_inline
+28,Memory/Shifter/LFSR,LFSR,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:23: $finish called at 215 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/028_Memory_Shifter_LFSR/direct_mygo_inline
+29,Memory/Shifter/barrel_shifter,barrel_shifter,direct_mygo_inline,FAIL,"=========== Test completed with           1 failures ===========
+testbench.v:31: $finish called at 80 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/029_Memory_Shifter_barrel_shifter/direct_mygo_inline
+30,Memory/Shifter/right_shifter,right_shifter,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:45: $finish called at 90 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/030_Memory_Shifter_right_shifter/direct_mygo_inline
+31,Miscellaneous/Frequency divider/freq_div,freq_div,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:46: $finish called at 1035 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/031_Miscellaneous_Frequency_divider_freq_div/direct_mygo_inline
+32,Miscellaneous/Frequency divider/freq_divbyeven,freq_diveven,direct_mygo_inline,FAIL,"Failed at          5: clk=0, clk_div=1 (expected           0)
+Failed at          6: clk=1, clk_div=1 (expected           0)
+Failed at          9: clk=0, clk_div=0 (expected           1)
+Failed at         10: clk=1, clk_div=0 (expected           1)
+Failed at         11: clk=0, clk_div=0 (expected           1)
+Failed at         12: clk=1, clk_div=0 (expected           1)
+Failed at         13: clk=0, clk_div=1 (expected           0)
+Failed at         14: clk=1, clk_div=1 (expected           0)
+Failed at         15: clk=0, clk_div=1 (expected           0)
+Failed at         16: clk=1, clk_div=1 (expected           0)
+Failed at         19: clk=0, clk_div=0 (expected           1)
+=========== Test completed with          11/20 failures ===========
+testbench.v:27: $finish called at 110000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/032_Miscellaneous_Frequency_divider_freq_divbyeven/direct_mygo_inline
+33,Miscellaneous/Frequency divider/freq_divbyfrac,freq_divbyfrac,direct_mygo_inline,FAIL,"Failed at          0: clk=1, clk_div=0 (expected           1)
+Failed at          3: clk=0, clk_div=1 (expected           0)
+Failed at          4: clk=1, clk_div=1 (expected           0)
+Failed at          5: clk=0, clk_div=1 (expected           0)
+Failed at          6: clk=1, clk_div=1 (expected           0)
+Failed at         10: clk=1, clk_div=1 (expected           0)
+Failed at         11: clk=0, clk_div=1 (expected           0)
+Failed at         14: clk=1, clk_div=0 (expected           1)
+Failed at         17: clk=0, clk_div=1 (expected           0)
+Failed at         18: clk=1, clk_div=1 (expected           0)
+Failed at         19: clk=0, clk_div=1 (expected           0)
+=========== Test completed with          11/20 failures ===========
+testbench.v:27: $finish called at 130000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/033_Miscellaneous_Frequency_divider_freq_divbyfrac/direct_mygo_inline
+34,Miscellaneous/Frequency divider/freq_divbyodd,freq_divbyodd,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:27: $finish called at 130000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/034_Miscellaneous_Frequency_divider_freq_divbyodd/direct_mygo_inline
+35,Miscellaneous/Others/calendar,calendar,direct_mygo_inline,PASS,"WARNING: testbench.v:31: $readmemh(reference.txt): Not enough words in the file for the requested range [0:4000].
+===========Your Design Passed===========
+testbench.v:48: $finish called at 40035000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/035_Miscellaneous_Others_calendar/direct_mygo_inline
+36,Miscellaneous/Others/edge_detect,edge_detect,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:67: $finish called at 85 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/036_Miscellaneous_Others_edge_detect/direct_mygo_inline
+37,Miscellaneous/Others/parallel2serial,parallel2serial,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:63: $finish called at 10005 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/037_Miscellaneous_Others_parallel2serial/direct_mygo_inline
+38,Miscellaneous/Others/pulse_detect,pulse_detect,direct_mygo_inline,FAIL,"===========Error===========
+testbench.v:43: $finish called at 148 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/038_Miscellaneous_Others_pulse_detect/direct_mygo_inline
+39,Miscellaneous/Others/serial2parallel,serial2parallel,direct_mygo_inline,TIMEOUT,simulation timeout,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/039_Miscellaneous_Others_serial2parallel/direct_mygo_inline
+40,Miscellaneous/Others/synchronizer,synchronizer,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:74: $finish called at 1005 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/040_Miscellaneous_Others_synchronizer/direct_mygo_inline
+41,Miscellaneous/Others/traffic_light,traffic_light,direct_mygo_inline,FAIL,"At time                   40, clock =  10, red = 1, yellow = 0, green = 0
+At time                  140, clock =   0, red = 1, yellow = 0, green = 0
+At time                  740, clock =   3, red = 0, yellow = 0, green = 1
+At time                  890, clock =   9, red = 1, yellow = 0, green = 0
+At time                  920, clock =   6, red = 1, yellow = 0, green = 0
+At time                  930, clock =   5, red = 1, yellow = 0, green = 0
+===========Failed===========          3
+testbench.v:78: $finish called at 930 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/041_Miscellaneous_Others_traffic_light/direct_mygo_inline
+42,Miscellaneous/Others/width_8to16,width_8to16,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:48: $finish called at 100 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/042_Miscellaneous_Others_width_8to16/direct_mygo_inline
+43,Miscellaneous/RISC-V/RAM,RAM,direct_mygo_inline,PASS,"===========Your Design Passed===========
+testbench.v:79: $finish called at 11000 (1ns)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/043_Miscellaneous_RISC-V_RAM/direct_mygo_inline
+44,Miscellaneous/RISC-V/ROM,ROM,direct_mygo_inline,PASS,"Starting ROM Testbench...
+=========== Your Design Passed ===========
+testbench.v:56: $finish called at 40 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/044_Miscellaneous_RISC-V_ROM/direct_mygo_inline
+45,Miscellaneous/RISC-V/alu,alu,direct_mygo_inline,PASS,"WARNING: testbench.v:43: $readmemh(reference.dat): Not enough words in the file for the requested range [0:31].
+===========Your Design Passed===========
+testbench.v:86: $finish called at 175000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/045_Miscellaneous_RISC-V_alu/direct_mygo_inline
+46,Miscellaneous/RISC-V/clkgenerator,clkgenerator,direct_mygo_inline,FAIL,"=========== Test completed with           x failures ===========
+testbench.v:29: $finish called at 100 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/046_Miscellaneous_RISC-V_clkgenerator/direct_mygo_inline
+47,Miscellaneous/RISC-V/instr_reg,instr_reg,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:78: $finish called at 135000 (1ps)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/047_Miscellaneous_RISC-V_instr_reg/direct_mygo_inline
+48,Miscellaneous/RISC-V/pe,pe,direct_mygo_inline,PASS,===========Your Design Passed===========,/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/048_Miscellaneous_RISC-V_pe/direct_mygo_inline
+49,Miscellaneous/Signal generation/signal_generator,signal_generator,direct_mygo_inline,FAIL,"===========Error===========
+testbench.v:39: $finish called at 1010 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/049_Miscellaneous_Signal_generation_signal_generator/direct_mygo_inline
+50,Miscellaneous/Signal generation/square_wave,square_wave,direct_mygo_inline,PASS,"=========== Your Design Passed ===========
+testbench.v:36: $finish called at 1000 (1s)",/home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/direct-mygo-inline-pass1-20260608/050_Miscellaneous_Signal_generation_square_wave/direct_mygo_inline

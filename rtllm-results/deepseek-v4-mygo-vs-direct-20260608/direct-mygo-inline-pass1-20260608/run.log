@@ -1,0 +1,50 @@
+[1/50] direct_mygo_inline Arithmetic/Accumulator/accu -> PASS
+[2/50] direct_mygo_inline Arithmetic/Adder/adder_bcd -> PASS
+[3/50] direct_mygo_inline Arithmetic/Adder/adder_16bit -> PASS
+[4/50] direct_mygo_inline Arithmetic/Comparator/comparator_3bit -> PASS
+[5/50] direct_mygo_inline Arithmetic/Adder/adder_8bit -> PASS
+[6/50] direct_mygo_inline Arithmetic/Adder/adder_pipe_64bit -> PASS
+[7/50] direct_mygo_inline Arithmetic/Comparator/comparator_4bit -> PASS
+[8/50] direct_mygo_inline Arithmetic/Multiplier/multi_8bit -> PASS
+[9/50] direct_mygo_inline Arithmetic/Divider/div_16bit -> FAIL
+[10/50] direct_mygo_inline Arithmetic/Multiplier/multi_16bit -> PASS
+[11/50] direct_mygo_inline Arithmetic/Multiplier/multi_booth_8bit -> FAIL
+[12/50] direct_mygo_inline Arithmetic/Multiplier/multi_pipe_4bit -> PASS
+[13/50] direct_mygo_inline Arithmetic/Other/fixed_point_adder -> FAIL
+[14/50] direct_mygo_inline Arithmetic/Adder/adder_32bit -> PASS
+[15/50] direct_mygo_inline Arithmetic/Other/fixed_point_substractor -> COMPILE_FAIL
+[16/50] direct_mygo_inline Arithmetic/Multiplier/multi_pipe_8bit -> FAIL
+[17/50] direct_mygo_inline Control/Counter/JC_counter -> PASS
+[18/50] direct_mygo_inline Control/Counter/counter_12 -> PASS
+[19/50] direct_mygo_inline Control/Counter/ring_counter -> FAIL
+[20/50] direct_mygo_inline Arithmetic/Substractor/sub_64bit -> PASS
+[21/50] direct_mygo_inline Control/Counter/up_down_counter -> PASS
+[22/50] direct_mygo_inline Control/Finite State Machine/sequence_detector -> PASS
+[23/50] direct_mygo_inline Control/Finite State Machine/fsm -> PASS
+[24/50] direct_mygo_inline Memory/LIFO/LIFObuffer -> FAIL
+[25/50] direct_mygo_inline Memory/Shifter/LFSR -> PASS
+[26/50] direct_mygo_inline Memory/Shifter/right_shifter -> PASS
+[27/50] direct_mygo_inline Miscellaneous/Frequency divider/freq_div -> PASS
+[28/50] direct_mygo_inline Miscellaneous/Frequency divider/freq_divbyeven -> FAIL
+[29/50] direct_mygo_inline Arithmetic/Other/float_multi -> FAIL
+[30/50] direct_mygo_inline Miscellaneous/Others/calendar -> PASS
+[31/50] direct_mygo_inline Miscellaneous/Frequency divider/freq_divbyodd -> PASS
+[32/50] direct_mygo_inline Miscellaneous/Frequency divider/freq_divbyfrac -> FAIL
+[33/50] direct_mygo_inline Miscellaneous/Others/edge_detect -> PASS
+[34/50] direct_mygo_inline Miscellaneous/Others/parallel2serial -> PASS
+[35/50] direct_mygo_inline Miscellaneous/Others/pulse_detect -> FAIL
+[36/50] direct_mygo_inline Miscellaneous/Others/synchronizer -> PASS
+[37/50] direct_mygo_inline Miscellaneous/Others/width_8to16 -> PASS
+[38/50] direct_mygo_inline Miscellaneous/Others/traffic_light -> FAIL
+[39/50] direct_mygo_inline Miscellaneous/RISC-V/RAM -> PASS
+[40/50] direct_mygo_inline Memory/Shifter/barrel_shifter -> FAIL
+[41/50] direct_mygo_inline Miscellaneous/RISC-V/clkgenerator -> FAIL
+[42/50] direct_mygo_inline Miscellaneous/RISC-V/alu -> PASS
+[43/50] direct_mygo_inline Miscellaneous/RISC-V/pe -> PASS
+[44/50] direct_mygo_inline Miscellaneous/RISC-V/instr_reg -> PASS
+[45/50] direct_mygo_inline Miscellaneous/Signal generation/square_wave -> PASS
+[46/50] direct_mygo_inline Miscellaneous/Signal generation/signal_generator -> FAIL
+[47/50] direct_mygo_inline Miscellaneous/RISC-V/ROM -> PASS
+[48/50] direct_mygo_inline Arithmetic/Divider/radix2_div -> TIMEOUT
+[49/50] direct_mygo_inline Miscellaneous/Others/serial2parallel -> TIMEOUT
+[50/50] direct_mygo_inline Memory/FIFO/asyn_fifo -> TIMEOUT

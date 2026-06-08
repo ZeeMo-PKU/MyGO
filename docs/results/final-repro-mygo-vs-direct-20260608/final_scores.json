@@ -1,0 +1,1156 @@
+{
+  "root": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521",
+  "scores": [
+    {
+      "benchmark": "CVDP cid003",
+      "path": "direct",
+      "total": 78,
+      "pass": 51,
+      "rate": 65.38461538461539,
+      "counts": {
+        "FAIL": 27,
+        "PASS": 51
+      },
+      "rows": [
+        {
+          "id": "cvdp_copilot_16qam_mapper_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/01_cvdp_copilot_16qam_mapper_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_16qam_mapper_0006",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/02_cvdp_copilot_16qam_mapper_0006/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_64b66b_encoder_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/03_cvdp_copilot_64b66b_encoder_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_8x3_priority_encoder_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/04_cvdp_copilot_8x3_priority_encoder_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_Carry_Lookahead_Adder_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/05_cvdp_copilot_Carry_Lookahead_Adder_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_GFCM_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/06_cvdp_copilot_GFCM_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_apb_dsp_unit_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/07_cvdp_copilot_apb_dsp_unit_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_apb_gpio_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/08_cvdp_copilot_apb_gpio_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_apb_history_shift_register_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/09_cvdp_copilot_apb_history_shift_register_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_axi_register_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/10_cvdp_copilot_axi_register_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_axi_stream_upscale_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/11_cvdp_copilot_axi_stream_upscale_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_axil_precision_counter_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/12_cvdp_copilot_axil_precision_counter_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_axis_joiner_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/13_cvdp_copilot_axis_joiner_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_barrel_shifter_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/14_cvdp_copilot_barrel_shifter_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_bcd_counter_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/15_cvdp_copilot_bcd_counter_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_bcd_to_excess_3_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/16_cvdp_copilot_bcd_to_excess_3_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_binary_to_one_hot_decoder_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/17_cvdp_copilot_binary_to_one_hot_decoder_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_caesar_cipher_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/18_cvdp_copilot_caesar_cipher_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_car_parking_management_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/19_cvdp_copilot_car_parking_management_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_cascaded_adder_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/20_cvdp_copilot_cascaded_adder_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_clock_divider_0003",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/21_cvdp_copilot_clock_divider_0003/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_comparator_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/22_cvdp_copilot_comparator_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_complex_multiplier_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/23_cvdp_copilot_complex_multiplier_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_concatenate_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/24_cvdp_copilot_concatenate_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_configurable_digital_low_pass_filter_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/25_cvdp_copilot_configurable_digital_low_pass_filter_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_configurable_digital_low_pass_filter_0004",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/26_cvdp_copilot_configurable_digital_low_pass_filter_0004/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_configurable_digital_low_pass_filter_0014",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/27_cvdp_copilot_configurable_digital_low_pass_filter_0014/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_convolutional_encoder_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/28_cvdp_copilot_convolutional_encoder_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_data_bus_controller_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/29_cvdp_copilot_data_bus_controller_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_data_width_converter_0003",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/30_cvdp_copilot_data_width_converter_0003/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_dbi_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/31_cvdp_copilot_dbi_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_decode_firstbit_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/32_cvdp_copilot_decode_firstbit_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_digital_dice_roller_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/33_cvdp_copilot_digital_dice_roller_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_digital_stopwatch_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/34_cvdp_copilot_digital_stopwatch_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_edge_detector_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/35_cvdp_copilot_edge_detector_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_ethernet_packet_parser_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/36_cvdp_copilot_ethernet_packet_parser_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_events_to_apb_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/37_cvdp_copilot_events_to_apb_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_factorial_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/38_cvdp_copilot_factorial_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_fibonacci_series_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/39_cvdp_copilot_fibonacci_series_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_fifo_async_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/40_cvdp_copilot_fifo_async_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_filo_0005",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/41_cvdp_copilot_filo_0005/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_fsm_seq_detector_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/42_cvdp_copilot_fsm_seq_detector_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_gcd_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/43_cvdp_copilot_gcd_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_gf_multiplier_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/44_cvdp_copilot_gf_multiplier_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_hamming_code_tx_and_rx_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/45_cvdp_copilot_hamming_code_tx_and_rx_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_hamming_code_tx_and_rx_0003",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/46_cvdp_copilot_hamming_code_tx_and_rx_0003/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_hebbian_rule_0017",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/47_cvdp_copilot_hebbian_rule_0017/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_hill_cipher_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/48_cvdp_copilot_hill_cipher_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_load_store_unit_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/49_cvdp_copilot_load_store_unit_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_matrix_multiplier_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/50_cvdp_copilot_matrix_multiplier_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_microcode_sequencer_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/51_cvdp_copilot_microcode_sequencer_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_morse_code_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/52_cvdp_copilot_morse_code_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_moving_average_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/53_cvdp_copilot_moving_average_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_nbit_swizzling_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/54_cvdp_copilot_nbit_swizzling_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_packet_controller_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/55_cvdp_copilot_packet_controller_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_palindrome_3b_0002",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/56_cvdp_copilot_palindrome_3b_0002/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_perceptron_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/57_cvdp_copilot_perceptron_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_perf_counters_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/58_cvdp_copilot_perf_counters_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_perfect_squares_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/59_cvdp_copilot_perfect_squares_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_piso_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/60_cvdp_copilot_piso_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_prbs_gen_0003",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/61_cvdp_copilot_prbs_gen_0003/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_restoring_division_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/62_cvdp_copilot_restoring_division_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_reverse_bits_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/63_cvdp_copilot_reverse_bits_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_secure_read_write_bus_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/64_cvdp_copilot_secure_read_write_bus_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_secure_read_write_register_bank_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/65_cvdp_copilot_secure_read_write_register_bank_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_sequencial_binary_to_one_hot_decoder_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/66_cvdp_copilot_sequencial_binary_to_one_hot_decoder_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_serial_in_parallel_out_0004",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/67_cvdp_copilot_serial_in_parallel_out_0004/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_set_bit_calculator_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/68_cvdp_copilot_set_bit_calculator_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_sorter_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/69_cvdp_copilot_sorter_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_static_branch_predict_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/70_cvdp_copilot_static_branch_predict_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_sync_lifo_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/71_cvdp_copilot_sync_lifo_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_sync_serial_communication_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/72_cvdp_copilot_sync_serial_communication_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_thermostat_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/73_cvdp_copilot_thermostat_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_ttc_lite_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/74_cvdp_copilot_ttc_lite_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_unpacker_one_hot_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/75_cvdp_copilot_unpacker_one_hot_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_vending_machine_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/76_cvdp_copilot_vending_machine_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_vga_controller_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/77_cvdp_copilot_vga_controller_0001/test_result.json"
+        },
+        {
+          "id": "cvdp_copilot_wb2ahb_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_direct/78_cvdp_copilot_wb2ahb_0001/test_result.json"
+        }
+      ]
+    },
+    {
+      "benchmark": "CVDP cid003",
+      "path": "mygo",
+      "total": 78,
+      "pass": 48,
+      "rate": 61.53846153846154,
+      "counts": {
+        "FAIL": 26,
+        "MODEL_ERROR": 1,
+        "MYGO_COMPILE_ERROR": 3,
+        "PASS": 48
+      },
+      "rows": [
+        {
+          "id": "cvdp_copilot_16qam_mapper_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/01_cvdp_copilot_16qam_mapper_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_16qam_mapper_0006",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/02_cvdp_copilot_16qam_mapper_0006/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_64b66b_encoder_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/03_cvdp_copilot_64b66b_encoder_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_8x3_priority_encoder_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/04_cvdp_copilot_8x3_priority_encoder_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_Carry_Lookahead_Adder_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/05_cvdp_copilot_Carry_Lookahead_Adder_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_GFCM_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/06_cvdp_copilot_GFCM_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_apb_dsp_unit_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/07_cvdp_copilot_apb_dsp_unit_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_apb_gpio_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/08_cvdp_copilot_apb_gpio_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_apb_history_shift_register_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/09_cvdp_copilot_apb_history_shift_register_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_axi_register_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/10_cvdp_copilot_axi_register_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_axi_stream_upscale_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/11_cvdp_copilot_axi_stream_upscale_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_axil_precision_counter_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/12_cvdp_copilot_axil_precision_counter_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_axis_joiner_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/13_cvdp_copilot_axis_joiner_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_barrel_shifter_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/14_cvdp_copilot_barrel_shifter_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_bcd_counter_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/15_cvdp_copilot_bcd_counter_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_bcd_to_excess_3_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/16_cvdp_copilot_bcd_to_excess_3_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_binary_to_one_hot_decoder_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/17_cvdp_copilot_binary_to_one_hot_decoder_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_caesar_cipher_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/18_cvdp_copilot_caesar_cipher_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_car_parking_management_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/19_cvdp_copilot_car_parking_management_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_cascaded_adder_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/20_cvdp_copilot_cascaded_adder_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_clock_divider_0003",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/21_cvdp_copilot_clock_divider_0003/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_comparator_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/22_cvdp_copilot_comparator_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_complex_multiplier_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/23_cvdp_copilot_complex_multiplier_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_concatenate_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/24_cvdp_copilot_concatenate_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_configurable_digital_low_pass_filter_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/25_cvdp_copilot_configurable_digital_low_pass_filter_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_configurable_digital_low_pass_filter_0004",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/26_cvdp_copilot_configurable_digital_low_pass_filter_0004/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_configurable_digital_low_pass_filter_0014",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/27_cvdp_copilot_configurable_digital_low_pass_filter_0014/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_convolutional_encoder_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/28_cvdp_copilot_convolutional_encoder_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_data_bus_controller_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/29_cvdp_copilot_data_bus_controller_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_data_width_converter_0003",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/30_cvdp_copilot_data_width_converter_0003/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_dbi_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/31_cvdp_copilot_dbi_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_decode_firstbit_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/32_cvdp_copilot_decode_firstbit_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_digital_dice_roller_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/33_cvdp_copilot_digital_dice_roller_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_digital_stopwatch_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/34_cvdp_copilot_digital_stopwatch_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_edge_detector_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/35_cvdp_copilot_edge_detector_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_ethernet_packet_parser_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/36_cvdp_copilot_ethernet_packet_parser_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_events_to_apb_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/37_cvdp_copilot_events_to_apb_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_factorial_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/38_cvdp_copilot_factorial_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_fibonacci_series_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/39_cvdp_copilot_fibonacci_series_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_fifo_async_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/40_cvdp_copilot_fifo_async_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_filo_0005",
+          "status": "MYGO_COMPILE_ERROR",
+          "reason": "MyGo compile failed after DeepSeek revision attempts: MyGo verilog TIMEOUT after 95.1s",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/41_cvdp_copilot_filo_0005/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_fsm_seq_detector_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/42_cvdp_copilot_fsm_seq_detector_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_gcd_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/43_cvdp_copilot_gcd_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_gf_multiplier_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/44_cvdp_copilot_gf_multiplier_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_hamming_code_tx_and_rx_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/45_cvdp_copilot_hamming_code_tx_and_rx_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_hamming_code_tx_and_rx_0003",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/46_cvdp_copilot_hamming_code_tx_and_rx_0003/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_hebbian_rule_0017",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/47_cvdp_copilot_hebbian_rule_0017/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_hill_cipher_0001",
+          "status": "MYGO_COMPILE_ERROR",
+          "reason": "MyGo compile failed after DeepSeek revision attempts: MyGo mlir TIMEOUT after 90.0s",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/48_cvdp_copilot_hill_cipher_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_load_store_unit_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/49_cvdp_copilot_load_store_unit_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_matrix_multiplier_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/50_cvdp_copilot_matrix_multiplier_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_microcode_sequencer_0001",
+          "status": "MODEL_ERROR",
+          "reason": "RuntimeError: Model returned empty response",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/51_cvdp_copilot_microcode_sequencer_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_morse_code_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/52_cvdp_copilot_morse_code_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_moving_average_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/53_cvdp_copilot_moving_average_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_nbit_swizzling_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/54_cvdp_copilot_nbit_swizzling_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_packet_controller_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/55_cvdp_copilot_packet_controller_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_palindrome_3b_0002",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/56_cvdp_copilot_palindrome_3b_0002/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_perceptron_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/57_cvdp_copilot_perceptron_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_perf_counters_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/58_cvdp_copilot_perf_counters_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_perfect_squares_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/59_cvdp_copilot_perfect_squares_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_piso_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/60_cvdp_copilot_piso_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_prbs_gen_0003",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/61_cvdp_copilot_prbs_gen_0003/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_restoring_division_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/62_cvdp_copilot_restoring_division_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_reverse_bits_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/63_cvdp_copilot_reverse_bits_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_secure_read_write_bus_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/64_cvdp_copilot_secure_read_write_bus_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_secure_read_write_register_bank_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/65_cvdp_copilot_secure_read_write_register_bank_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_sequencial_binary_to_one_hot_decoder_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/66_cvdp_copilot_sequencial_binary_to_one_hot_decoder_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_serial_in_parallel_out_0004",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/67_cvdp_copilot_serial_in_parallel_out_0004/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_set_bit_calculator_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/68_cvdp_copilot_set_bit_calculator_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_sorter_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/69_cvdp_copilot_sorter_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_static_branch_predict_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/70_cvdp_copilot_static_branch_predict_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_sync_lifo_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/71_cvdp_copilot_sync_lifo_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_sync_serial_communication_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/72_cvdp_copilot_sync_serial_communication_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_thermostat_0001",
+          "status": "FAIL",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/73_cvdp_copilot_thermostat_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_ttc_lite_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/74_cvdp_copilot_ttc_lite_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_unpacker_one_hot_0001",
+          "status": "MYGO_COMPILE_ERROR",
+          "reason": "MyGo compile failed after DeepSeek revision attempts: MyGo ir FAIL. error: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:13:19: ^uint64(0) << 1 (constant 36893488147419103230 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:21:19: ^uint64(0) << 1 (constant 36893488147419103230 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:29:19: ^uint64(0) << 1 (constant 36893488147419103230 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:37:19: ^uint64(0) << 1 (constant 36893488147419103230 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:45:19: ^uint64(0) << 1 (constant 36893488147419103230 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:53:19: ^uint64(0) << 1 (constant 36893488147419103230 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:61:19: ^uint64(0) << 1 (constant 36893488147419103230 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:69:19: ^uint64(0) << 1 (constant 36893488147419103230 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:77:19: ^uint64(0) << 2 (constant 73786976294838206460 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:85:19: ^uint64(0) << 2 (constant 73786976294838206460 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:93:19: ^uint64(0) << 2 (constant 73786976294838206460 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:101:19: ^uint64(0) << 2 (constant 73786976294838206460 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:109:19: ^uint64(0) << 2 (constant 73786976294838206460 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:117:19: ^uint64(0) << 2 (constant 73786976294838206460 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:125:19: ^uint64(0) << 2 (constant 73786976294838206460 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:133:19: ^uint64(0) << 2 (constant 73786976294838206460 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:142:20: ^uint64(0) << 8 (constant 4722366482869645213440 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:150:20: ^uint64(0) << 8 (constant 4722366482869645213440 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:158:20: ^uint64(0) << 8 (constant 4722366482869645213440 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:166:20: ^uint64(0) << 8 (constant 4722366482869645213440 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:174:20: ^uint64(0) << 4 (constant 295147905179352825840 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:182:20: ^uint64(0) << 4 (constant 295147905179352825840 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:190:20: ^uint64(0) << 4 (constant 295147905179352825840 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:198:20: ^uint64(0) << 4 (constant 295147905179352825840 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:206:20: ^uint64(0) << 4 (constant 295147905179352825840 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:214:20: ^uint64(0) << 4 (constant 295147905179352825840 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:222:20: ^uint64(0) << 4 (constant 295147905179352825840 of type uint64) overflows uint64\nerror: /tmp/mygo_cvdp_work/75_cvdp_copilot_unpacker_one_hot_0001_1780931350398_2915734/main.go:230:20: ^uint64(0) << 4 (constant 295147905179352825840 of type uint64) overflows uint64\npackage loading failed",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/75_cvdp_copilot_unpacker_one_hot_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_vending_machine_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/76_cvdp_copilot_vending_machine_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_vga_controller_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/77_cvdp_copilot_vga_controller_0001/测试结果.json"
+        },
+        {
+          "id": "cvdp_copilot_wb2ahb_0001",
+          "status": "PASS",
+          "reason": "",
+          "file": "/home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521/results/cvdp_mygo_envfix/78_cvdp_copilot_wb2ahb_0001/测试结果.json"
+        }
+      ]
+    },
+    {
+      "benchmark": "RTLLM",
+      "path": "direct_verilog",
+      "total": 50,
+      "pass": 26,
+      "rate": 52.0,
+      "counts": {
+        "PASS": 26,
+        "FAIL": 22,
+        "TIMEOUT": 2
+      }
+    },
+    {
+      "benchmark": "RTLLM",
+      "path": "mygo",
+      "total": 50,
+      "pass": 5,
+      "rate": 10.0,
+      "counts": {
+        "FAIL": 43,
+        "PASS": 5,
+        "TIMEOUT": 1,
+        "MYGO_COMPILE_ERROR": 1
+      }
+    },
+    {
+      "benchmark": "Verilog-Eval",
+      "path": "path_a",
+      "total": 151,
+      "pass": 108,
+      "rate": 71.52317880794702,
+      "counts": {
+        "equivalent": 108,
+        "iverilog_failed": 26,
+        "not_equivalent": 17
+      }
+    },
+    {
+      "benchmark": "Verilog-Eval",
+      "path": "path_b",
+      "total": 151,
+      "pass": 97,
+      "rate": 64.23841059602648,
+      "counts": {
+        "equivalent": 97,
+        "go_compile_failed": 26,
+        "go_compile_timeout": 1,
+        "not_equivalent": 27
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "name": "cvdp_direct_cvdp_shard_00",
+      "pid": 2831334,
+      "alive": false
+    },
+    {
+      "name": "cvdp_direct_cvdp_shard_01",
+      "pid": 2831336,
+      "alive": false
+    },
+    {
+      "name": "cvdp_direct_cvdp_shard_02",
+      "pid": 2831338,
+      "alive": false
+    },
+    {
+      "name": "cvdp_direct_cvdp_shard_03",
+      "pid": 2831340,
+      "alive": false
+    },
+    {
+      "name": "cvdp_direct_cvdp_shard_04",
+      "pid": 2831342,
+      "alive": false
+    },
+    {
+      "name": "cvdp_direct_cvdp_shard_05",
+      "pid": 2831344,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_cvdp_shard_00",
+      "pid": 2831346,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_cvdp_shard_01",
+      "pid": 2831348,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_cvdp_shard_02",
+      "pid": 2831350,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_cvdp_shard_03",
+      "pid": 2831352,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_cvdp_shard_04",
+      "pid": 2831354,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_cvdp_shard_05",
+      "pid": 2831356,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_envfix_shard_00",
+      "pid": 2915728,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_envfix_shard_01",
+      "pid": 2915731,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_envfix_shard_02",
+      "pid": 2915734,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_envfix_shard_03",
+      "pid": 2915737,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_envfix_shard_04",
+      "pid": 2915740,
+      "alive": false
+    },
+    {
+      "name": "cvdp_mygo_envfix_shard_05",
+      "pid": 2915743,
+      "alive": false
+    },
+    {
+      "name": "rtllm_both",
+      "pid": 2831357,
+      "alive": false
+    },
+    {
+      "name": "rtllm_both_rerun_envfix",
+      "pid": 2862601,
+      "alive": false
+    },
+    {
+      "name": "verilog_eval_both",
+      "pid": 2874340,
+      "alive": false
+    },
+    {
+      "name": "verilog_eval_shard_00",
+      "pid": 2937887,
+      "alive": false
+    },
+    {
+      "name": "verilog_eval_shard_01",
+      "pid": 2937890,
+      "alive": false
+    },
+    {
+      "name": "verilog_eval_shard_02",
+      "pid": 2937893,
+      "alive": false
+    },
+    {
+      "name": "verilog_eval_shard_03",
+      "pid": 2937896,
+      "alive": false
+    },
+    {
+      "name": "verilog_eval_shard_04",
+      "pid": 2937899,
+      "alive": false
+    },
+    {
+      "name": "verilog_eval_shard_05",
+      "pid": 2937902,
+      "alive": false
+    }
+  ]
+}

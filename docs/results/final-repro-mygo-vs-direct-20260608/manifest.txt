@@ -1,0 +1,14 @@
+created_at: 2026-06-08T21:52:55+08:00
+root: /home/rongxv/work/final-repro-mygo-vs-direct-20260608-212521
+python: /home/rongxv/venvs/cvdp-test/bin/python
+model: deepseek/deepseek-v4-pro
+key_file: /home/rongxv/work/secrets/openrouter_key.txt
+mygo_repo: /home/rongxv/work/MyGo-PR21-repro-20260607-165808
+mygo_commit: f86c2c5fbf289b6b39a53d6a31fcd1ec4efa72e2
+rtllm_runner_repo: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/MyGO
+rtllm_runner_commit: 9699ebdf84ace8daa67388d8197099d7d12c044b
+rtllm_root: /home/rongxv/work/rtllm-runs/dsv4-mygo-vs-direct-20260608-005901/RTLLM-41b2689
+rtllm_commit: 41b26896e33b536940116a975626455eed3de65e
+cvdp_assets: /home/rongxv/work/cvdp-assets
+circt_opt: /home/rongxv/work/tools/circt/firtool-1.146.0/bin/circt-opt
+mygo_bin: /home/rongxv/work/MyGo-PR21-repro-20260607-165808/bin/mygo

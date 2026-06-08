@@ -37,6 +37,7 @@ These suites gracefully skip Verilog/Sim checks if `circt-opt` or `verilator` is
 ---
 
 ## Docs
+- `docs/results/final-repro-mygo-vs-direct-20260608/` -- final 2026-06-08 MyGo vs direct-Verilog reproduction scores.
 - `docs/compile.md` – full `mygo compile` flag reference, SSA/IR dump modes, lint workflow notes, FIFO guidance, and golden generation tips.
 - `docs/sim.md` – simulator options, default Verilator flow, test structure, and how goldens/expectations work.
 - `docs/phi-repro.md` – current known issues such as the `phi_loop` workload.

@@ -1,4 +1,4 @@
-# CVDP MyGo port-wrapper fix evidence (2026-06-09)
+﻿# CVDP MyGo port-wrapper fix evidence (2026-06-09)
 
 ## Scope
 
@@ -50,10 +50,10 @@ Summary:
 | `24_cvdp_copilot_concatenate_0001` | FAIL | Port compile issue fixed; now real functional failure: FSM status expected 2, got 1. |
 | `30_cvdp_copilot_data_width_converter_0003` | FAIL | Port compile issue fixed; now real functional failure: output remains 0. |
 | `68_cvdp_copilot_set_bit_calculator_0001` | FAIL | Parameter/input confusion fixed; now real functional failure: count remains 0. |
-| `28_cvdp_copilot_convolutional_encoder_0001` | FAIL | Testbench expects internal `shift_reg`; MyGo output lacks that hierarchy. |
-| `33_cvdp_copilot_digital_dice_roller_0001` | FAIL | Testbench expects parameter/internal `DICE_MAX`; generated design lacks it. |
-| `40_cvdp_copilot_fifo_async_0001` | FAIL | Testbench expects parameter/internal `DEPTH`; generated design lacks it. |
-| `70_cvdp_copilot_static_branch_predict_0001` | FAIL | Testbench drives `register_addr_i`, which is not in the parsed top-level interface. |
+| `28_cvdp_copilot_convolutional_encoder_0001` | FAIL | Harness/interface mismatch: testbench expects internal `shift_reg`; generated/wrapped design lacks that hierarchy. |
+| `33_cvdp_copilot_digital_dice_roller_0001` | FAIL | Harness/interface mismatch: testbench expects a parameter/internal object such as `DICE_MAX`; generated/wrapped design does not expose it. |
+| `40_cvdp_copilot_fifo_async_0001` | FAIL | Harness/interface mismatch: testbench expects a parameter/internal object such as `DEPTH`; generated/wrapped design does not expose it. |
+| `70_cvdp_copilot_static_branch_predict_0001` | FAIL | Harness/interface mismatch: testbench drives `register_addr_i`, which is not in the parsed top-level interface. |
 
 Projected CVDP MyGo env-fixed score if these rerun results replace the original missing-port failures:
 
@@ -67,3 +67,4 @@ Projected CVDP MyGo env-fixed score if these rerun results replace the original 
 - `/home/rongxv/work/cvdp-runs/run_cvdp_deepseek_mygo_go124_local.py`
 
 The existing MyGo compiler files `internal/mlir/emitter.go` and `internal/mlir/emitter_test.go` were already dirty and were not modified by this port-wrapper fix.
+

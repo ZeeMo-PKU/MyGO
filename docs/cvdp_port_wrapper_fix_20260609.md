@@ -43,6 +43,8 @@ Rerun path:
 
 Summary:
 
+Attribution note: remaining `contains no child object named ...` failures are reported as answer errors, not formatting mismatches. They mean the generated/wrapped design does not provide a signal or hierarchy object required by the benchmark test contract.
+
 | Case | Result after fix | Remaining issue |
 |---|---:|---|
 | `03_cvdp_copilot_64b66b_encoder_0001` | PASS | Fixed by split-output wrapper. |
@@ -50,10 +52,10 @@ Summary:
 | `24_cvdp_copilot_concatenate_0001` | FAIL | Port compile issue fixed; now real functional failure: FSM status expected 2, got 1. |
 | `30_cvdp_copilot_data_width_converter_0003` | FAIL | Port compile issue fixed; now real functional failure: output remains 0. |
 | `68_cvdp_copilot_set_bit_calculator_0001` | FAIL | Parameter/input confusion fixed; now real functional failure: count remains 0. |
-| `28_cvdp_copilot_convolutional_encoder_0001` | FAIL | Harness/interface mismatch: testbench expects internal `shift_reg`; generated/wrapped design lacks that hierarchy. |
-| `33_cvdp_copilot_digital_dice_roller_0001` | FAIL | Harness/interface mismatch: testbench expects a parameter/internal object such as `DICE_MAX`; generated/wrapped design does not expose it. |
-| `40_cvdp_copilot_fifo_async_0001` | FAIL | Harness/interface mismatch: testbench expects a parameter/internal object such as `DEPTH`; generated/wrapped design does not expose it. |
-| `70_cvdp_copilot_static_branch_predict_0001` | FAIL | Harness/interface mismatch: testbench drives `register_addr_i`, which is not in the parsed top-level interface. |
+| `28_cvdp_copilot_convolutional_encoder_0001` | FAIL | Answer error: missing required signal. The test expects internal `shift_reg`, but the generated/wrapped design does not provide it. |
+| `33_cvdp_copilot_digital_dice_roller_0001` | FAIL | Answer error: missing required signal. The test expects a parameter/internal object such as `DICE_MAX`, but the generated/wrapped design does not expose it. |
+| `40_cvdp_copilot_fifo_async_0001` | FAIL | Answer error: missing required signal. The test expects a parameter/internal object such as `DEPTH`, but the generated/wrapped design does not expose it. |
+| `70_cvdp_copilot_static_branch_predict_0001` | FAIL | Answer error: missing required signal. The test drives `register_addr_i`, but the generated/wrapped design does not provide that required signal. |
 
 Projected CVDP MyGo env-fixed score if these rerun results replace the original missing-port failures:
 

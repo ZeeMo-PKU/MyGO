@@ -1,0 +1,74 @@
+[
+  {
+    "id": "03_cvdp_copilot_64b66b_encoder_0001",
+    "status": "PASS",
+    "returncode": 0,
+    "elapsed_seconds": 0.526,
+    "missing_port_error": false,
+    "target": "encoder_64b66b"
+  },
+  {
+    "id": "24_cvdp_copilot_concatenate_0001",
+    "status": "FAIL",
+    "returncode": 0,
+    "elapsed_seconds": 0.457,
+    "missing_port_error": false,
+    "target": "enhanced_fsm_signal_processor"
+  },
+  {
+    "id": "28_cvdp_copilot_convolutional_encoder_0001",
+    "status": "FAIL",
+    "returncode": 0,
+    "elapsed_seconds": 0.447,
+    "missing_port_error": true,
+    "target": "convolutional_encoder"
+  },
+  {
+    "id": "30_cvdp_copilot_data_width_converter_0003",
+    "status": "FAIL",
+    "returncode": 0,
+    "elapsed_seconds": 0.429,
+    "missing_port_error": false,
+    "target": "data_width_converter"
+  },
+  {
+    "id": "33_cvdp_copilot_digital_dice_roller_0001",
+    "status": "FAIL",
+    "returncode": 0,
+    "elapsed_seconds": 0.459,
+    "missing_port_error": true,
+    "target": "digital_dice_roller"
+  },
+  {
+    "id": "40_cvdp_copilot_fifo_async_0001",
+    "status": "FAIL",
+    "returncode": 0,
+    "elapsed_seconds": 0.601,
+    "missing_port_error": true,
+    "target": "fifo_async"
+  },
+  {
+    "id": "68_cvdp_copilot_set_bit_calculator_0001",
+    "status": "FAIL",
+    "returncode": 0,
+    "elapsed_seconds": 0.446,
+    "missing_port_error": false,
+    "target": "SetBitStreamCalculator"
+  },
+  {
+    "id": "70_cvdp_copilot_static_branch_predict_0001",
+    "status": "FAIL",
+    "returncode": 0,
+    "elapsed_seconds": 0.53,
+    "missing_port_error": true,
+    "target": "static_branch_predict"
+  },
+  {
+    "id": "73_cvdp_copilot_thermostat_0001",
+    "status": "PASS",
+    "returncode": 0,
+    "elapsed_seconds": 0.447,
+    "missing_port_error": false,
+    "target": "thermostat"
+  }
+]

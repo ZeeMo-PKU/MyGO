@@ -88,6 +88,18 @@ MyGO Go DSL — complete reference:
 - Wide vectors: [N]bool for 100+ bit ports. Index 0 = LSB.
 - No return values, pointers, structs, interfaces, maps, select, recursion.
 
+=== GLOBAL GENERATION GUARDRAILS ===
+- Do not use imports, fmt, unsafe, goroutines, channels, pointers, dynamic slices, maps, structs, recursion, or software-style helpers.
+- Keep `TopModule` as the only hardware function. Helper stubs are allowed only for MyGO builtins listed below: Latch, NegEdgeFF, BitsAnd/BitsOr/BitsXor/BitsNot/BitsShiftLeft/BitsShiftRight/BitsAnd3/BitsOr3.
+- Do not use arrays as memories, register banks, queues, or lookup tables. Fixed `[N]bool` arrays are allowed only when the port itself is a very wide bit-vector or when calling the listed wide-vector helper stubs.
+- Avoid `for`/`range` loops in generated logic. For wide vector operations use the Bits* helper stubs; for small decoders use direct bitwise/arithmetic expressions or a short explicit if/else chain.
+- For adders/subtractors/comparators up to 64 bits, use integer arithmetic directly. Do not expand every bit into separate bool carry variables; that can make MyGO/CIRCT compilation explode.
+- Example 8-bit adder: `tmp := uint16(a) + uint16(b); if cin { tmp++ }; out_sum = uint8(tmp & 0xff); out_cout = (tmp >> 8) != 0`.
+- For sequential designs, use package-level registers. Handle reset first, then update every related register in one clocked block. Do not keep persistent state in local variables.
+- If the clock input is bool, use `if reset { ... } else if clk { ... }`; if the clock input is numeric, use `if reset != 0 { ... } else if clk != 0 { ... }`.
+- Do not assign persistent outputs only inside `if clk`; assign `out_*` from package-level output registers after the clocked block so sampled outputs remain stable.
+- Avoid overflowing masks: cast to a wider unsigned type before masking, e.g. `tmp := uint32(a) + uint32(b); out_sum = uint16(tmp & 0xffff)`.
+
 === RESET PATTERNS (critical — #1 source of errors) ===
 Synchronous reset (param named "reset"):
     if clk { if reset { state = 0 } else { state = next } }
@@ -438,7 +450,11 @@ def run_path_b(case_info, fewshot, output_dir):
         "(2) For combinational FSMs where state is an INPUT: assign out_next_state directly inside each switch case — do NOT use a local `next` variable. "
         "(3) For transparent latches: use `out_p = Latch(clock, a)` builtin. For negedge FF: use `out_q = NegEdgeFF(clock, a)` builtin. "
         "(4) For wide [N]bool bitwise ops (100+ bits): use BitsAnd/BitsOr/BitsNot/BitsShiftLeft/BitsShiftRight helper stubs. "
-        "(5) NEVER add intermediate state variables or extra pipeline stages unless the spec explicitly requires them."
+        "(5) NEVER add intermediate state variables or extra pipeline stages unless the spec explicitly requires them. "
+        "(6) Do not use arrays as memories/register banks; fixed [N]bool arrays are only for wide vector ports and Bits* helper stubs. "
+        "(7) Avoid for/range loops; use direct expressions, short if/else chains, or Bits* helpers. "
+        "(8) For small adders/subtractors/comparators use integer arithmetic with a wider temporary, not bit-by-bit bool carry expansion. "
+        "(9) For numeric clocks use `clk != 0`; for bool clocks use `clk`."
     )
     user_prompt = (
         "Generate one complete Go source file for the MyGO compiler.\n"
@@ -484,6 +500,7 @@ def run_path_b(case_info, fewshot, output_dir):
         repair_prompt = (
             "The following Go code failed to compile. Fix it and return ONLY the corrected Go code.\n"
             "Start with `package main` immediately. No explanations.\n\n"
+            "Keep the same MyGO subset guardrails: no imports/pointers/slices/maps/structs; no helper functions except the documented builtins; no arrays as memories/register banks; fixed [N]bool arrays only for wide vector ports; avoid for/range loops; cast to wider unsigned types before applying large masks.\n\n"
             f"Original task:\n{prompt_text}\n\n"
             f"Reference Verilog:\n{ref_sv}\n\n"
             f"Broken Go code:\n{go_code}\n\n"

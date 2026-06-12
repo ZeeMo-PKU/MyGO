@@ -6363,8 +6363,7 @@ func (p *processPrinter) emitCombinationalRegBlock(block *ir.BasicBlock, active 
 
 	switch term := block.Terminator.(type) {
 	case *ir.BranchTerminator:
-		cond := p.valueRef(term.Cond)
-		cond = p.ensurePlainValueRef(term.Cond, cond)
+		cond := p.controlValueRef(term.Cond)
 		if cond == "" || cond == "%unknown" {
 			cond = p.boolConst(false)
 		}
@@ -6628,8 +6627,7 @@ func (p *processPrinter) emitDirectClockedBlock(block *ir.BasicBlock, active map
 			fmt.Fprintln(p.w, "}")
 			return
 		}
-		cond := p.valueRef(term.Cond)
-		cond = p.ensurePlainValueRef(term.Cond, cond)
+		cond := p.controlValueRef(term.Cond)
 		if cond == "" || cond == "%unknown" {
 			cond = p.boolConst(false)
 		}
@@ -6706,8 +6704,7 @@ func (p *processPrinter) emitDirectClockedBlockForEdge(block *ir.BasicBlock, mod
 			fmt.Fprintln(p.w, "}")
 			return
 		}
-		cond := p.valueRef(term.Cond)
-		cond = p.ensurePlainValueRef(term.Cond, cond)
+		cond := p.controlValueRef(term.Cond)
 		if cond == "" || cond == "%unknown" {
 			cond = p.boolConst(false)
 		}
@@ -8507,7 +8504,46 @@ func (p *processPrinter) clockPortName() string {
 }
 
 func (p *processPrinter) clockPortRef() string {
-	return p.portRef(p.clockPortName())
+	return p.boolLikePortRef(p.clockPortName())
+}
+
+func (p *processPrinter) controlValueRef(sig *ir.Signal) string {
+	if p == nil || sig == nil {
+		return "%unknown"
+	}
+	if val, ok := signalBoolConst(sig); ok {
+		return p.boolConst(val)
+	}
+	ref := p.valueRef(sig)
+	ref = p.ensurePlainValueRef(sig, ref)
+	return p.boolLikeRef(ref)
+}
+
+func (p *processPrinter) boolLikePortRef(name string) string {
+	return p.boolLikeRef(p.portRef(name))
+}
+
+func (p *processPrinter) boolLikeRef(ref string) string {
+	if p == nil || ref == "" || ref == "%unknown" {
+		return ref
+	}
+	if !strings.HasPrefix(ref, "%") || strings.ContainsAny(ref, " \t\n") {
+		return ref
+	}
+	clean := strings.TrimPrefix(ref, "%")
+	if moduleSig, ok := p.moduleSignals[clean]; ok && moduleSig != nil && signalWidth(moduleSig.Type) > 1 {
+		name := p.freshValueName(sanitize(clean) + "_bit")
+		p.printIndent()
+		fmt.Fprintf(p.w, "%s = comb.extract %s from 0 : (%s) -> i1\n", name, ref, typeString(moduleSig.Type))
+		return name
+	}
+	if portType, ok := p.portTypes[clean]; ok && portType != nil && signalWidth(portType) > 1 {
+		name := p.freshValueName(sanitize(clean) + "_bit")
+		p.printIndent()
+		fmt.Fprintf(p.w, "%s = comb.extract %s from 0 : (%s) -> i1\n", name, ref, typeString(portType))
+		return name
+	}
+	return ref
 }
 
 func (p *processPrinter) resetAssertedRef() string {

@@ -28,6 +28,10 @@ Synthesizability requirements:
   3. clocked state updates on the correct edge,
   4. straightforward output logic.
 - Do not use dynamic allocation, maps, recursion, goroutines, interfaces, structs-as-ports, pointers for outputs, or any software-style workaround.
+- Do not use imports, dynamic slices, arrays as memories/register banks, or helper functions except documented MyGO builtins.
+- Fixed `[N]bool` arrays are allowed only for wide vector ports and Bits* helper stubs.
+- Avoid `for`/`range` loops in generated logic; use direct expressions, short if/else chains, or Bits* helpers.
+- Cast to a wider unsigned type before applying large masks or shifts that could overflow the operand type.
 - Do not depend on non-synthesizable behavior, implicit simulator quirks, or undefined values.
 - Do not use unusual coding patterns unless they are clearly required by the circuit itself.
 

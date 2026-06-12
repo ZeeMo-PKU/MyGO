@@ -9,6 +9,8 @@ Generate only valid Go source code for MyGO.
 Follow the provided DSL exactly.
 Outputs must use out_* package globals.
 Do not use pointer outputs or return-value outputs.
+Do not use imports, slices, maps, structs, arrays-as-memories, or helper functions except documented MyGO builtin stubs.
+Use package-level registers for sequential state and keep clock/reset logic in one block.
 ```
 
 ## User Prompt Template
@@ -19,6 +21,12 @@ Return Go code only.
 
 Follow this Go DSL summary exactly:
 {{GO_DSL_SUMMARY}}
+
+Global constraints:
+- Return one complete Go file only.
+- Do not use arrays as memories/register banks; fixed [N]bool arrays are only for wide vector ports and Bits* helper stubs.
+- Avoid for/range loops; use direct expressions, short if/else chains, or Bits* helpers.
+- Cast to wider unsigned types before large masks.
 
 Original task prompt:
 {{TASK_PROMPT}}

@@ -1,4 +1,4 @@
-# MyGO-CVDP cid003 Non-Agentic Experiment Artifacts
+﻿# MyGO-CVDP cid003 Non-Agentic Experiment Artifacts
 
 This directory records a lightweight, reviewable artifact set for a MyGO evaluation on the CVDP cid003 Non-Agentic code-generation subset.
 
@@ -38,14 +38,15 @@ Reviewed category counts:
 - `teacher_report.html`: human-readable summary report.
 - `run_manifest.redacted.json`: redacted run environment metadata.
 - `cid003_non_agentic_whitelist.txt`: case whitelist used by the run.
-- `prompts/<case_id>/problem.md`: original problem text saved for the case.
-- `prompts/<case_id>/prompt.txt`: full prompt sent to the LLM.
-- `prompts/<case_id>/extracted_go.go`: Go code extracted from the LLM response, or a placeholder when no code was extracted.
+- prompts/<case_id>/prompt.txt: full prompt sent to the LLM for each case. The prompt contains the problem context used by the model.
+- prompts/<case_id>/extracted_go.go: Go code extracted from the LLM response, or a placeholder when no code was extracted.
 
 ## Omitted Raw Artifacts
 
-The full raw run directory, Verilog outputs, CVDP simulation logs, and packaged tarball are intentionally not committed here because they are large and noisy for code review. This PR keeps the artifact set small enough for normal repository review while preserving the prompt, generated Go, result table, and reviewed failure analysis.
+The full raw run directory, Verilog outputs, CVDP simulation logs, and packaged tarball are intentionally not committed here because they are large and noisy for code review. This PR keeps the artifact set small enough for normal repository review while preserving the prompt, extracted Go, result table, and reviewed failure analysis.
 
 ## Redaction
 
 The artifact set is redacted to avoid committing local user paths, server secret paths, API-key locations, authorization headers, or large archives.
+
+

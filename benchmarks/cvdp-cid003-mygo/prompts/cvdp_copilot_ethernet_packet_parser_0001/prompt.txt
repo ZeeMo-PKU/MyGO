@@ -1,0 +1,111 @@
+You are generating Go source code for MyGO, a Go-to-RTL compiler.
+Return exactly one Go program that implements the requested RTL module.
+
+Required MyGO shape:
+1. Start with `package main`.
+2. Implement the hardware entry function using exactly the CVDP TOPLEVEL name specified below.
+3. Inputs are ordinary hardware entry function parameters.
+4. Outputs are package-level globals whose names start with `out_`.
+5. Assign outputs by writing directly to those `out_*` globals.
+6. End with `func main() {}`.
+
+Important constraints:
+- Do not return outputs from the hardware entry function.
+- Do not use pointer outputs such as `*bool` or `*uint8`.
+- Avoid structs, interfaces, maps, select, recursion, dynamic goroutines, channels, slices, and heap allocation.
+- Prefer bool for 1-bit signals.
+- Prefer uint8, uint16, uint32, uint64 for packed vectors.
+- Use fixed-size arrays only when a vector is wider than scalar integer types.
+- For vectors represented as arrays, index 0 should represent the least significant bit unless the problem states otherwise.
+- Use only the Go standard language subset that is likely synthesizable by MyGO.
+- Preserve the CVDP module interface semantics in the hardware entry parameters and `out_*` globals.
+- Include helpful comments only where needed.
+
+Output format:
+- Return only Go code.
+- Do not wrap the answer in Markdown fences.
+
+
+CVDP case id: cvdp_copilot_ethernet_packet_parser_0001
+Categories: ['cid003', 'medium']
+Expected RTL file(s) in original benchmark: ['rtl/ethernet_parser.v']
+
+CVDP TOPLEVEL / required MyGO hardware entry function:
+`field_extract`
+
+The Go program must define exactly this hardware entry function:
+`func field_extract(...)`
+
+CVDP harness environment, including expected TOPLEVEL and VERILOG_SOURCES:
+```
+SIM             = icarus
+TOPLEVEL_LANG   = verilog
+VERILOG_SOURCES = /code/rtl/ethernet_parser.v
+TOPLEVEL        = field_extract
+MODULE          = tb
+PYTHONPATH      = /src
+HASH            = 1-ethernet-parser-verilog-code
+```
+
+Original CVDP problem statement:
+```
+**Design a Verilog module to extract specific bytes from a data stream in digital logic. The module interfaces with a simple bus protocol commonly used in FPGA designs. The objective is to extract exactly 2 bytes from a specific beat (the 2nd beat in a burst) of the data stream and output them based on the defined protocol signals. Each data transfer, or beat, sends 32-bit chunks (4 bytes) of data in each cycle.**
+
+### Module Interface:
+
+#### Inputs:
+1. **`clk` (Clock Signal):**  
+   - The module operates synchronously with this clock signal.
+  
+2. **`rst` (Reset Signal):**  
+   - A high-level signal that resets the module, returning it to an idle state and clearing internal state variables.
+
+3. **Protocol Signals from Transmitter:**
+   - **`vld` (1-bit Valid Signal):**  
+     - Indicates that the current data on the bus is valid for processing.
+   - **`sof` (1-bit Start-of-Frame Signal):**  
+     - Asserts at the start of a new packet, initializing the extraction process.
+   - **`data` (32-bit Data Signal):**  
+     - Carries 32 bits of data per cycle, with each beat containing exactly 4 valid bytes.
+   - **`eof` (1-bit End-of-Frame Signal):**  
+     - Marks the end of the current data burst, signaling the module to return to an idle state after completing the extraction.
+
+#### Outputs:
+1. **Protocol Signal to Transmitter:**
+   - **`ack` (1-bit Acknowledge Signal):**  
+     - Fixed as `1`, indicating the receiver always accepts valid data without delay.
+
+2. **Field Extraction Outputs:**
+   - **`field` (16-bit Output):**  
+     - Contains the 2 extracted bytes from the 2nd beat of the burst, specifically the most significant two bytes of the `data` signal (`data[31:16]`).
+   - **`field_vld` (1-bit Field Valid Signal):**  
+     - Signals the validity of the extracted `field`. It is asserted after extracting the 2 bytes from the 2nd beat and cleared once `eof` is asserted.
+
+### Internal Design and Operation:
+
+1. **Beat Counter (`beat_cnt`):**
+   - A 4-bit counter that increments with each valid beat (`vld` asserted). It counts the beats in each burst, ensuring the extraction occurs precisely at the 2nd beat.
+
+2. **Temporary Storage (`temp_extracted_field`):**
+   - A 16-bit register for temporarily storing the extracted bytes. Once the correct beat is reached, the `temp_extracted_field` stores the value of `data[31:16]` from the 2nd beat.
+
+3. **State Machine:**
+   - The module utilizes a 2-bit state machine with four states:
+     - **IDLE (0):**  
+       - Awaits the start of a new packet (`vld` and `sof` asserted together). Initializes internal registers, including clearing the `beat_cnt`, `field`, and `field_vld`.
+     - **EXTRACTING (1):**  
+       - Monitors the beats. At the 2nd beat (`beat_cnt == 1`), the module captures `data[31:16]` into `temp_extracted_field` and prepares to complete extraction.
+     - **DONE (2):**  
+       - Assigns the `temp_extracted_field` to the `field` output and asserts `field_vld`. The `field` output is held steady until `eof` is received, indicating burst completion.
+     - **FAIL_FINAL (3):**  
+       - Clears `field_vld` and resets to IDLE upon detecting `eof`, preparing for the next burst.
+
+### Protocol Compliance:
+
+- The module initiates byte extraction when a new burst begins (`sof` asserted).
+- The beat counter (`beat_cnt`) increments for each beat, tracking the position within the burst.
+- Upon reaching the 2nd beat, it extracts the 2 most significant bytes (`data[31:16]`) and outputs them on `field` once `DONE` is entered.
+- The `ack` signal remains constantly high (`1`), as the receiver does not apply backpressure to the transmitter.
+- At the end of the burst (signaled by `eof`), `field_vld` is cleared, and the state returns to `IDLE`.
+
+```

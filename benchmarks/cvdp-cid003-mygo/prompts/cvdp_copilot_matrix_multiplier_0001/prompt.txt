@@ -1,0 +1,131 @@
+You are generating Go source code for MyGO, a Go-to-RTL compiler.
+Return exactly one Go program that implements the requested RTL module.
+
+Required MyGO shape:
+1. Start with `package main`.
+2. Implement the hardware entry function using exactly the CVDP TOPLEVEL name specified below.
+3. Inputs are ordinary hardware entry function parameters.
+4. Outputs are package-level globals whose names start with `out_`.
+5. Assign outputs by writing directly to those `out_*` globals.
+6. End with `func main() {}`.
+
+Important constraints:
+- Do not return outputs from the hardware entry function.
+- Do not use pointer outputs such as `*bool` or `*uint8`.
+- Avoid structs, interfaces, maps, select, recursion, dynamic goroutines, channels, slices, and heap allocation.
+- Prefer bool for 1-bit signals.
+- Prefer uint8, uint16, uint32, uint64 for packed vectors.
+- Use fixed-size arrays only when a vector is wider than scalar integer types.
+- For vectors represented as arrays, index 0 should represent the least significant bit unless the problem states otherwise.
+- Use only the Go standard language subset that is likely synthesizable by MyGO.
+- Preserve the CVDP module interface semantics in the hardware entry parameters and `out_*` globals.
+- Include helpful comments only where needed.
+
+Output format:
+- Return only Go code.
+- Do not wrap the answer in Markdown fences.
+
+
+CVDP case id: cvdp_copilot_matrix_multiplier_0001
+Categories: ['cid003', 'easy']
+Expected RTL file(s) in original benchmark: ['rtl/matrix_multiplier.sv']
+
+CVDP TOPLEVEL / required MyGO hardware entry function:
+`matrix_multiplier`
+
+The Go program must define exactly this hardware entry function:
+`func matrix_multiplier(...)`
+
+CVDP harness environment, including expected TOPLEVEL and VERILOG_SOURCES:
+```
+SIM             = icarus
+WAVE            = False
+TOPLEVEL_LANG   = verilog
+VERILOG_SOURCES = /code/rtl/matrix_multiplier.sv
+TOPLEVEL        = matrix_multiplier
+MODULE          = test_matrix_multiplier
+PYTHONPATH      = /src
+HASH            = a9942c043d60293cb26718227d561f1022f9e47f
+
+```
+
+Original CVDP problem statement:
+```
+Design and implement a parameterized matrix multiplier using System Verilog. The matrix multiplier should take two input matrices with configurable dimensions and output the result of their multiplication. The design should support any matrix sizes as long as the dimensions are compatible for matrix multiplication (i.e., the number of columns in matrix A matches the number of rows in matrix B). The module should operate as a combinational logic block, updating the output immediately based on changes in the input.
+
+---
+
+### Specifications for module `matrix_multiplier`:
+
+#### Inputs:
+- **matrix_a[ (ROW_A x COL_A x INPUT_DATA_WIDTH) -1 : 0]**: The first input matrix with dimensions `[ROW_A x COL_A x INPUT_DATA_WIDTH]`, where `ROW_A` represents the number of rows,  `COL_A` represents the number of columns and `INPUT_DATA_WIDTH` represents the bit-width of each unsigned input element in the matrix.
+- **matrix_b[ (ROW_B x COL_B x INPUT_DATA_WIDTH) -1 : 0]**: The second input matrix with dimensions `[ROW_B x COL_B x INPUT_DATA_WIDTH]`, where `ROW_B` represents the number of rows,  `COL_B` represents the number of columns and `INPUT_DATA_WIDTH` represents the bit-width of each unsigned input element in the matrix.
+
+#### Output:
+- **matrix_c[(ROW_A x COL_B x OUTPUT_DATA_WIDTH) -1 : 0]**: The resulting matrix with dimensions `[ROW_A x COL_B x OUTPUT_DATA_WIDTH]`, containing the result of the multiplication of `matrix_a` and `matrix_b`. The elements of this matrix are unsigned values.
+
+### Parameters:
+
+- `ROW_A`: Number of rows in `matrix_a`. Default value 4.
+- `COL_A`: Number of columns in `matrix_a`. Default value 4.
+- `ROW_B`: Number of rows in `matrix_b` (It must be equal to number of columns in `matrix_a`). Default value 4.
+- `COL_B`: Number of columns in `matrix_b`. Default value 4.
+- `INPUT_DATA_WIDTH`: The bit-width of each unsigned element in the input matrices. Default value 8.
+- `OUTPUT_DATA_WIDTH`: The bit-width of each unsigned element in the output matrix, should be calculated to handle potential overflow from multiplication.
+
+### Additional Details:
+
+- Ensure that the design supports only unsigned inputs and any parameterized sizes for the matrices, so it can be scaled easily for different applications, including **non-square matrices** (e.g., 2x3, 4x5, or 3x2 matrices).
+- The design should handle all input combinations, including cases where one or both matrices contain zero-valued elements.
+- The output matrix should be updated immediately whenever there is a change in the input matrices.
+- Internal arrays and output must have a sufficient bit-width to avoid potential overflow
+
+### Example of Matrix Flattening:
+
+Suppose you have two input matrices A and B to multiply:
+
+- **Matrix A (2x3)**:
+
+```text
+| a11  a12  a13 |
+| a21  a22  a23 |
+```
+
+- **Matrix B (3x2)**:
+
+```text
+| b11  b12 |
+| b21  b22 |
+| b31  b32 |
+```
+
+The resulting output matrix from the multiplication of the above matrices would be:
+
+- **Matrix C (2x2)**:
+
+```text
+| c11  c12 |
+| c21  c22 |
+```
+
+The flattened representation of these matrices will be as follows:
+
+- **Flattened Matrix A (2x3)**:
+
+```text
+matrix_a = {a23, a22, a21, a13, a12, a11}
+```
+
+- **Flattened Matrix B (3x2)**:
+
+```text
+matrix_b = {b32, b31, b22, b21, b12, b11}
+```
+
+- **Flattened Matrix C (2x2)**:
+
+```text
+matrix_c = {c22, c21, c12, c11}
+```
+
+```

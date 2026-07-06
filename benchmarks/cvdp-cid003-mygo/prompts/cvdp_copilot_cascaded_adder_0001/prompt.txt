@@ -1,0 +1,97 @@
+You are generating Go source code for MyGO, a Go-to-RTL compiler.
+Return exactly one Go program that implements the requested RTL module.
+
+Required MyGO shape:
+1. Start with `package main`.
+2. Implement the hardware entry function using exactly the CVDP TOPLEVEL name specified below.
+3. Inputs are ordinary hardware entry function parameters.
+4. Outputs are package-level globals whose names start with `out_`.
+5. Assign outputs by writing directly to those `out_*` globals.
+6. End with `func main() {}`.
+
+Important constraints:
+- Do not return outputs from the hardware entry function.
+- Do not use pointer outputs such as `*bool` or `*uint8`.
+- Avoid structs, interfaces, maps, select, recursion, dynamic goroutines, channels, slices, and heap allocation.
+- Prefer bool for 1-bit signals.
+- Prefer uint8, uint16, uint32, uint64 for packed vectors.
+- Use fixed-size arrays only when a vector is wider than scalar integer types.
+- For vectors represented as arrays, index 0 should represent the least significant bit unless the problem states otherwise.
+- Use only the Go standard language subset that is likely synthesizable by MyGO.
+- Preserve the CVDP module interface semantics in the hardware entry parameters and `out_*` globals.
+- Include helpful comments only where needed.
+
+Output format:
+- Return only Go code.
+- Do not wrap the answer in Markdown fences.
+
+
+CVDP case id: cvdp_copilot_cascaded_adder_0001
+Categories: ['cid003', 'easy']
+Expected RTL file(s) in original benchmark: ['rtl/cascaded_adder.sv']
+
+CVDP TOPLEVEL / required MyGO hardware entry function:
+`cascaded_adder`
+
+The Go program must define exactly this hardware entry function:
+`func cascaded_adder(...)`
+
+CVDP harness environment, including expected TOPLEVEL and VERILOG_SOURCES:
+```
+SIM             = icarus
+WAVE            = True
+TOPLEVEL_LANG   = verilog
+VERILOG_SOURCES = /code/rtl/cascaded_adder.sv
+TOPLEVEL        = cascaded_adder
+MODULE          = test_cascaded_adder
+PYTHONPATH      = /src
+HASH            = 79caf4385f9cc9090fab54358c17f1ac53f16af7
+
+```
+
+Original CVDP problem statement:
+```
+Develop a System Verilog module that implements a cascaded adder. This module named `cascaded_adder` performs the summation of multiple input data elements, synchronized to the clock, and supports asynchronous reset functionality. The input data is received as a flattened 1D vector, and the output provides the cumulative sum of all the input elements.
+
+## Parameters:
+ - **`IN_DATA_WIDTH` (default = 16):** Specifies the bit-width of each individual input data element.
+ - **`IN_DATA_NS` (default = 4):** Defines the number of input data elements to be summed.
+
+## Input Ports:
+- `clk`: Clock signal. The design registers are triggered on its positive edge.
+- `rst_n`: An active-low asynchronous reset signal. When low, the module is held in a reset state, and both `o_valid` and `o_data` are driven low.
+- `i_valid`: An active-high input signal that indicates the availability of valid data for processing. It is assumed to be synchronous to the positive edge of `clk` signal.
+- `i_data` [`IN_DATA_WIDTH` * `IN_DATA_NS` - 1 : 0]: Input data provided as a flattened 1D vector. This vector contains `IN_DATA_NS` elements, each `IN_DATA_WIDTH` bits wide. It is assumed to be synchronous to the positive edge of `clk` signal.
+
+## Output Ports:
+- `o_valid`: Active-high signal indicating that the output sum has been computed and is ready to be read. It is driven on the rising edge of the `clk`
+- `o_data` [(`IN_DATA_WIDTH` + $clog2(`IN_DATA_NS`)) - 1 : 0]: Output data representing the cumulative sum of all input elements. The output width is designed to accommodate the full sum **without overflow**. It is driven on the rising edge of the `clk`
+
+## Functional Description:
+
+### Input Data Structure:
+- The input data is a flattened 1D vector `i_data` with a total width of `IN_DATA_WIDTH` * `IN_DATA_NS`. 
+- For instance, with `IN_DATA_NS` = 4 and `IN_DATA_WIDTH` = 16, the 64-bit wide `i_data` contains four 16-bit elements.
+- The input data is latched when i_valid is asserted, synchronized to the positive edge of the clock.
+
+### Cascaded Addition Process:
+- The summation is performed on the registered data in a cascaded manner using combinational logic, where each element is progressively added in sequence to the accumulated total.
+- Each stage adds the next element in the sequence to the cumulative result of the previous stages, ultimately producing the final sum.
+- The design includes an output register that latches the cumulative result at the positive edge of the clock.
+
+---
+```mermaid
+graph LR;
+    A1((0)) --> B1(('+'))
+    A2((1)) --> B1
+    B1 --> B2(('+'))
+    A3((2)) --> B2
+    B2 --> B3
+    A4((3)) --> B3(('+'))
+    B3 --> Result[Result]
+```
+----
+
+### Latency:
+The module introduces a total latency of two clock cycles. One cycle is added for registering the input data, and another for registering the output sum.
+```

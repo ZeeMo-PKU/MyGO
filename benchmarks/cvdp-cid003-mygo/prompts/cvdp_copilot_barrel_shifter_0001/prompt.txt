@@ -1,0 +1,88 @@
+You are generating Go source code for MyGO, a Go-to-RTL compiler.
+Return exactly one Go program that implements the requested RTL module.
+
+Required MyGO shape:
+1. Start with `package main`.
+2. Implement the hardware entry function using exactly the CVDP TOPLEVEL name specified below.
+3. Inputs are ordinary hardware entry function parameters.
+4. Outputs are package-level globals whose names start with `out_`.
+5. Assign outputs by writing directly to those `out_*` globals.
+6. End with `func main() {}`.
+
+Important constraints:
+- Do not return outputs from the hardware entry function.
+- Do not use pointer outputs such as `*bool` or `*uint8`.
+- Avoid structs, interfaces, maps, select, recursion, dynamic goroutines, channels, slices, and heap allocation.
+- Prefer bool for 1-bit signals.
+- Prefer uint8, uint16, uint32, uint64 for packed vectors.
+- Use fixed-size arrays only when a vector is wider than scalar integer types.
+- For vectors represented as arrays, index 0 should represent the least significant bit unless the problem states otherwise.
+- Use only the Go standard language subset that is likely synthesizable by MyGO.
+- Preserve the CVDP module interface semantics in the hardware entry parameters and `out_*` globals.
+- Include helpful comments only where needed.
+
+Output format:
+- Return only Go code.
+- Do not wrap the answer in Markdown fences.
+
+
+CVDP case id: cvdp_copilot_barrel_shifter_0001
+Categories: ['cid003', 'easy']
+Expected RTL file(s) in original benchmark: ['rtl/barrel_shifter_8bit.sv']
+
+CVDP TOPLEVEL / required MyGO hardware entry function:
+`barrel_shifter_8bit`
+
+The Go program must define exactly this hardware entry function:
+`func barrel_shifter_8bit(...)`
+
+CVDP harness environment, including expected TOPLEVEL and VERILOG_SOURCES:
+```
+SIM             = icarus
+TOPLEVEL_LANG   = verilog
+VERILOG_SOURCES = /code/rtl/barrel_shifter_8bit.sv
+TOPLEVEL        = barrel_shifter_8bit
+MODULE          = test_barrel_shifter
+PYTHONPATH      = /src
+HASH            = eff4f10b22d739db6a0f7ccddae23d2d08162479
+```
+
+Original CVDP problem statement:
+```
+Design an **8-bit barrel shifter** which can shift the bits of an 8-bit input either to the left or to the right based on a control signal. This shift can range from 0 to 7 bits, as specified by another control signal. The operation must complete in **one clock cycle**. The detailed design specification for the **8-bit barrel shifter** is given below :
+
+## Design Specification:
+
+A **barrel shifter** is a digital circuit that shifts a data word by a specified number of bits in one clock cycle. It is commonly used in digital systems like microprocessors to perform rapid shifts of binary numbers, which is useful in operations such as multiplication, division, and data manipulation.
+
+### Module Name:
+`barrel_shifter_8bit`
+
+### Key Considerations:
+This design should be a **combinational logic**. The output must change immediately based on the input and control signals
+
+### Interface:
+
+#### Inputs:
+- **`data_in`** (8-bits, [7:0]): The 8-bit input data. This will be shifted by a number of bits based on the other control signals.
+- **`shift_bits`** (3-bits, [2:0]): Determines how many bits to shift the input. This value can range from `3'b000` (no shift) to `3'b111` (7-bit shift).
+- **`left_right`** (1-bit): Decides the direction of the shift.
+   - `left_right = 1`: Shift left.
+   - `left_right = 0`: Shift right.
+
+#### Output:
+- **`data_out`** (8-bits, [7:0]): The result after shifting the input. The output can range from 8'b00000000 to 8'b11111111.
+
+### Behavior and Data Flow:
+The input data (`data_in`) undergoes a shift operation, either to the left or right, as determined by the `shift_bits` value and the direction indicated by `left_right`. When `data_in` shifts right by the number specified in `shift_bits`, zeros are inserted into the Most Significant Bit (MSB) positions, equal to the value of `shift_bits`. Conversely, when `data_in` shifts left by the `shift_bits` value, zeros are inserted into the Least Significant Bit (LSB) positions, also corresponding in number to `shift_bits`.
+
+### Example Operations:
+
+#### Left Shift Example:
+- `data_in` = 8'b11001100, `shift_bits` = 3'b100, `left_right` = 1  
+- `data_out` = 8'b11001100 << 4 = 8'b11000000  
+
+#### Right Shift Example:
+- `data_in` = 8'b11001100, `shift_bits` = 3'b100, `left_right` = 0  
+- `data_out` = 8'b11001100 >> 4 = 8'b00001100  
+```

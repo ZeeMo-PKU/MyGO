@@ -1,0 +1,715 @@
+idx,case_id,status,primary_category,secondary_tags,first_failing_stage,reason,key_log_excerpt,analysis_path,case_dir,elapsed_sec,mygo_verilog_generated,cvdp_ran,reviewed_category,reviewed_subcategory,reviewed_meaning,reviewed_why_not_other,cvdp_toplevel,go_func,sv_module,reviewed_key_logs
+1,cvdp_copilot_16qam_mapper_0001,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `N` not found in `qam16_mapper_interpolated`.
+2 error(s) during elaboration.
+triggered by setting any of text, encoding, errors or universal_newlines.
+raise ValueError('stdin and input arguments may not both be used.')
+raise ValueError('stdout and stderr arguments may not be used '
+stdout, stderr = process.communicate(input, timeout=timeout)
+except TimeoutExpired as exc:
+# read() call run on child threads, with the timeout",<RUN_DIR>/case_analysis/cvdp_copilot_16qam_mapper_0001.md,<RUN_DIR>/logs/cvdp_copilot_16qam_mapper_0001,87.79363918304443,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,qam16_mapper_interpolated,qam16_mapper_interpolated,qam16_mapper_interpolated,":0: error: parameter `N` not found in `qam16_mapper_interpolated`.
+error: parameter `N` not found in `qam16_mapper_interpolated`.
+returned non-zero exit status 2
+FAILED ../../harness/src/test_runner.py::test_data[0-2] - subprocess.CalledPr...
+FAILED ../../harness/src/test_runner.py::test_data[0-4_0] - subprocess.Called...
+FAILED ../../harness/src/test_runner.py::test_data[0-8_0] - subprocess.Called...
+FAILED ../../harness/src/test_runner.py::test_data[0-4_1] - subprocess.Called..."
+2,cvdp_copilot_16qam_mapper_0006,TIMEOUT,TIMEOUT,llm_timeout,LLM/Go generation,LLM 调用超过 180 秒。,LLM 调用超过 180 秒。,<RUN_DIR>/case_analysis/cvdp_copilot_16qam_mapper_0006.md,<RUN_DIR>/logs/cvdp_copilot_16qam_mapper_0006,180.00460982322693,False,False,TIMEOUT,LLM_TIMEOUT,LLM ???? 180 ???????? MyGO ? Go ???,LLM ??????MyGO/CVDP ???????????? Go?MyGO ? Verilog?,qam16_demapper_interpolated,,,
+3,cvdp_copilot_64b66b_encoder_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: encoder_64b66b contains no child object named encoder_data_out. Did you mean: 'encoder_data_in'?
+253.00ns WARNING  cocotb.regression                  test_encoder_64b66b.mixed_data_control_test failed
+314.00ns WARNING  cocotb.regression                  test_encoder_64b66b.all_control_symbols_test failed
+375.00ns WARNING  cocotb.regression                  test_encoder_64b66b.random_data_control_test failed
+436.00ns WARNING  cocotb.regression                  test_encoder_64b66b.random_data_only_test failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 7 of 7 tests.
+FAILED",<RUN_DIR>/case_analysis/cvdp_copilot_64b66b_encoder_0001.md,<RUN_DIR>/logs/cvdp_copilot_64b66b_encoder_0001,34.60892987251282,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `encoder_data_out` ????? RTL ????? `encoder_data_in`?,??????????????? testbench ???????/????????????????,encoder_64b66b,encoder_64b66b,encoder_64b66b,"AttributeError: encoder_64b66b contains no child object named encoder_data_out. Did you mean: 'encoder_data_in'?
+Expected data output is zero
+Failed 7 of 7 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+4,cvdp_copilot_8x3_priority_encoder_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED ../../harness/src/test_runner.py::test_moving_run[0] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[1] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[2] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[3] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[4] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[5] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[6] - SystemExit: 1",<RUN_DIR>/case_analysis/cvdp_copilot_8x3_priority_encoder_0001.md,<RUN_DIR>/logs/cvdp_copilot_8x3_priority_encoder_0001,27.128341913223267,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `out` ????? RTL ???????,??????????????? testbench ???????/????????????????,priority_encoder_8x3,priority_encoder_8x3,priority_encoder_8x3,"AttributeError: priority_encoder_8x3 contains no child object named out
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_moving_run[0] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[1] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[2] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[3] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_run[4] - SystemExit: 1"
+5,cvdp_copilot_Carry_Lookahead_Adder_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: GP contains no child object named o_generate. Did you mean: 'out_o_generate'?
+2.00ns WARNING  cocotb.regression                  test_gp_test.test_gp_test failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_gp_test - SystemExit: 1
+============================== 1 failed in 0.29s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_Carry_Lookahead_Adder_0001.md,<RUN_DIR>/logs/cvdp_copilot_Carry_Lookahead_Adder_0001,8.28265905380249,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `o_generate` ????? RTL ????? `out_o_generate`?,??????????????? testbench ???????/????????????????,GP,GP,GP,"AttributeError: GP contains no child object named o_generate. Did you mean: 'out_o_generate'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_gp_test - SystemExit: 1"
+6,cvdp_copilot_GFCM_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: glitch_free_mux contains no child object named clkout
+54.00ns WARNING  cocotb.regression                  test_glitch_free_mux.test_glitch_free_mux failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_gfcm - SystemExit: 1
+============================== 1 failed in 0.30s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_GFCM_0001.md,<RUN_DIR>/logs/cvdp_copilot_GFCM_0001,86.89364814758301,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `clkout` ????? RTL ???????,??????????????? testbench ???????/????????????????,glitch_free_mux,glitch_free_mux,glitch_free_mux,"AttributeError: glitch_free_mux contains no child object named clkout
+assert dut.clkout.value == 0, f""Glitch detected, clkout is {dut.clkout.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_gfcm - SystemExit: 1"
+7,cvdp_copilot_apb_dsp_unit_0001,TIMEOUT,TIMEOUT,llm_timeout,LLM/Go generation,LLM 调用超过 180 秒。,LLM 调用超过 180 秒。,<RUN_DIR>/case_analysis/cvdp_copilot_apb_dsp_unit_0001.md,<RUN_DIR>/logs/cvdp_copilot_apb_dsp_unit_0001,180.00277590751648,False,False,TIMEOUT,LLM_TIMEOUT,LLM ???? 180 ???????? MyGO ? Go ???,LLM ??????MyGO/CVDP ???????????? Go?MyGO ? Verilog?,apb_dsp_unit,,,
+8,cvdp_copilot_apb_gpio_0001,FAIL,VERILOG_INTERFACE_ERROR,interface_mismatch,CVDP elaboration,生成的 Verilog 顶层模块、端口名、端口数量、方向或位宽与 CVDP testbench 期望不一致。,"../../harness/src/test_runner.py:67: AssertionError
+ERROR    test_runner:test_runner.py:65 Simulation failed for GPIO_WIDTH = 11: Command '['iverilog', '-o', '<RUN_DIR>/logs/cvdp_copilot_apb_gpio_0001/cvdp/host_rundir/harness/sim_build/sim.vvp', '-s', 'cvdp_copilot_apb_gpio', '-g2012', '-Pcvdp_copilot_apb_gpio.GPIO_WIDTH=11', '-f', '<RUN_DIR>/logs/cvdp_copilot_apb_gpio_0001/cvdp/host_rundir/harness/sim_build/cmds.f', '<RUN_DIR>/logs/cvdp_copilot_apb_gpio_0001/mygo/generated.sv']' returned non-zero exit status 2.
+input = None, capture_output = False, timeout = None, check = True
+input=None, capture_output=False, timeout=None, check=False, **kwargs):
+CalledProcessError. The CalledProcessError object will have the return code
+If timeout (seconds) is given and the process takes too long,
+a TimeoutExpired exception will be raised.
+triggered by setting any of text, encoding, errors or universal_newlines.",<RUN_DIR>/case_analysis/cvdp_copilot_apb_gpio_0001.md,<RUN_DIR>/logs/cvdp_copilot_apb_gpio_0001,105.92966222763062,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,cvdp_copilot_apb_gpio,cvdp_copilot_apb_gpio,cvdp_copilot_apb_gpio,":0: error: parameter `GPIO_WIDTH` not found in `cvdp_copilot_apb_gpio`.
+error: parameter `GPIO_WIDTH` not found in `cvdp_copilot_apb_gpio`.
+AssertionError: Simulation failed for GPIO_WIDTH = 8: Command '['iverilog', '-o', '<RUN_DIR>/logs/cvdp_copilot_apb_gpio_0001/cvdp/host_rundir/harness/sim_build/sim.vvp', '-s', 'cvdp_copilot_apb_gpio', '-g2012', '-Pcvdp_copilot_apb_gpio.GPIO_WIDTH=8', '-f', '/home/rongxv/work/...
+AssertionError: Simulation failed for GPIO_WIDTH = 11: Command '['iverilog', '-o', '<RUN_DIR>/logs/cvdp_copilot_apb_gpio_0001/cvdp/host_rundir/harness/sim_build/sim.vvp', '-s', 'cvdp_copilot_apb_gpio', '-g2012', '-Pcvdp_copilot_apb_gpio.GPIO_WIDTH=11', '-f', '/home/rongxv/wor...
+AssertionError: Simulation failed for GPIO_WIDTH = 30: Command '['iverilog', '-o', '<RUN_DIR>/logs/cvdp_copilot_apb_gpio_0001/cvdp/host_rundir/harness/sim_build/sim.vvp', '-s', 'cvdp_copilot_apb_gpio', '-g2012', '-Pcvdp_copilot_apb_gpio.GPIO_WIDTH=30', '-f', '/home/rongxv/wor...
+E AssertionError: Simulation failed for GPIO_WIDTH = 8: Command '['iverilog', '-o', '<RUN_DIR>/logs/cvdp_copilot_apb_gpio_0001/cvdp/host_rundir/harness/sim_build/sim.vvp', '-s', 'cvdp_copilot_apb_gpio', '-g2012', '-Pcvdp_copilot_apb_gpio.GPIO_WIDTH=8', '-f', '/home/rongxv/wor...
+E AssertionError: Simulation failed for GPIO_WIDTH = 11: Command '['iverilog', '-o', '<RUN_DIR>/logs/cvdp_copilot_apb_gpio_0001/cvdp/host_rundir/harness/sim_build/sim.vvp', '-s', 'cvdp_copilot_apb_gpio', '-g2012', '-Pcvdp_copilot_apb_gpio.GPIO_WIDTH=11', '-f', '/home/rongxv/w..."
+9,cvdp_copilot_apb_history_shift_register_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: APBGlobalHistoryRegister contains no child object named history_empty. Did you mean: 'out_history_empty'?
+121.00ns WARNING  cocotb.regression                  test_APBGlobalHistoryRegister.test_APBGlobalHistoryRegister failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.31s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_apb_history_shift_register_0001.md,<RUN_DIR>/logs/cvdp_copilot_apb_history_shift_register_0001,122.64964604377747,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `history_empty` ????? RTL ????? `out_history_empty`?,??????????????? testbench ???????/????????????????,APBGlobalHistoryRegister,APBGlobalHistoryRegister,APBGlobalHistoryRegister,"AttributeError: APBGlobalHistoryRegister contains no child object named history_empty. Did you mean: 'out_history_empty'?
+assert dut.history_empty.value == 1, ""history_empty should be 1 after reset""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+10,cvdp_copilot_axi_register_0001,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `ADDR_WIDTH` not found in `axi_register`.
+:0: error: parameter `DATA_WIDTH` not found in `axi_register`.
+3 error(s) during elaboration.
+triggered by setting any of text, encoding, errors or universal_newlines.
+raise ValueError('stdin and input arguments may not both be used.')
+raise ValueError('stdout and stderr arguments may not be used '
+stdout, stderr = process.communicate(input, timeout=timeout)
+except TimeoutExpired as exc:",<RUN_DIR>/case_analysis/cvdp_copilot_axi_register_0001.md,<RUN_DIR>/logs/cvdp_copilot_axi_register_0001,171.77065110206604,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,axi_register,axi_register,axi_register,":0: error: parameter `ADDR_WIDTH` not found in `axi_register`.
+:0: error: parameter `DATA_WIDTH` not found in `axi_register`.
+error: parameter `ADDR_WIDTH` not found in `axi_register`.
+error: parameter `DATA_WIDTH` not found in `axi_register`.
+returned non-zero exit status 3
+FAILED ../../harness/src/test_runner.py::test_axi_reg[8-12-0] - subprocess.Ca...
+FAILED ../../harness/src/test_runner.py::test_axi_reg[8-16-0] - subprocess.Ca..."
+11,cvdp_copilot_axi_stream_upscale_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: axis_upscale contains no child object named m_axis_data. Did you mean: 's_axis_data'?
+0.00ns WARNING  cocotb.regression                  test_axis_upscale.test_axis_upscale failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_axis_upscale[0] - SystemExit: 1
+============================== 1 failed in 0.31s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_axi_stream_upscale_0001.md,<RUN_DIR>/logs/cvdp_copilot_axi_stream_upscale_0001,154.49610424041748,True,True,VERILOG_INTERFACE_ERROR,INTERNAL_SIGNAL_OR_OBSERVABILITY_MISSING,cocotb ?? `m_axis_data` ????? RTL ?? benchmark ??????????,???? testbench ??? RTL ???????????????????,axis_upscale,axis_upscale,axis_upscale,"AttributeError: axis_upscale contains no child object named m_axis_data. Did you mean: 's_axis_data'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_axis_upscale[0] - SystemExit: 1"
+12,cvdp_copilot_axil_precision_counter_0001,TIMEOUT,TIMEOUT,llm_timeout,LLM/Go generation,LLM 调用超过 180 秒。,LLM 调用超过 180 秒。,<RUN_DIR>/case_analysis/cvdp_copilot_axil_precision_counter_0001.md,<RUN_DIR>/logs/cvdp_copilot_axil_precision_counter_0001,180.00300979614258,False,False,TIMEOUT,LLM_TIMEOUT,LLM ???? 180 ???????? MyGO ? Go ???,LLM ??????MyGO/CVDP ???????????? Go?MyGO ? Verilog?,precision_counter_axi,,,
+13,cvdp_copilot_axis_joiner_0001,TIMEOUT,TIMEOUT,mygo_compile_timeout,MyGO compile,MyGO 编译阶段超过限时，后续 Verilog/CVDP 没有运行。,TIMEOUT after 120s while running: <RUN_DIR>/tools/mygo compile -emit=verilog --target axis_joiner --circt-mlir <RUN_DIR>/logs/cvdp_copilot_axis_joiner_0001/mygo/design.mlir -o <RUN_DIR>/logs/cvdp_copilot_axis_joiner_0001/mygo/generated.sv <RUN_DIR>/logs/cvdp_copilot_axis_joiner_0001/extracted_go/main.go,<RUN_DIR>/case_analysis/cvdp_copilot_axis_joiner_0001.md,<RUN_DIR>/logs/cvdp_copilot_axis_joiner_0001,298.9131383895874,False,False,TIMEOUT,MYGO_COMPILE_TIMEOUT,MyGO ???? 120 ???????? Verilog/CVDP?,MyGO ????????????? RTL????? CVDP ?????,axis_joiner,axis_joiner,,TIMEOUT after 120s while running: <RUN_DIR>/tools/mygo compile -emit=verilog --target axis_joiner --circt-mlir <RUN_DIR>/logs/cvdp_copilot_axis_joiner_0001/mygo/design.mlir -o /home/rongxv/work/c...
+14,cvdp_copilot_barrel_shifter_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: barrel_shifter_8bit contains no child object named data_out. Did you mean: 'data_in'?
+10.00ns WARNING  cocotb.regression                  test_barrel_shifter.test_barrel_1 failed
+21.00ns WARNING  cocotb.regression                  test_barrel_shifter.test_barrel_2 failed
+32.00ns WARNING  cocotb.regression                  test_barrel_shifter.test_barrel_3 failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 3 of 3 tests.
+FAILED
+=================================== FAILURES ===================================",<RUN_DIR>/case_analysis/cvdp_copilot_barrel_shifter_0001.md,<RUN_DIR>/logs/cvdp_copilot_barrel_shifter_0001,15.027982950210571,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `data_out` ????? RTL ????? `data_in`?,??????????????? testbench ???????/????????????????,barrel_shifter_8bit,barrel_shifter_8bit,barrel_shifter_8bit,"AttributeError: barrel_shifter_8bit contains no child object named data_out. Did you mean: 'data_in'?
+Failed 3 of 3 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+15,cvdp_copilot_bcd_counter_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"assert int(dut.ms_hr) == 0 and int(dut.ls_hr) == 0, ""24-hour reset failed""
+assert int(dut.ms_min) == 0 and int(dut.ls_min) == 0, ""24-hour reset failed""
+assert int(dut.ms_sec) == 0 and int(dut.ls_sec) == 0, ""24-hour reset failed""
+AssertionError: Counter incorrect for hours after reset
+123011000000000.00ns WARNING  cocotb.regression                  test_bcd_counter.test_bcd_counter failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================",<RUN_DIR>/case_analysis/cvdp_copilot_bcd_counter_0001.md,<RUN_DIR>/logs/cvdp_copilot_bcd_counter_0001,40.87303137779236,True,True,FUNCTIONAL_FAIL,ASSERTION_VALUE_MISMATCH,RTL ??????????CVDP ????????????????,??/?????????????????????????????????????,bcd_counter,bcd_counter,bcd_counter,"AssertionError: Counter incorrect for hours after reset
+assert int(dut.ms_hr) == 0 and int(dut.ls_hr) == 0, ""24-hour reset failed""
+assert int(dut.ms_min) == 0 and int(dut.ls_min) == 0, ""24-hour reset failed""
+assert int(dut.ms_sec) == 0 and int(dut.ls_sec) == 0, ""24-hour reset failed""
+assert int(dut.ms_hr) == 1 and int(dut.ls_hr) == 0, ""Counter incorrect for hours after reset""
+assert (0 == 1)
+Failed 1 of 1 tests"
+16,cvdp_copilot_bcd_to_excess_3_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"assert dut.excess3.value == expected_value, f""Error: BCD {bcd_value} should convert to {expected_value}, got {dut.excess3.value}""
+raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: bcd_to_excess_3 contains no child object named excess3
+10.00ns WARNING  cocotb.regression                  test_bcd_to_excess_3.bcd_to_excess_3 failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+Test BCD to Excess-3 conversion including error flag assertions.
+=================================== FAILURES ===================================",<RUN_DIR>/case_analysis/cvdp_copilot_bcd_to_excess_3_0001.md,<RUN_DIR>/logs/cvdp_copilot_bcd_to_excess_3_0001,6.756810665130615,True,True,VERILOG_INTERFACE_ERROR,INTERNAL_SIGNAL_OR_OBSERVABILITY_MISSING,cocotb ?? `excess3` ????? RTL ?? benchmark ??????????,???? testbench ??? RTL ???????????????????,bcd_to_excess_3,bcd_to_excess_3,bcd_to_excess_3,"AttributeError: bcd_to_excess_3 contains no child object named excess3
+assert dut.excess3.value == expected_value, f""Error: BCD {bcd_value} should convert to {expected_value}, got {dut.excess3.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_areg_param[0] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_areg_param[1] - SystemExit: 1"
+17,cvdp_copilot_binary_to_one_hot_decoder_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: binary_to_one_hot_decoder contains no child object named one_hot_out. Did you mean: 'out_one_hot_out'?
+0.10ns WARNING  cocotb.regression                  test_binary_to_one_hot_decoder.test_binary_to_one_hot_decoder failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.29s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_binary_to_one_hot_decoder_0001.md,<RUN_DIR>/logs/cvdp_copilot_binary_to_one_hot_decoder_0001,12.433855056762695,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `one_hot_out` ????? RTL ????? `out_one_hot_out`?,??????????????? testbench ???????/????????????????,binary_to_one_hot_decoder,binary_to_one_hot_decoder,binary_to_one_hot_decoder,"AttributeError: binary_to_one_hot_decoder contains no child object named one_hot_out. Did you mean: 'out_one_hot_out'?
+assert dut.one_hot_out.value==1, f""output should not be {dut.one_hot_out.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+18,cvdp_copilot_caesar_cipher_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"AssertionError: DUT does not have an 'output_char' output.
+0.00ns WARNING  cocotb.regression                  test_caesar_cipher.test_predefined_cases failed
+1.00ns WARNING  cocotb.regression                  test_caesar_cipher.test_boundary_conditions failed
+2.00ns WARNING  cocotb.regression                  test_caesar_cipher.test_random_cases failed
+3.00ns WARNING  cocotb.regression                  test_caesar_cipher.test_with_numbers_and_symbols failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 4 of 4 tests.
+FAILED
+=================================== FAILURES ===================================",<RUN_DIR>/case_analysis/cvdp_copilot_caesar_cipher_0001.md,<RUN_DIR>/logs/cvdp_copilot_caesar_cipher_0001,12.151740074157715,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISSING,CVDP ??????????????,????? cocotb ?? DUT ?????????????,caesar_cipher,caesar_cipher,caesar_cipher,"DUT does not have an 'output_char' output.
+DUT does not have an 'output_char' output.""
+AssertionError: DUT does not have an 'output_char' output.
+assert False
+assert hasattr(dut, ""output_char""), ""DUT does not have an 'output_char' output.""
+Failed 4 of 4 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+19,cvdp_copilot_car_parking_management_0001,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `TOTAL_SPACES` not found in `car_parking_system`.
+2 error(s) during elaboration.
+If timeout (seconds) is given and the process takes too long,
+a TimeoutExpired exception will be raised.
+triggered by setting any of text, encoding, errors or universal_newlines.
+raise ValueError('stdin and input arguments may not both be used.')
+raise ValueError('stdout and stderr arguments may not be used '
+stdout, stderr = process.communicate(input, timeout=timeout)",<RUN_DIR>/case_analysis/cvdp_copilot_car_parking_management_0001.md,<RUN_DIR>/logs/cvdp_copilot_car_parking_management_0001,90.99999022483826,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,car_parking_system,sevenSeg,car_parking_system,":0: error: parameter `TOTAL_SPACES` not found in `car_parking_system`.
+error: parameter `TOTAL_SPACES` not found in `car_parking_system`.
+returned non-zero exit status 2
+FAILED ../../harness/src/test_runner.py::test_runner - subprocess.CalledProce...
+FAILED ../../harness/src/test_runner.py::test_car_parking_system[14] - subpro...
+FAILED ../../harness/src/test_runner.py::test_car_parking_system[12] - subpro...
+FAILED ../../harness/src/test_runner.py::test_car_parking_system[9] - subproc..."
+20,cvdp_copilot_cascaded_adder_0001,TIMEOUT,TIMEOUT,llm_timeout,LLM/Go generation,LLM 调用超过 180 秒。,LLM 调用超过 180 秒。,<RUN_DIR>/case_analysis/cvdp_copilot_cascaded_adder_0001.md,<RUN_DIR>/logs/cvdp_copilot_cascaded_adder_0001,180.00135040283203,False,False,TIMEOUT,LLM_TIMEOUT,LLM ???? 180 ???????? MyGO ? Go ???,LLM ??????MyGO/CVDP ???????????? Go?MyGO ? Verilog?,cascaded_adder,,,
+21,cvdp_copilot_clock_divider_0003,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: clock_divider contains no child object named clk_out
+180.00ns WARNING  cocotb.regression                  test_clk_div.test_clock_divider failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_clock_divider_run[0] - SystemEx...
+============================== 1 failed in 0.30s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_clock_divider_0003.md,<RUN_DIR>/logs/cvdp_copilot_clock_divider_0003,49.23695230484009,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `clk_out` ????? RTL ???????,??????????????? testbench ???????/????????????????,clock_divider,clock_divider,clock_divider,"AttributeError: clock_divider contains no child object named clk_out
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_clock_divider_run[0] - SystemEx..."
+22,cvdp_copilot_comparator_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: signed_unsigned_comparator contains no child object named o_greater. Did you mean: 'out_o_greater'?
+0.10ns WARNING  cocotb.regression                  test_signed_comparator.test_signed_comparator failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.32s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_comparator_0001.md,<RUN_DIR>/logs/cvdp_copilot_comparator_0001,32.92488765716553,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `o_greater` ????? RTL ????? `out_o_greater`?,??????????????? testbench ???????/????????????????,signed_unsigned_comparator,signed_unsigned_comparator,signed_unsigned_comparator,"AttributeError: signed_unsigned_comparator contains no child object named o_greater. Did you mean: 'out_o_greater'?
+assert dut.o_greater.value==0, f""output should not be {dut.o_greater.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+23,cvdp_copilot_complex_multiplier_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: complex_multiplier contains no child object named result_real. Did you mean: 'out_result_real'?
+30.00ns WARNING  cocotb.regression                  test_complex_multiplier.test_complex_multiplier failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_palindrome_detect - SystemExit: 1
+========================= 1 failed, 1 warning in 0.29s =========================",<RUN_DIR>/case_analysis/cvdp_copilot_complex_multiplier_0001.md,<RUN_DIR>/logs/cvdp_copilot_complex_multiplier_0001,31.26301670074463,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `result_real` ????? RTL ????? `out_result_real`?,??????????????? testbench ???????/????????????????,complex_multiplier,complex_multiplier,complex_multiplier,"AttributeError: complex_multiplier contains no child object named result_real. Did you mean: 'out_result_real'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_palindrome_detect - SystemExit: 1"
+24,cvdp_copilot_concatenate_0001,FAIL,VERILOG_INTERFACE_ERROR,interface_mismatch,CVDP elaboration,生成的 Verilog 顶层模块、端口名、端口数量、方向或位宽与 CVDP testbench 期望不一致。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: enhanced_fsm_signal_processor contains no child object named o_fsm_status. Did you mean: 'out_o_fsm_status'?
+21.00ns WARNING  cocotb.regression                  test_enhanced_fsm_signal_processor.test_enhanced_fsm_signal_processor failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.30s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_concatenate_0001.md,<RUN_DIR>/logs/cvdp_copilot_concatenate_0001,111.24443697929382,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `o_fsm_status` ????? RTL ????? `out_o_fsm_status`?,??????????????? testbench ???????/????????????????,enhanced_fsm_signal_processor,enhanced_fsm_signal_processor,enhanced_fsm_signal_processor,"AttributeError: enhanced_fsm_signal_processor contains no child object named o_fsm_status. Did you mean: 'out_o_fsm_status'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+25,cvdp_copilot_configurable_digital_low_pass_filter_0001,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `COEFF_WIDTH` not found in `low_pass_filter`.
+:0: error: parameter `DATA_WIDTH` not found in `low_pass_filter`.
+:0: error: parameter `NUM_TAPS` not found in `low_pass_filter`.
+4 error(s) during elaboration.
+/usr/lib/python3.13/subprocess.py:577: CalledProcessError
+FAILED ../../harness/src/test_runner.py::test_data[0-2-2-2] - subprocess.Call...
+FAILED ../../harness/src/test_runner.py::test_data[0-2-2-16] - subprocess.Cal...
+FAILED ../../harness/src/test_runner.py::test_data[0-2-2-26] - subprocess.Cal...",<RUN_DIR>/case_analysis/cvdp_copilot_configurable_digital_low_pass_filter_0001.md,<RUN_DIR>/logs/cvdp_copilot_configurable_digital_low_pass_filter_0001,103.6525149345398,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,low_pass_filter,low_pass_filter,low_pass_filter,":0: error: parameter `COEFF_WIDTH` not found in `low_pass_filter`.
+:0: error: parameter `DATA_WIDTH` not found in `low_pass_filter`.
+:0: error: parameter `NUM_TAPS` not found in `low_pass_filter`.
+error: parameter `COEFF_WIDTH` not found in `low_pass_filter`.
+error: parameter `DATA_WIDTH` not found in `low_pass_filter`.
+error: parameter `NUM_TAPS` not found in `low_pass_filter`.
+returned non-zero exit status 4"
+26,cvdp_copilot_configurable_digital_low_pass_filter_0004,MODEL_OR_MYGO_ERROR,MYGO_CIRCT_BACKEND_ERROR,inout_lowering,MyGO CIRCT backend,MyGO 已生成中间表示，但 CIRCT/firtool 后端拒绝了它，通常表示 MyGO lowering 产生了非法 MLIR/SV 结构。,"<RUN_DIR>/logs/cvdp_copilot_configurable_digital_low_pass_filter_0004/extracted_go/.mygo-tmp/.mygo-circt-882420740/design.mlir:820:113: error: use of value '%t52_127' expects different type than prior uses: 'i16' vs '!hw.inout<i16>'
+backend: circt-opt --pass-pipeline failed: exit status 1",<RUN_DIR>/case_analysis/cvdp_copilot_configurable_digital_low_pass_filter_0004.md,<RUN_DIR>/logs/cvdp_copilot_configurable_digital_low_pass_filter_0004,107.03217601776123,False,False,MYGO_CIRCT_BACKEND_ERROR,CIRCT_SSA_OR_TYPE_ERROR,CIRCT ???? SSA ????SSA ?????? SSA ???????? MyGO ??? CIRCT/MLIR ??????,????? circt-opt/firtool ????????? Verilog??? CVDP harness ??????,advanced_decimator_with_adaptive_peak_detection,advanced_decimator_with_adaptive_peak_detection,,"<RUN_DIR>/logs/cvdp_copilot_configurable_digital_low_pass_filter_0004/extracted_go/.mygo-tmp/.mygo-circt-882420740/design.mlir:820:113: error: use of value '%t52_127' expects different type than prior uses: 'i16' vs '!hw.inout<i16>'
+backend: circt-opt --pass-pipeline failed: exit status 1"
+27,cvdp_copilot_configurable_digital_low_pass_filter_0014,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `DATA_WIDTH` not found in `fsm_linear_reg`.
+2 error(s) during elaboration.
+Error(retcode, process.args,
+E               subprocess.CalledProcessError: Command '['iverilog', '-o', '<RUN_DIR>/logs/cvdp_copilot_configurable_digital_low_pass_filter_0014/cvdp/host_rundir/harness/sim_build/sim.vvp', '-s', 'fsm_linear_reg', '-g2012', '-Pfsm_linear_reg.DATA_WIDTH=11', '-f', '<RUN_DIR>/logs/cvdp_copilot_configurable_digital_low_pass_filter_0014/cvdp/host_rundir/harness/sim_build/cmds.f', '<RUN_DIR>/logs/cvdp_copilot_configurable_digital_low_pass_filter_0014/mygo/generated.sv']' returned non-zero exit status 2.
+/usr/lib/python3.13/subprocess.py:577: CalledProcessError
+input = None, capture_output = False, timeout = None, check = True
+input=None, capture_output=False, timeout=None, check=False, **kwargs):
+CalledProcessError. The CalledProcessError object will have the return code",<RUN_DIR>/case_analysis/cvdp_copilot_configurable_digital_low_pass_filter_0014.md,<RUN_DIR>/logs/cvdp_copilot_configurable_digital_low_pass_filter_0014,140.9987359046936,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,fsm_linear_reg,fsm_linear_reg,fsm_linear_reg,":0: error: parameter `DATA_WIDTH` not found in `fsm_linear_reg`.
+error: parameter `DATA_WIDTH` not found in `fsm_linear_reg`.
+returned non-zero exit status 2
+FAILED ../../harness/src/test_runner.py::test_data[0-2] - subprocess.CalledPr...
+FAILED ../../harness/src/test_runner.py::test_data[0-16_0] - subprocess.Calle...
+FAILED ../../harness/src/test_runner.py::test_data[0-15] - subprocess.CalledP...
+FAILED ../../harness/src/test_runner.py::test_data[0-8] - subprocess.CalledPr..."
+28,cvdp_copilot_convolutional_encoder_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: convolutional_encoder contains no child object named shift_reg
+10.00ns WARNING  cocotb.regression                  test_convolutional_encoder.test_reset failed
+AttributeError: convolutional_encoder contains no child object named encoded_bit1. Did you mean: 'out_encoded_bit1'?
+33.00ns WARNING  cocotb.regression                  test_convolutional_encoder.test_convolutional_encoding failed
+56.00ns WARNING  cocotb.regression                  test_convolutional_encoder.test_random_data failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 3 of 3 tests.
+FAILED",<RUN_DIR>/case_analysis/cvdp_copilot_convolutional_encoder_0001.md,<RUN_DIR>/logs/cvdp_copilot_convolutional_encoder_0001,26.252782583236694,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `shift_reg` ????? RTL ???????,??????????????? testbench ???????/????????????????,convolutional_encoder,convolutional_encoder,convolutional_encoder,"AttributeError: convolutional_encoder contains no child object named shift_reg
+AttributeError: convolutional_encoder contains no child object named encoded_bit1. Did you mean: 'out_encoded_bit1'?
+assert dut.shift_reg.value == 0, f""Shift register is not reset properly: {dut.shift_reg.value}""
+Expected encoded bits: bit1=1, bit2=1
+Expected encoded bits: bit1=0, bit2=0
+Failed 3 of 3 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+29,cvdp_copilot_data_bus_controller_0001,MODEL_OR_MYGO_ERROR,GO_SYNTAX_ERROR,invalid_go_input,MyGO frontend,Go 代码本身不合法，MyGO 在解析或类型检查前后失败。,"<RUN_DIR>/logs/cvdp_copilot_data_bus_controller_0001/extracted_go/.mygo-tmp/.mygo-circt-833160785/design.mlir:50:27: error: expected operation name in quotes
+backend: circt-opt --pass-pipeline failed: exit status 1",<RUN_DIR>/case_analysis/cvdp_copilot_data_bus_controller_0001.md,<RUN_DIR>/logs/cvdp_copilot_data_bus_controller_0001,74.04949712753296,False,False,MYGO_IR_LOWERING_ERROR,MALFORMED_MLIR,MyGO ? Go lowering ??? MLIR ??????CIRCT ???? expected operation name in quotes?,Go ?????? MyGO?????? design.mlir/CIRCT ??????? CVDP???? Verilog ???,data_bus_controller,data_bus_controller,,"<RUN_DIR>/logs/cvdp_copilot_data_bus_controller_0001/extracted_go/.mygo-tmp/.mygo-circt-833160785/design.mlir:50:27: error: expected operation name in quotes
+expected operation name in quotes
+backend: circt-opt --pass-pipeline failed: exit status 1"
+30,cvdp_copilot_data_width_converter_0003,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"assert dut.o_data_out.value == expected_output, f""Output mismatch: Expected {hex(expected_output)}, got {hex(dut.o_data_out.value)}""
+raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: data_width_converter contains no child object named o_data_out. Did you mean: 'out_o_data_out'?
+70.00ns WARNING  cocotb.regression                  DW_convertor.test_data_width_converter failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1",<RUN_DIR>/case_analysis/cvdp_copilot_data_width_converter_0003.md,<RUN_DIR>/logs/cvdp_copilot_data_width_converter_0003,51.34920334815979,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `o_data_out` ????? RTL ????? `out_o_data_out`?,??????????????? testbench ???????/????????????????,data_width_converter,data_width_converter,data_width_converter,"AttributeError: data_width_converter contains no child object named o_data_out. Did you mean: 'out_o_data_out'?
+assert dut.o_data_out.value == expected_output, f""Output mismatch: Expected {hex(expected_output)}, got {hex(dut.o_data_out.value)}""
+Expected {hex(expected_output)}, got {hex(dut.o_data_out.value)}""
+Expected output: 0x11111111222222223333333344444444
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+31,cvdp_copilot_dbi_0001,TIMEOUT,TIMEOUT,mygo_compile_timeout,MyGO compile,MyGO 编译阶段超过限时，后续 Verilog/CVDP 没有运行。,TIMEOUT after 120s while running: <RUN_DIR>/tools/mygo compile -emit=verilog --target dbi_enc --circt-mlir <RUN_DIR>/logs/cvdp_copilot_dbi_0001/mygo/design.mlir -o <RUN_DIR>/logs/cvdp_copilot_dbi_0001/mygo/generated.sv <RUN_DIR>/logs/cvdp_copilot_dbi_0001/extracted_go/main.go,<RUN_DIR>/case_analysis/cvdp_copilot_dbi_0001.md,<RUN_DIR>/logs/cvdp_copilot_dbi_0001,183.42486548423767,False,False,TIMEOUT,MYGO_COMPILE_TIMEOUT,MyGO ???? 120 ???????? Verilog/CVDP?,MyGO ????????????? RTL????? CVDP ?????,dbi_enc,dbi_enc,,TIMEOUT after 120s while running: <RUN_DIR>/tools/mygo compile -emit=verilog --target dbi_enc --circt-mlir <RUN_DIR>/logs/cvdp_copilot_dbi_0001/mygo/design.mlir -o /home/rongxv/work/cvdp-runs/myg...
+32,cvdp_copilot_decode_firstbit_0001,MODEL_OR_MYGO_ERROR,GO_SYNTAX_ERROR,invalid_go_input,MyGO frontend,Go 代码本身不合法，MyGO 在解析或类型检查前后失败。,"<RUN_DIR>/logs/cvdp_copilot_decode_firstbit_0001/extracted_go/.mygo-tmp/.mygo-circt-2992803055/design.mlir:95:27: error: expected operation name in quotes
+backend: circt-opt --pass-pipeline failed: exit status 1",<RUN_DIR>/case_analysis/cvdp_copilot_decode_firstbit_0001.md,<RUN_DIR>/logs/cvdp_copilot_decode_firstbit_0001,158.39690732955933,False,False,MYGO_IR_LOWERING_ERROR,MALFORMED_MLIR,MyGO ? Go lowering ??? MLIR ??????CIRCT ???? expected operation name in quotes?,Go ?????? MyGO?????? design.mlir/CIRCT ??????? CVDP???? Verilog ???,cvdp_copilot_decode_firstbit,find_first_set_16,,"<RUN_DIR>/logs/cvdp_copilot_decode_firstbit_0001/extracted_go/.mygo-tmp/.mygo-circt-2992803055/design.mlir:95:27: error: expected operation name in quotes
+expected operation name in quotes
+backend: circt-opt --pass-pipeline failed: exit status 1"
+33,cvdp_copilot_digital_dice_roller_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: digital_dice_roller contains no child object named DICE_MAX
+0.00ns WARNING  cocotb.regression                  test_dice_roller.test_dice_roller failed
+AttributeError: digital_dice_roller contains no child object named reset. Did you mean: 'reset_n'?
+0.00ns WARNING  cocotb.regression                  test_dice_roller.test_reset_functionality failed
+0.00ns WARNING  cocotb.regression                  test_dice_roller.test_hold_reset_low failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 3 of 3 tests.
+FAILED",<RUN_DIR>/case_analysis/cvdp_copilot_digital_dice_roller_0001.md,<RUN_DIR>/logs/cvdp_copilot_digital_dice_roller_0001,64.73208022117615,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `DICE_MAX` ????? RTL ???????,??????????????? testbench ???????/????????????????,digital_dice_roller,digital_dice_roller,digital_dice_roller,"AttributeError: digital_dice_roller contains no child object named DICE_MAX
+AttributeError: digital_dice_roller contains no child object named reset. Did you mean: 'reset_n'?
+Failed 3 of 3 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+34,cvdp_copilot_digital_stopwatch_0001,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `CLK_FREQ` not found in `dig_stopwatch`.
+2 error(s) during elaboration.
+CalledProcessError. The CalledProcessError object will have the return code
+If timeout (seconds) is given and the process takes too long,
+a TimeoutExpired exception will be raised.
+triggered by setting any of text, encoding, errors or universal_newlines.
+raise ValueError('stdin and input arguments may not both be used.')
+raise ValueError('stdout and stderr arguments may not be used '",<RUN_DIR>/case_analysis/cvdp_copilot_digital_stopwatch_0001.md,<RUN_DIR>/logs/cvdp_copilot_digital_stopwatch_0001,60.6509473323822,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,dig_stopwatch,dig_stopwatch,dig_stopwatch,":0: error: parameter `CLK_FREQ` not found in `dig_stopwatch`.
+error: parameter `CLK_FREQ` not found in `dig_stopwatch`.
+returned non-zero exit status 2
+FAILED ../../harness/src/test_runner.py::test_dig_stop[3-0] - subprocess.Call...
+FAILED ../../harness/src/test_runner.py::test_dig_stop[50-0] - subprocess.Cal...
+FAILED ../../harness/src/test_runner.py::test_dig_stop[63-0] - subprocess.Cal..."
+35,cvdp_copilot_edge_detector_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: sync_pos_neg_edge_detector contains no child object named o_positive_edge_detected. Did you mean: 'out_o_positive_edge_detected'?
+35.00ns WARNING  cocotb.regression                  test_sync_pos_neg_edge_detector.test_sync_pos_neg_edge_detector failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.29s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_edge_detector_0001.md,<RUN_DIR>/logs/cvdp_copilot_edge_detector_0001,60.36721062660217,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `o_positive_edge_detected` ????? RTL ????? `out_o_positive_edge_detected`?,??????????????? testbench ???????/????????????????,sync_pos_neg_edge_detector,sync_pos_neg_edge_detector,sync_pos_neg_edge_detector,"AttributeError: sync_pos_neg_edge_detector contains no child object named o_positive_edge_detected. Did you mean: 'out_o_positive_edge_detected'?
+assert dut.o_positive_edge_detected.value==1, f""output should be 1 not {dut.o_positive_edge_detected.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+36,cvdp_copilot_ethernet_packet_parser_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: field_extract contains no child object named field
+60.00ns WARNING  cocotb.regression                  tb.test_field_extract failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+========================= 1 failed, 1 warning in 0.28s =========================",<RUN_DIR>/case_analysis/cvdp_copilot_ethernet_packet_parser_0001.md,<RUN_DIR>/logs/cvdp_copilot_ethernet_packet_parser_0001,98.16697454452515,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `field` ????? RTL ???????,??????????????? testbench ???????/????????????????,field_extract,field_extract,field_extract,"AttributeError: field_extract contains no child object named field
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+37,cvdp_copilot_events_to_apb_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: apb_controller contains no child object named apb_psel_o. Did you mean: 'out_apb_psel_o'?
+7.00ns WARNING  cocotb.regression                  test_apb_controller.test_apb_controller_with_delay failed
+15.00ns WARNING  cocotb.regression                  test_apb_controller.test_apb_controller_without_delay failed
+15.00ns INFO     cocotb.regression                  running test_apb_controller.test_apb_controller_with_timeout (3/4)
+23.00ns WARNING  ..test_apb_controller_with_timeout apb_controller contains no child object named apb_psel_o
+File ""<RUN_DIR>/logs/cvdp_copilot_events_to_apb_0001/cvdp/harness/src/test_apb_controller.py"", line 95, in test_apb_controller_with_timeout
+23.00ns WARNING  cocotb.regression                  test_apb_controller.test_apb_controller_with_timeout failed",<RUN_DIR>/case_analysis/cvdp_copilot_events_to_apb_0001.md,<RUN_DIR>/logs/cvdp_copilot_events_to_apb_0001,170.83982253074646,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `apb_psel_o` ????? RTL ????? `out_apb_psel_o`?,??????????????? testbench ???????/????????????????,apb_controller,apb_controller,apb_controller,"AttributeError: apb_controller contains no child object named apb_psel_o. Did you mean: 'out_apb_psel_o'?
+assert dut.apb_psel_o.value == 0, ""APB select should be 0 at a reset""
+Failed 4 of 4 tests
+FAILED ../../harness/src/test_runner.py::test_apb - SystemExit: 1"
+38,cvdp_copilot_factorial_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: factorial contains no child object named busy
+10.00ns WARNING  cocotb.regression                  test_factorial.test_factorial failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_factorial - SystemExit: 1
+========================= 1 failed, 1 warning in 0.28s =========================",<RUN_DIR>/case_analysis/cvdp_copilot_factorial_0001.md,<RUN_DIR>/logs/cvdp_copilot_factorial_0001,180.72979164123535,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `busy` ????? RTL ???????,??????????????? testbench ???????/????????????????,factorial,factorial,factorial,"AttributeError: factorial contains no child object named busy
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_factorial - SystemExit: 1"
+39,cvdp_copilot_fibonacci_series_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: fibonacci_series contains no child object named fib_out
+10.00ns WARNING  cocotb.regression                  test_fibonacci_series.test_reset_scenario failed
+21.00ns WARNING  cocotb.regression                  test_fibonacci_series.test_overflow_and_reset failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 2 of 2 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1",<RUN_DIR>/case_analysis/cvdp_copilot_fibonacci_series_0001.md,<RUN_DIR>/logs/cvdp_copilot_fibonacci_series_0001,117.29965281486511,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `fib_out` ????? RTL ???????,??????????????? testbench ???????/????????????????,fibonacci_series,fibonacci_series,fibonacci_series,"AttributeError: fibonacci_series contains no child object named fib_out
+Failed 2 of 2 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+40,cvdp_copilot_fifo_async_0001,MODEL_OR_MYGO_ERROR,MYGO_CIRCT_BACKEND_ERROR,invalid_mlir_ssa,MyGO CIRCT backend,MyGO 已生成中间表示，但 CIRCT/firtool 后端拒绝了它，通常表示 MyGO lowering 产生了非法 MLIR/SV 结构。,"<RUN_DIR>/logs/cvdp_copilot_fifo_async_0001/extracted_go/.mygo-tmp/.mygo-circt-2603216313/design.mlir:431:38: error: use of undeclared SSA value name
+backend: circt-opt --pass-pipeline failed: exit status 1",<RUN_DIR>/case_analysis/cvdp_copilot_fifo_async_0001.md,<RUN_DIR>/logs/cvdp_copilot_fifo_async_0001,119.4117329120636,False,False,MYGO_CIRCT_BACKEND_ERROR,CIRCT_SSA_OR_TYPE_ERROR,CIRCT ???? SSA ????SSA ?????? SSA ???????? MyGO ??? CIRCT/MLIR ??????,????? circt-opt/firtool ????????? Verilog??? CVDP harness ??????,fifo_async,binToGray,,"<RUN_DIR>/logs/cvdp_copilot_fifo_async_0001/extracted_go/.mygo-tmp/.mygo-circt-2603216313/design.mlir:431:38: error: use of undeclared SSA value name
+backend: circt-opt --pass-pipeline failed: exit status 1"
+41,cvdp_copilot_filo_0005,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"CalledProcessError. The CalledProcessError object will have the return code
+If timeout (seconds) is given and the process takes too long,
+a TimeoutExpired exception will be raised.
+triggered by setting any of text, encoding, errors or universal_newlines.
+raise ValueError('stdin and input arguments may not both be used.')
+raise ValueError('stdout and stderr arguments may not be used '
+stdout, stderr = process.communicate(input, timeout=timeout)
+except TimeoutExpired as exc:",<RUN_DIR>/case_analysis/cvdp_copilot_filo_0005.md,<RUN_DIR>/logs/cvdp_copilot_filo_0005,67.77302193641663,True,True,VERILOG_COMPILE_ERROR,VVP_RUNTIME_ERROR,vvp ??????? 3???????????????/??????,?????????? Verilog/CVDP ???????? Go ?????,FILO_RTL,FILO_RTL,FILO_RTL,"returned non-zero exit status 3
+FAILED ../../harness/src/test_runner.py::test_runner - subprocess.CalledProce...
+FAILED ../../harness/src/test_runner.py::test_filo[12-10] - subprocess.Called...
+FAILED ../../harness/src/test_runner.py::test_filo[12-12] - subprocess.Called...
+FAILED ../../harness/src/test_runner.py::test_filo[16-10] - subprocess.Called...
+FAILED ../../harness/src/test_runner.py::test_filo[16-12] - subprocess.Called..."
+42,cvdp_copilot_fsm_seq_detector_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED ../../harness/src/test_runner.py::test_detection_at_start - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_detection_at_end - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_multiple_occurrences - SystemEx...
+FAILED ../../harness/src/test_runner.py::test_noise_before_after - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_seq_overlapping - SystemExit: 1
+============================== 5 failed in 1.85s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_fsm_seq_detector_0001.md,<RUN_DIR>/logs/cvdp_copilot_fsm_seq_detector_0001,100.2763659954071,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `seq_detected` ????? RTL ????? `out_seq_detected`?,??????????????? testbench ???????/????????????????,fsm_seq_detector,fsm_seq_detector,fsm_seq_detector,"AttributeError: fsm_seq_detector contains no child object named seq_detected. Did you mean: 'out_seq_detected'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_detection_at_start - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_detection_at_end - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_multiple_occurrences - SystemEx...
+FAILED ../../harness/src/test_runner.py::test_noise_before_after - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_seq_overlapping - SystemExit: 1"
+43,cvdp_copilot_gcd_0001,MODEL_OR_MYGO_ERROR,GO_SYNTAX_ERROR,invalid_go_input,MyGO frontend,Go 代码本身不合法，MyGO 在解析或类型检查前后失败。,"<RUN_DIR>/logs/cvdp_copilot_gcd_0001/extracted_go/main.go:12:52: expected ')', found 'go' (and 1 more errors)",<RUN_DIR>/case_analysis/cvdp_copilot_gcd_0001.md,<RUN_DIR>/logs/cvdp_copilot_gcd_0001,88.25899815559387,False,False,GO_SYNTAX_ERROR,GO_PARSE_ERROR,???? Go ???????????????/????????,??????? main.go ? Go ???????????? MyGO IR/Verilog?,gcd_top,gcd_top,,"expected ')', found 'go' (and 1 more errors)"
+44,cvdp_copilot_gf_multiplier_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: gf_multiplier contains no child object named result
+1.00ns WARNING  cocotb.regression                  test_gf_mult.gf_multiplier_basic_test failed
+3.00ns WARNING  cocotb.regression                  test_gf_mult.gf_multiplier_random_test failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 2 of 2 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1",<RUN_DIR>/case_analysis/cvdp_copilot_gf_multiplier_0001.md,<RUN_DIR>/logs/cvdp_copilot_gf_multiplier_0001,31.93992018699646,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `result` ????? RTL ???????,??????????????? testbench ???????/????????????????,gf_multiplier,gf_multiplier,gf_multiplier,"AttributeError: gf_multiplier contains no child object named result
+Failed 2 of 2 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+45,cvdp_copilot_hamming_code_tx_and_rx_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: hamming_code_tx_for_4bit contains no child object named data_out. Did you mean: 'data_in'?
+5.00ns WARNING  cocotb.regression                  tx_test.tx_test failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test[0] - SystemExit: 1
+============================== 1 failed in 0.27s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_hamming_code_tx_and_rx_0001.md,<RUN_DIR>/logs/cvdp_copilot_hamming_code_tx_and_rx_0001,23.471250772476196,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `data_out` ????? RTL ????? `data_in`?,??????????????? testbench ???????/????????????????,hamming_code_tx_for_4bit,hamming_code_tx_for_4bit,hamming_code_tx_for_4bit,"AttributeError: hamming_code_tx_for_4bit contains no child object named data_out. Did you mean: 'data_in'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test[0] - SystemExit: 1"
+46,cvdp_copilot_hamming_code_tx_and_rx_0003,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: hamming_code_receiver contains no child object named data_out. Did you mean: 'data_in'?
+20.00ns WARNING  cocotb.regression                  test_hamming_code_receiver.test_hamming_code_receiver failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test[0] - SystemExit: 1
+============================== 1 failed in 0.29s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_hamming_code_tx_and_rx_0003.md,<RUN_DIR>/logs/cvdp_copilot_hamming_code_tx_and_rx_0003,34.458343505859375,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `data_out` ????? RTL ????? `data_in`?,??????????????? testbench ???????/????????????????,hamming_code_receiver,hamming_code_receiver,hamming_code_receiver,"AttributeError: hamming_code_receiver contains no child object named data_out. Did you mean: 'data_in'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test[0] - SystemExit: 1"
+47,cvdp_copilot_hebbian_rule_0017,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"AssertionError: Expected w1=1, but got 0
+270.00ns WARNING  cocotb.regression                  test_hebb_gates.test_hebb_gates failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_hebb_gates - SystemExit: 1
+============================== 1 failed in 0.32s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_hebbian_rule_0017.md,<RUN_DIR>/logs/cvdp_copilot_hebbian_rule_0017,137.96689653396606,True,True,FUNCTIONAL_FAIL,ASSERTION_VALUE_MISMATCH,RTL ??????????CVDP ????????????????,??/?????????????????????????????????????,hebb_gates,computeTarget,hebb_gates,"AssertionError: Expected w1=1, but got 0
+assert dut.w1.value.signed_integer == 2, f""Expected w1=1, but got {dut.w1.value.signed_integer}""
+assert 0 == 2
+Expected w1=1, but got 0
+Expected w1=1, but got {dut.w1.value.signed_integer}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_hebb_gates - SystemExit: 1"
+48,cvdp_copilot_hill_cipher_0001,MODEL_OR_MYGO_ERROR,MYGO_CIRCT_BACKEND_ERROR,invalid_mlir_ssa;inout_lowering,MyGO CIRCT backend,MyGO 已生成中间表示，但 CIRCT/firtool 后端拒绝了它，通常表示 MyGO lowering 产生了非法 MLIR/SV 结构。,"<RUN_DIR>/logs/cvdp_copilot_hill_cipher_0001/extracted_go/.mygo-tmp/.mygo-circt-1019206835/design.mlir:573:5: error: redefinition of SSA value '%c0'
+backend: circt-opt --pass-pipeline failed: exit status 1",<RUN_DIR>/case_analysis/cvdp_copilot_hill_cipher_0001.md,<RUN_DIR>/logs/cvdp_copilot_hill_cipher_0001,96.12645053863525,False,False,MYGO_CIRCT_BACKEND_ERROR,CIRCT_SSA_OR_TYPE_ERROR,CIRCT ???? SSA ????SSA ?????? SSA ???????? MyGO ??? CIRCT/MLIR ??????,????? circt-opt/firtool ????????? Verilog??? CVDP harness ??????,hill_cipher,hill_cipher,,"<RUN_DIR>/logs/cvdp_copilot_hill_cipher_0001/extracted_go/.mygo-tmp/.mygo-circt-1019206835/design.mlir:573:5: error: redefinition of SSA value '%c0'
+backend: circt-opt --pass-pipeline failed: exit status 1"
+49,cvdp_copilot_load_store_unit_0001,TIMEOUT,TIMEOUT,llm_timeout,LLM/Go generation,LLM 调用超过 180 秒。,LLM 调用超过 180 秒。,<RUN_DIR>/case_analysis/cvdp_copilot_load_store_unit_0001.md,<RUN_DIR>/logs/cvdp_copilot_load_store_unit_0001,180.00177884101868,False,False,TIMEOUT,LLM_TIMEOUT,LLM ???? 180 ???????? MyGO ? Go ???,LLM ??????MyGO/CVDP ???????????? Go?MyGO ? Verilog?,load_store_unit,,,
+50,cvdp_copilot_matrix_multiplier_0001,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `COL_A` not found in `matrix_multiplier`.
+:0: error: parameter `COL_B` not found in `matrix_multiplier`.
+:0: error: parameter `INPUT_DATA_WIDTH` not found in `matrix_multiplier`.
+:0: error: parameter `ROW_A` not found in `matrix_multiplier`.
+:0: error: parameter `ROW_B` not found in `matrix_multiplier`.
+6 error(s) during elaboration.
+input = None, capture_output = False, timeout = None, check = True
+input=None, capture_output=False, timeout=None, check=False, **kwargs):",<RUN_DIR>/case_analysis/cvdp_copilot_matrix_multiplier_0001.md,<RUN_DIR>/logs/cvdp_copilot_matrix_multiplier_0001,152.32693815231323,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,matrix_multiplier,matrix_multiplier,matrix_multiplier,":0: error: parameter `COL_A` not found in `matrix_multiplier`.
+:0: error: parameter `COL_B` not found in `matrix_multiplier`.
+:0: error: parameter `INPUT_DATA_WIDTH` not found in `matrix_multiplier`.
+:0: error: parameter `ROW_A` not found in `matrix_multiplier`.
+:0: error: parameter `ROW_B` not found in `matrix_multiplier`.
+error: parameter `COL_A` not found in `matrix_multiplier`.
+error: parameter `COL_B` not found in `matrix_multiplier`."
+51,cvdp_copilot_microcode_sequencer_0001,TIMEOUT,TIMEOUT,llm_timeout,LLM/Go generation,LLM 调用超过 180 秒。,LLM 调用超过 180 秒。,<RUN_DIR>/case_analysis/cvdp_copilot_microcode_sequencer_0001.md,<RUN_DIR>/logs/cvdp_copilot_microcode_sequencer_0001,180.00238299369812,False,False,TIMEOUT,LLM_TIMEOUT,LLM ???? 180 ???????? MyGO ? Go ???,LLM ??????MyGO/CVDP ???????????? Go?MyGO ? Verilog?,microcode_sequencer,,,
+52,cvdp_copilot_morse_code_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"assert int(dut.morse_out.value) == expected_morse, f""Test failed for {ascii_char}: Expected Morse {bin(expected_morse)}, got {bin(int(dut.morse_out.value))}""
+raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: morse_encoder contains no child object named morse_out. Did you mean: 'out_morse_out'?
+1.00ns WARNING  cocotb.regression                  test_morse_encoder.test_random_ascii_inputs failed
+3.00ns WARNING  cocotb.regression                  test_morse_encoder.test_specific_chars failed
+5.00ns WARNING  cocotb.regression                  test_morse_encoder.test_random_numeric_inputs failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 3 of 3 tests.
+FAILED",<RUN_DIR>/case_analysis/cvdp_copilot_morse_code_0001.md,<RUN_DIR>/logs/cvdp_copilot_morse_code_0001,48.514453411102295,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `morse_out` ????? RTL ????? `out_morse_out`?,??????????????? testbench ???????/????????????????,morse_encoder,morse_encoder,morse_encoder,"AttributeError: morse_encoder contains no child object named morse_out. Did you mean: 'out_morse_out'?
+assert int(dut.morse_out.value) == expected_morse, f""Test failed for {ascii_char}: Expected Morse {bin(expected_morse)}, got {bin(int(dut.morse_out.value))}""
+Expected Morse {bin(expected_morse)}, got {bin(int(dut.morse_out.value))}""
+Failed 3 of 3 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+53,cvdp_copilot_moving_average_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED ../../harness/src/test_runner.py::test_moving_rndm[0] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_rndm[1] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_rndm[2] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_rndm[3] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_rndm[4] - SystemExit: 1
+============================== 5 failed in 1.33s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_moving_average_0001.md,<RUN_DIR>/logs/cvdp_copilot_moving_average_0001,44.23241448402405,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `data_out` ????? RTL ????? `data_in`?,??????????????? testbench ???????/????????????????,moving_average,moving_average,moving_average,"AttributeError: moving_average contains no child object named data_out. Did you mean: 'data_in'?
+assert dut.data_out.value == 0, f""[ERROR] data_out is not zero after reset: {dut.data_out.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_moving_rndm[0] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_rndm[1] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_rndm[2] - SystemExit: 1
+FAILED ../../harness/src/test_runner.py::test_moving_rndm[3] - SystemExit: 1"
+54,cvdp_copilot_nbit_swizzling_0001,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `DATA_WIDTH` not found in `nbit_swizzling`.
+2 error(s) during elaboration.
+CalledProcessError. The CalledProcessError object will have the return code
+If timeout (seconds) is given and the process takes too long,
+a TimeoutExpired exception will be raised.
+triggered by setting any of text, encoding, errors or universal_newlines.
+raise ValueError('stdin and input arguments may not both be used.')
+raise ValueError('stdout and stderr arguments may not be used '",<RUN_DIR>/case_analysis/cvdp_copilot_nbit_swizzling_0001.md,<RUN_DIR>/logs/cvdp_copilot_nbit_swizzling_0001,57.056230545043945,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,nbit_swizzling,reverse8,nbit_swizzling,":0: error: parameter `DATA_WIDTH` not found in `nbit_swizzling`.
+error: parameter `DATA_WIDTH` not found in `nbit_swizzling`.
+returned non-zero exit status 2
+FAILED ../../harness/src/test_runner.py::test_nbit_sizling[16] - subprocess.C...
+FAILED ../../harness/src/test_runner.py::test_nbit_sizling[32] - subprocess.C...
+FAILED ../../harness/src/test_runner.py::test_nbit_sizling[40] - subprocess.C...
+FAILED ../../harness/src/test_runner.py::test_nbit_sizling[48] - subprocess.C..."
+55,cvdp_copilot_packet_controller_0001,MODEL_OR_MYGO_ERROR,MYGO_FRONTEND_ERROR,package_loading,MyGO frontend,MyGO 前端加载或类型检查 Go 包失败。,"error: <RUN_DIR>/logs/cvdp_copilot_packet_controller_0001/extracted_go/main.go:110:20: 0xAB + 0xCD (untyped int constant 376) overflows uint8
+package loading failed",<RUN_DIR>/case_analysis/cvdp_copilot_packet_controller_0001.md,<RUN_DIR>/logs/cvdp_copilot_packet_controller_0001,98.21597290039062,False,False,GO_SYNTAX_ERROR,GO_TYPE_ERROR,Go ??????????????/????/????????,??????? main.go??? LLM ?? Go ?????????? MyGO ??? CVDP?,packet_controller,packet_controller,,error: <RUN_DIR>/logs/cvdp_copilot_packet_controller_0001/extracted_go/main.go:110:20: 0xAB + 0xCD (untyped int constant 376) overflows uint8
+56,cvdp_copilot_palindrome_3b_0002,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: palindrome_detect contains no child object named palindrome_detected. Did you mean: 'out_palindrome_detected'?
+120.00ns WARNING  cocotb.regression                  test_palindrome_detect.test_palindrome_detect failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_palindrome_detect - SystemExit: 1
+========================= 1 failed, 1 warning in 0.47s =========================",<RUN_DIR>/case_analysis/cvdp_copilot_palindrome_3b_0002.md,<RUN_DIR>/logs/cvdp_copilot_palindrome_3b_0002,50.281259536743164,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `palindrome_detected` ????? RTL ????? `out_palindrome_detected`?,??????????????? testbench ???????/????????????????,palindrome_detect,palindrome_detect,palindrome_detect,"AttributeError: palindrome_detect contains no child object named palindrome_detected. Did you mean: 'out_palindrome_detected'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_palindrome_detect - SystemExit: 1"
+57,cvdp_copilot_perceptron_0001,TIMEOUT,TIMEOUT,llm_timeout,LLM/Go generation,LLM 调用超过 180 秒。,LLM 调用超过 180 秒。,<RUN_DIR>/case_analysis/cvdp_copilot_perceptron_0001.md,<RUN_DIR>/logs/cvdp_copilot_perceptron_0001,180.00205278396606,False,False,TIMEOUT,LLM_TIMEOUT,LLM ???? 180 ???????? MyGO ? Go ???,LLM ??????MyGO/CVDP ???????????? Go?MyGO ? Verilog?,perceptron_gates,,,
+58,cvdp_copilot_perf_counters_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: cvdp_copilot_perf_counters contains no child object named p_count_o. Did you mean: 'count_q'?
+60.00ns WARNING  cocotb.regression                  test_perf_counters.test_perf_counters failed
+60.00ns WARNING  cocotb.regression                  test_perf_counters.test_perf_counters_overflow failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 2 of 2 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1",<RUN_DIR>/case_analysis/cvdp_copilot_perf_counters_0001.md,<RUN_DIR>/logs/cvdp_copilot_perf_counters_0001,61.795854806900024,True,True,VERILOG_INTERFACE_ERROR,INTERNAL_SIGNAL_OR_OBSERVABILITY_MISSING,cocotb ?? `p_count_o` ????? RTL ?? benchmark ??????????,???? testbench ??? RTL ???????????????????,cvdp_copilot_perf_counters,cvdp_copilot_perf_counters,cvdp_copilot_perf_counters,"AttributeError: cvdp_copilot_perf_counters contains no child object named p_count_o. Did you mean: 'count_q'?
+Failed 2 of 2 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+59,cvdp_copilot_perfect_squares_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: perfect_squares_generator contains no child object named sqr_o
+50.00ns WARNING  cocotb.regression                  test_perfect_squares_generator.test_perfect_squares_generator failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+========================= 1 failed, 1 warning in 0.29s =========================",<RUN_DIR>/case_analysis/cvdp_copilot_perfect_squares_0001.md,<RUN_DIR>/logs/cvdp_copilot_perfect_squares_0001,36.25410032272339,True,True,VERILOG_INTERFACE_ERROR,INTERNAL_SIGNAL_OR_OBSERVABILITY_MISSING,cocotb ?? `sqr_o` ????? RTL ?? benchmark ??????????,???? testbench ??? RTL ???????????????????,perfect_squares_generator,perfect_squares_generator,perfect_squares_generator,"AttributeError: perfect_squares_generator contains no child object named sqr_o
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+60,cvdp_copilot_piso_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: piso_8bit contains no child object named serial_out. Did you mean: 'out_serial_out'?
+25.00ns WARNING  cocotb.regression                  test_piso.test_piso_1 failed
+131.00ns WARNING  cocotb.regression                  test_piso.test_piso_2 failed
+397.00ns WARNING  cocotb.regression                  test_piso.test_piso_3 failed
+423.00ns WARNING  cocotb.regression                  test_piso.test_piso_4 failed
+439.00ns WARNING  cocotb.regression                  test_piso.test_reset failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 5 of 5 tests.",<RUN_DIR>/case_analysis/cvdp_copilot_piso_0001.md,<RUN_DIR>/logs/cvdp_copilot_piso_0001,55.59334421157837,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `serial_out` ????? RTL ????? `out_serial_out`?,??????????????? testbench ???????/????????????????,piso_8bit,piso_8bit,piso_8bit,"AttributeError: piso_8bit contains no child object named serial_out. Did you mean: 'out_serial_out'?
+assert int(dut.serial_out.value) == 0, ""serial_out value didn't reset properly""
+Failed 5 of 5 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+61,cvdp_copilot_prbs_gen_0003,MODEL_OR_MYGO_ERROR,GO_SYNTAX_ERROR,invalid_go_input,MyGO frontend,Go 代码本身不合法，MyGO 在解析或类型检查前后失败。,"error: <RUN_DIR>/logs/cvdp_copilot_prbs_gen_0003/extracted_go/main.go:44:31: invalid operation: inBit ^ expected (mismatched types uint16 and uint32)
+package loading failed",<RUN_DIR>/case_analysis/cvdp_copilot_prbs_gen_0003.md,<RUN_DIR>/logs/cvdp_copilot_prbs_gen_0003,74.349684715271,False,False,GO_SYNTAX_ERROR,GO_TYPE_ERROR,Go ??????????????/????/????????,??????? main.go??? LLM ?? Go ?????????? MyGO ??? CVDP?,cvdp_prbs_gen,cvdp_prbs_gen,,"error: <RUN_DIR>/logs/cvdp_copilot_prbs_gen_0003/extracted_go/main.go:44:31: invalid operation: inBit ^ expected (mismatched types uint16 and uint32)
+expected (mismatched types uint16 and uint32)"
+62,cvdp_copilot_restoring_division_0001,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `WIDTH` not found in `restoring_division`.
+2 error(s) during elaboration.
+triggered by setting any of text, encoding, errors or universal_newlines.
+raise ValueError('stdin and input arguments may not both be used.')
+raise ValueError('stdout and stderr arguments may not be used '
+stdout, stderr = process.communicate(input, timeout=timeout)
+except TimeoutExpired as exc:
+# read() call run on child threads, with the timeout",<RUN_DIR>/case_analysis/cvdp_copilot_restoring_division_0001.md,<RUN_DIR>/logs/cvdp_copilot_restoring_division_0001,91.77012729644775,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,restoring_division,restoring_division,restoring_division,":0: error: parameter `WIDTH` not found in `restoring_division`.
+error: parameter `WIDTH` not found in `restoring_division`.
+returned non-zero exit status 2
+FAILED ../../harness/src/test_runner.py::test_areg_param[3-0] - subprocess.Ca...
+FAILED ../../harness/src/test_runner.py::test_areg_param[3-1] - subprocess.Ca...
+FAILED ../../harness/src/test_runner.py::test_areg_param[4-0] - subprocess.Ca...
+FAILED ../../harness/src/test_runner.py::test_areg_param[4-1] - subprocess.Ca..."
+63,cvdp_copilot_reverse_bits_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: reverse_bits contains no child object named num_out
+0.10ns WARNING  cocotb.regression                  test_reverse_bits.test_reverse_bits failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.28s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_reverse_bits_0001.md,<RUN_DIR>/logs/cvdp_copilot_reverse_bits_0001,12.115562200546265,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `num_out` ????? RTL ???????,??????????????? testbench ???????/????????????????,reverse_bits,reverse_bits,reverse_bits,"AttributeError: reverse_bits contains no child object named num_out
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+64,cvdp_copilot_secure_read_write_bus_0001,FAIL,VERILOG_INTERFACE_ERROR,interface_mismatch,CVDP elaboration,生成的 Verilog 顶层模块、端口名、端口数量、方向或位宽与 CVDP testbench 期望不一致。,"25.00ns WARNING  .._secure_read_write_bus_interface secure_read_write_bus_interface contains no child object named o_error
+assert dut.o_error.value==0, f""output should not be {dut.o_error.value}""
+raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: secure_read_write_bus_interface contains no child object named o_error
+25.00ns WARNING  cocotb.regression                  test_secure_read_write_bus_interface.test_secure_read_write_bus_interface failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================",<RUN_DIR>/case_analysis/cvdp_copilot_secure_read_write_bus_0001.md,<RUN_DIR>/logs/cvdp_copilot_secure_read_write_bus_0001,48.57368540763855,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `o_error` ????? RTL ???????,??????????????? testbench ???????/????????????????,secure_read_write_bus_interface,secure_read_write_bus_interface,secure_read_write_bus_interface,"AttributeError: secure_read_write_bus_interface contains no child object named o_error
+assert dut.o_error.value==0, f""output should not be {dut.o_error.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+65,cvdp_copilot_secure_read_write_register_bank_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: secure_read_write_register_bank contains no child object named o_data_out
+65.00ns WARNING  cocotb.regression                  test_secure_read_write_register_bank.test_secure_read_write_register_bank failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.54s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_secure_read_write_register_bank_0001.md,<RUN_DIR>/logs/cvdp_copilot_secure_read_write_register_bank_0001,183.03553366661072,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `o_data_out` ????? RTL ???????,??????????????? testbench ???????/????????????????,secure_read_write_register_bank,secure_read_write_register_bank,secure_read_write_register_bank,"AttributeError: secure_read_write_register_bank contains no child object named o_data_out
+assert dut.o_data_out.value==2, f""output should not be {dut.o_data_out.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+66,cvdp_copilot_sequencial_binary_to_one_hot_decoder_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: binary_to_one_hot_decoder_sequential contains no child object named o_one_hot_out. Did you mean: 'out_o_one_hot_out'?
+25.00ns WARNING  cocotb.regression                  test_binary_to_one_hot_decoder_sequential.test_binary_to_one_hot_decoder_sequential failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.91s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_sequencial_binary_to_one_hot_decoder_0001.md,<RUN_DIR>/logs/cvdp_copilot_sequencial_binary_to_one_hot_decoder_0001,44.740854263305664,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `o_one_hot_out` ????? RTL ????? `out_o_one_hot_out`?,??????????????? testbench ???????/????????????????,binary_to_one_hot_decoder_sequential,binary_to_one_hot_decoder_sequential,binary_to_one_hot_decoder_sequential,"AttributeError: binary_to_one_hot_decoder_sequential contains no child object named o_one_hot_out. Did you mean: 'out_o_one_hot_out'?
+assert dut.o_one_hot_out.value==1, f""output should not be {dut.o_one_hot_out.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+67,cvdp_copilot_serial_in_parallel_out_0004,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: serial_in_parallel_out_8bit contains no child object named parallel_out. Did you mean: 'out_parallel_out'?
+75.00ns WARNING  cocotb.regression                  test_sipo.test_sipo_1 failed
+151.00ns WARNING  cocotb.regression                  test_sipo.test_sipo_2 failed
+227.00ns WARNING  cocotb.regression                  test_sipo.test_sipo_3 failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 3 of 3 tests.
+FAILED
+=================================== FAILURES ===================================",<RUN_DIR>/case_analysis/cvdp_copilot_serial_in_parallel_out_0004.md,<RUN_DIR>/logs/cvdp_copilot_serial_in_parallel_out_0004,24.392508506774902,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `parallel_out` ????? RTL ????? `out_parallel_out`?,??????????????? testbench ???????/????????????????,serial_in_parallel_out_8bit,serial_in_parallel_out_8bit,serial_in_parallel_out_8bit,"AttributeError: serial_in_parallel_out_8bit contains no child object named parallel_out. Did you mean: 'out_parallel_out'?
+Failed 3 of 3 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+68,cvdp_copilot_set_bit_calculator_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: SetBitStreamCalculator contains no child object named o_set_bit_count. Did you mean: 'out_o_set_bit_count'?
+205.00ns WARNING  cocotb.regression                  test_SetBitStreamCalculator.test_unique_number_identifier failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.29s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_set_bit_calculator_0001.md,<RUN_DIR>/logs/cvdp_copilot_set_bit_calculator_0001,107.33874821662903,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `o_set_bit_count` ????? RTL ????? `out_o_set_bit_count`?,??????????????? testbench ???????/????????????????,SetBitStreamCalculator,SetBitStreamCalculator,SetBitStreamCalculator,"AttributeError: SetBitStreamCalculator contains no child object named o_set_bit_count. Did you mean: 'out_o_set_bit_count'?
+assert dut.o_set_bit_count.value==8, f""output should not be {dut.o_set_bit_count.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+69,cvdp_copilot_sorter_0001,MODEL_OR_MYGO_ERROR,MYGO_FRONTEND_ERROR,package_loading,MyGO frontend,MyGO 前端加载或类型检查 Go 包失败。,"error: <RUN_DIR>/logs/cvdp_copilot_sorter_0001/extracted_go/main.go:44:6: invalid operation: arr_reg &= clearMaskA (mismatched types uint64 and int)
+error: <RUN_DIR>/logs/cvdp_copilot_sorter_0001/extracted_go/main.go:45:6: invalid operation: arr_reg &= clearMaskB (mismatched types uint64 and int)
+package loading failed",<RUN_DIR>/case_analysis/cvdp_copilot_sorter_0001.md,<RUN_DIR>/logs/cvdp_copilot_sorter_0001,122.82580590248108,False,False,GO_SYNTAX_ERROR,GO_TYPE_ERROR,Go ??????????????/????/????????,??????? main.go??? LLM ?? Go ?????????? MyGO ??? CVDP?,sorting_engine,sorting_engine,,"error: <RUN_DIR>/logs/cvdp_copilot_sorter_0001/extracted_go/main.go:44:6: invalid operation: arr_reg &= clearMaskA (mismatched types uint64 and int)
+error: <RUN_DIR>/logs/cvdp_copilot_sorter_0001/extracted_go/main.go:45:6: invalid operation: arr_reg &= clearMaskB (mismatched types uint64 and int)"
+70,cvdp_copilot_static_branch_predict_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: static_branch_predict contains no child object named register_addr_i
+0.00ns WARNING  cocotb.regression                  test_static_branch_predict.test_static_branch_predict failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+========================= 1 failed, 1 passed in 0.30s ==========================",<RUN_DIR>/case_analysis/cvdp_copilot_static_branch_predict_0001.md,<RUN_DIR>/logs/cvdp_copilot_static_branch_predict_0001,71.55925559997559,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `register_addr_i` ????? RTL ???????,??????????????? testbench ???????/????????????????,static_branch_predict,static_branch_predict,static_branch_predict,"AttributeError: static_branch_predict contains no child object named register_addr_i
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+71,cvdp_copilot_sync_lifo_0001,FAIL,CVDP_HARNESS_ERROR,toolchain_failure,CVDP harness,CVDP harness 运行依赖缺失或路径不正确。,":0: error: parameter `ADDR_WIDTH` not found in `sync_lifo`.
+:0: error: parameter `DATA_WIDTH` not found in `sync_lifo`.
+3 error(s) during elaboration.
+CalledProcessError. The CalledProcessError object will have the return code
+If timeout (seconds) is given and the process takes too long,
+a TimeoutExpired exception will be raised.
+triggered by setting any of text, encoding, errors or universal_newlines.
+raise ValueError('stdin and input arguments may not both be used.')",<RUN_DIR>/case_analysis/cvdp_copilot_sync_lifo_0001.md,<RUN_DIR>/logs/cvdp_copilot_sync_lifo_0001,80.52028489112854,True,True,VERILOG_INTERFACE_ERROR,PARAMETER_MISSING,CVDP testbench ?? iverilog -P ?????????????? Verilog parameter?,????????????? RTL ??????? benchmark ???????? pytest/cocotb ?????,sync_lifo,sync_lifo,sync_lifo,":0: error: parameter `ADDR_WIDTH` not found in `sync_lifo`.
+:0: error: parameter `DATA_WIDTH` not found in `sync_lifo`.
+error: parameter `ADDR_WIDTH` not found in `sync_lifo`.
+error: parameter `DATA_WIDTH` not found in `sync_lifo`.
+returned non-zero exit status 3
+FAILED ../../harness/src/test_runner.py::test_areg_param[4] - subprocess.Call...
+FAILED ../../harness/src/test_runner.py::test_areg_param[8] - subprocess.Call..."
+72,cvdp_copilot_sync_serial_communication_0001,TIMEOUT,TIMEOUT,mygo_compile_timeout,MyGO compile,MyGO 编译阶段超过限时，后续 Verilog/CVDP 没有运行。,TIMEOUT after 120s while running: <RUN_DIR>/tools/mygo compile -emit=verilog --target sync_serial_communication_tx_rx --circt-mlir <RUN_DIR>/logs/cvdp_copilot_sync_serial_communication_0001/mygo/design.mlir -o <RUN_DIR>/logs/cvdp_copilot_sync_serial_communication_0001/mygo/generated.sv <RUN_DIR>/logs/cvdp_copilot_sync_serial_communication_0001/extracted_go/main.go,<RUN_DIR>/case_analysis/cvdp_copilot_sync_serial_communication_0001.md,<RUN_DIR>/logs/cvdp_copilot_sync_serial_communication_0001,294.5411250591278,False,False,TIMEOUT,MYGO_COMPILE_TIMEOUT,MyGO ???? 120 ???????? Verilog/CVDP?,MyGO ????????????? RTL????? CVDP ?????,sync_serial_communication_tx_rx,sync_serial_communication_tx_rx,sync_serial_communication_tx_rx,TIMEOUT after 120s while running: <RUN_DIR>/tools/mygo compile -emit=verilog --target sync_serial_communication_tx_rx --circt-mlir <RUN_DIR>/logs/cvdp_copilot_sync_serial_communication_0001/mygo/...
+73,cvdp_copilot_thermostat_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: thermostat contains no child object named o_state. Did you mean: 'out_state'?
+31.00ns WARNING  cocotb.regression                  test_thermostat.test_thermostat failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+============================== 1 failed in 0.34s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_thermostat_0001.md,<RUN_DIR>/logs/cvdp_copilot_thermostat_0001,86.5217034816742,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `o_state` ????? RTL ????? `out_state`?,??????????????? testbench ???????/????????????????,thermostat,thermostat,thermostat,"AttributeError: thermostat contains no child object named o_state. Did you mean: 'out_state'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+74,cvdp_copilot_ttc_lite_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: ttc_counter_lite contains no child object named axi_rdata. Did you mean: 'axi_wdata'?
+290.00ns WARNING  cocotb.regression                  test_ttc_counter_lite.test_ttc_counter_lite failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_areg_param[0] - SystemExit: 1
+============================== 1 failed in 0.31s ===============================",<RUN_DIR>/case_analysis/cvdp_copilot_ttc_lite_0001.md,<RUN_DIR>/logs/cvdp_copilot_ttc_lite_0001,85.20672988891602,True,True,VERILOG_INTERFACE_ERROR,INTERNAL_SIGNAL_OR_OBSERVABILITY_MISSING,cocotb ?? `axi_rdata` ????? RTL ?? benchmark ??????????,???? testbench ??? RTL ???????????????????,ttc_counter_lite,ttc_counter_lite,ttc_counter_lite,"AttributeError: ttc_counter_lite contains no child object named axi_rdata. Did you mean: 'axi_wdata'?
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_areg_param[0] - SystemExit: 1"
+75,cvdp_copilot_unpacker_one_hot_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: unpack_one_hot contains no child object named destination_reg
+2.00ns WARNING  cocotb.regression                  tb.test_unpack_one_hot failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1
+========================= 1 failed, 1 warning in 0.36s =========================",<RUN_DIR>/case_analysis/cvdp_copilot_unpacker_one_hot_0001.md,<RUN_DIR>/logs/cvdp_copilot_unpacker_one_hot_0001,114.6705334186554,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `destination_reg` ????? RTL ???????,??????????????? testbench ???????/????????????????,unpack_one_hot,unpack_one_hot,unpack_one_hot,"AttributeError: unpack_one_hot contains no child object named destination_reg
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_runner - SystemExit: 1"
+76,cvdp_copilot_vending_machine_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED ../../harness/src/test_runner.py::test_vending_machine1[0] - SystemExi...
+FAILED ../../harness/src/test_runner.py::test_vending_machine1[1] - SystemExi...
+FAILED ../../harness/src/test_runner.py::test_vending_machine1[2] - SystemExi...
+FAILED ../../harness/src/test_runner.py::test_vending_machine1[3] - SystemExi...
+FAILED ../../harness/src/test_runner.py::test_vending_machine1[4] - SystemExi...
+FAILED ../../harness/src/test_runner.py::test_vending_machine1[5] - SystemExi...
+FAILED ../../harness/src/test_runner.py::test_vending_machine1[6] - SystemExi...",<RUN_DIR>/case_analysis/cvdp_copilot_vending_machine_0001.md,<RUN_DIR>/logs/cvdp_copilot_vending_machine_0001,173.65969109535217,True,True,VERILOG_INTERFACE_ERROR,PORT_NAME_MISMATCH_OUT_PREFIX,cocotb ?? `dispense_item` ????? RTL ????? `out_dispense_item`?,??????????????? testbench ???????/????????????????,vending_machine,vending_machine,vending_machine,"AttributeError: vending_machine contains no child object named dispense_item. Did you mean: 'out_dispense_item'?
+assert dut.dispense_item.value == 1, f""Expected item to be dispensed!""
+Expected item to be dispensed!""
+expected price: 20
+expected price: 10
+expected price: 15
+Failed 1 of 1 tests"
+77,cvdp_copilot_vga_controller_0001,PASS,PASS,,CVDP simulation,MyGO 生成的 Verilog 通过 CVDP harness。,CVDP harness returned success.,<RUN_DIR>/case_analysis/cvdp_copilot_vga_controller_0001.md,<RUN_DIR>/logs/cvdp_copilot_vga_controller_0001,183.86878895759583,True,True,PASS,PASS,Passed CVDP harness.,N/A,,,,
+78,cvdp_copilot_wb2ahb_0001,FAIL,FUNCTIONAL_FAIL,assertion_failure,CVDP simulation/assertion,Verilog 能进入测试流程，但 CVDP 断言或功能检查失败，说明行为语义不满足题目要求。,"assert dut.hwrite.value == 1, f""ERROR: hwrite should be 1, got {dut.hwrite.value}""
+raise AttributeError(f""{self._path} contains no child object named {name}"")
+AttributeError: wishbone_to_ahb_bridge contains no child object named hwrite
+50.00ns WARNING  cocotb.regression                  test_wishbone_to_ahb_bridge.test_wishbone_to_ahb_bridge failed
+ERROR    Icarus:runner.py:572 ERROR: Failed 1 of 1 tests.
+FAILED
+=================================== FAILURES ===================================
+FAILED ../../harness/src/test_runner.py::test_areg_param[0] - SystemExit: 1",<RUN_DIR>/case_analysis/cvdp_copilot_wb2ahb_0001.md,<RUN_DIR>/logs/cvdp_copilot_wb2ahb_0001,158.01927280426025,True,True,VERILOG_INTERFACE_ERROR,PORT_OR_SIGNAL_MISSING,cocotb ?? `hwrite` ????? RTL ???????,??????????????? testbench ???????/????????????????,wishbone_to_ahb_bridge,trailing_ones,wishbone_to_ahb_bridge,"AttributeError: wishbone_to_ahb_bridge contains no child object named hwrite
+assert dut.hwrite.value == 1, f""ERROR: hwrite should be 1, got {dut.hwrite.value}""
+Failed 1 of 1 tests
+FAILED ../../harness/src/test_runner.py::test_areg_param[0] - SystemExit: 1"

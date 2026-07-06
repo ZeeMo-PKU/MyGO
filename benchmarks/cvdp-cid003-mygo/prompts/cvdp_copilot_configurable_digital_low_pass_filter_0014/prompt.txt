@@ -1,0 +1,124 @@
+You are generating Go source code for MyGO, a Go-to-RTL compiler.
+Return exactly one Go program that implements the requested RTL module.
+
+Required MyGO shape:
+1. Start with `package main`.
+2. Implement the hardware entry function using exactly the CVDP TOPLEVEL name specified below.
+3. Inputs are ordinary hardware entry function parameters.
+4. Outputs are package-level globals whose names start with `out_`.
+5. Assign outputs by writing directly to those `out_*` globals.
+6. End with `func main() {}`.
+
+Important constraints:
+- Do not return outputs from the hardware entry function.
+- Do not use pointer outputs such as `*bool` or `*uint8`.
+- Avoid structs, interfaces, maps, select, recursion, dynamic goroutines, channels, slices, and heap allocation.
+- Prefer bool for 1-bit signals.
+- Prefer uint8, uint16, uint32, uint64 for packed vectors.
+- Use fixed-size arrays only when a vector is wider than scalar integer types.
+- For vectors represented as arrays, index 0 should represent the least significant bit unless the problem states otherwise.
+- Use only the Go standard language subset that is likely synthesizable by MyGO.
+- Preserve the CVDP module interface semantics in the hardware entry parameters and `out_*` globals.
+- Include helpful comments only where needed.
+
+Output format:
+- Return only Go code.
+- Do not wrap the answer in Markdown fences.
+
+
+CVDP case id: cvdp_copilot_configurable_digital_low_pass_filter_0014
+Categories: ['cid003', 'easy']
+Expected RTL file(s) in original benchmark: ['rtl/fsm_linear_reg.sv']
+
+CVDP TOPLEVEL / required MyGO hardware entry function:
+`fsm_linear_reg`
+
+The Go program must define exactly this hardware entry function:
+`func fsm_linear_reg(...)`
+
+CVDP harness environment, including expected TOPLEVEL and VERILOG_SOURCES:
+```
+SIM             = icarus
+TOPLEVEL_LANG   = verilog
+VERILOG_SOURCES = /code/rtl/fsm_linear_reg.sv
+TOPLEVEL        = fsm_linear_reg
+MODULE          = test_fsm
+PYTHONPATH      = /src
+HASH            = 14-create-an-rtl-of-fsm-to-linear-regression
+```
+
+Original CVDP problem statement:
+```
+Implement a complete SystemVerilog module for `fsm_linear_reg` module, a finite state machine (FSM) for linear regression computations. It processes input data using configurable weights and biases to produce filtered results. The FSM operates in three states: `IDLE`, `COMPUTE`, and `DONE`. When triggered by a start signal, the module computes and outputs the filtered results, signaling completion with a `done` flag.
+
+---
+
+## Parameters
+
+| **Parameter**    | **Description**                          | **Default Value** | **Constraint**          |
+|------------------|------------------------------------------|-------------------|-------------------------|
+| `DATA_WIDTH`     | Bit-width of the input data              | 16                | Minimum: 2              |
+
+---
+
+## Inputs and Outputs
+
+### Inputs
+
+| **Port**      | **Size**            | **Description**                                      | **Constraint**                                |
+|---------------|---------------------|------------------------------------------------------|-----------------------------------------------|
+| `clk`         | 1 bit               | Clock signal, active on the rising edge              | None                                          |
+| `reset`       | 1 bit               | Asynchronous reset, active high                      | None                                          |
+| `start`       | 1 bit               | Start signal to initiate computation                 | None                                          |
+| `x_in`        | `DATA_WIDTH` bits   | Input data (integer signed)                          | Range: -2**DATA_WIDTH to 2**DATA_WIDTH - 1    |
+| `w_in`        | `DATA_WIDTH` bits   | Trained weight for linear regression (integer signed)| Range: -2**DATA_WIDTH to 2**DATA_WIDTH - 1    |
+| `b_in`        | `DATA_WIDTH` bits   | Trained bias for linear regression (integer signed)  | Range: -2**DATA_WIDTH to 2**DATA_WIDTH - 1    |
+
+### Outputs
+
+| **Port**      | **Size**            | **Description**                                                   | **Constraint**                                                   |
+|---------------|---------------------|-------------------------------------------------------------------|------------------------------------------------------------------|
+| `result1`     | `2*DATA_WIDTH` bits | Output result of the weighted sum calculation (integer signed)    | Size accommodates the product of two `DATA_WIDTH`-sized signals. |
+| `result2`     | `DATA_WIDTH+1` bits | Output result of bias-adjusted input calculation (integer signed) | Size accommodates the sum of two `DATA_WIDTH`-sized signals.     |
+| `done`        | 1 bit               | Completion signal                                                 |  High for 1 clock cycle                                          |
+---
+
+## Behavioral Description
+
+The FSM operates in three states: **`IDLE`**, **`COMPUTE`**, and **`DONE`**.
+
+- **IDLE**:  
+  - Waits for `start` signal.  
+  - Outputs are held at zero.
+
+- **COMPUTE**:  
+  - Computes results using combinational logic:  
+    - **`result1`** = `w_in * x_in >>> 1`  
+       - The size of **result1** is calculated to prevent overflow during multiplication when the inputs have maximum or minimum values.
+    - **`result2`** = `b_in + (x_in >>> 2)`  
+       - The size of **result2** is calculated to prevent overflow during the sum when the inputs have maximum or minimum values.
+  - Updates the output registers.  
+  - Transitions to `DONE` upon completion.
+
+- **DONE**:  
+  - Asserts `done` signal for 1 clock cycle.  
+     - Even if the `start` input is always `1`, the `done` output will only be `1` for one cycle during the state transitions from `IDLE` to `COMPUTE` and from `COMPUTE` to `DONE`.
+  - Returns to `IDLE` state to await the next `start`.
+
+- **Default**:
+   -  If, for any reason, there is a failure in the state transition and the next state becomes invalid, the FSM must return to the `IDLE` state.
+
+---
+
+## Reset and Latency
+
+- **Reset**:  
+  - When `reset` is high, all outputs (`result1`, `result2`, `done`) are reset to zero.  
+  - FSM returns to `IDLE`.
+
+- **Latency**:  
+  - Fixed latency: 2 clock cycles from `start` asserted to changes in `result1`  and `result2`.
+  - Fixed latency: 3 clock cycles from `start` asserted to assertion of `done`.
+
+---
+```

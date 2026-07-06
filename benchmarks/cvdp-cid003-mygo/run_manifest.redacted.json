@@ -1,0 +1,63 @@
+{
+  "dataset": "<CVDP_DATASET_JSONL>",
+  "dataset_sha256": "cbcd81295561ebb16e4d857e096f4d9908d042c33aff3b58abf236e868411857",
+  "run_dir": "<RUN_DIR>",
+  "cid003_case_count": 78,
+  "model": "deepseek/deepseek-v4-pro",
+  "provider": "openrouter",
+  "openrouter_key_file": "<OPENROUTER_KEY_FILE_REDACTED>",
+  "timeouts": {
+    "llm": 180,
+    "mygo": 120,
+    "cvdp": 420,
+    "total": 600
+  },
+  "cvdp_runtime": "host",
+  "parallel_jobs": 4,
+  "mygo_root": "/home/rongxv/work/MyGo-ZeeMo",
+  "mygo_head": "125084e4dffcc3f859e44652cde986b7e229fcf0",
+  "mygo_status_short": "<omitted: source worktree status is not part of this artifact PR>",
+  "tools": {
+    "go": [
+      "go version go1.25.4 linux/amd64"
+    ],
+    "mygo": [
+      "ERROR: Command '['<RUN_DIR>/tools/mygo']' returned non-zero exit status 1."
+    ],
+    "circt-opt": [
+      "LLVM (http://llvm.org/):",
+      "  LLVM version 23.0.0git",
+      "  Optimized build.",
+      "CIRCT firtool-1.146.0"
+    ],
+    "firtool": [
+      "LLVM (http://llvm.org/):",
+      "  LLVM version 23.0.0git",
+      "  Optimized build.",
+      "CIRCT firtool-1.146.0"
+    ],
+    "verilator": [
+      "Verilator 5.048 2026-04-26 rev vUNKNOWN-built20260429"
+    ],
+    "iverilog": [
+      "Icarus Verilog version 13.0 (stable) (v13_0)",
+      "",
+      "Copyright (c) 2000-2026 Stephen Williams (steve@icarus.com)",
+      "",
+      "  This program is free software; you can redistribute it and/or modify"
+    ],
+    "python": [
+      "Python 3.13.12"
+    ],
+    "pytest": [
+      "pytest 8.3.2"
+    ],
+    "cocotb": [
+      "2.0.1"
+    ],
+    "podman": [
+      "podman version 5.7.0"
+    ]
+  },
+  "notes": "Parallel resume of the same single-shot run. No retries for recorded cases, no auto-fix, no fallback. Unrecorded prompt-only interrupted cases are treated as incomplete because no LLM raw response exists."
+}

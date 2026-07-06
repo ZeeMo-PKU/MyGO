@@ -1,0 +1,78 @@
+You are generating Go source code for MyGO, a Go-to-RTL compiler.
+Return exactly one Go program that implements the requested RTL module.
+
+Required MyGO shape:
+1. Start with `package main`.
+2. Implement the hardware entry function using exactly the CVDP TOPLEVEL name specified below.
+3. Inputs are ordinary hardware entry function parameters.
+4. Outputs are package-level globals whose names start with `out_`.
+5. Assign outputs by writing directly to those `out_*` globals.
+6. End with `func main() {}`.
+
+Important constraints:
+- Do not return outputs from the hardware entry function.
+- Do not use pointer outputs such as `*bool` or `*uint8`.
+- Avoid structs, interfaces, maps, select, recursion, dynamic goroutines, channels, slices, and heap allocation.
+- Prefer bool for 1-bit signals.
+- Prefer uint8, uint16, uint32, uint64 for packed vectors.
+- Use fixed-size arrays only when a vector is wider than scalar integer types.
+- For vectors represented as arrays, index 0 should represent the least significant bit unless the problem states otherwise.
+- Use only the Go standard language subset that is likely synthesizable by MyGO.
+- Preserve the CVDP module interface semantics in the hardware entry parameters and `out_*` globals.
+- Include helpful comments only where needed.
+
+Output format:
+- Return only Go code.
+- Do not wrap the answer in Markdown fences.
+
+
+CVDP case id: cvdp_copilot_sorter_0001
+Categories: ['cid003', 'easy']
+Expected RTL file(s) in original benchmark: ['rtl/sorting_engine.sv']
+
+CVDP TOPLEVEL / required MyGO hardware entry function:
+`sorting_engine`
+
+The Go program must define exactly this hardware entry function:
+`func sorting_engine(...)`
+
+CVDP harness environment, including expected TOPLEVEL and VERILOG_SOURCES:
+```
+SIM             = icarus
+WAVE            = True
+TOPLEVEL_LANG   = verilog
+VERILOG_SOURCES = /code/rtl/sorting_engine.sv
+TOPLEVEL        = sorting_engine
+MODULE          = test_sorting_engine
+PYTHONPATH      = /src
+HASH            = 1-bubble-sort-rtl
+```
+
+Original CVDP problem statement:
+```
+Design an RTL module named `sorting_engine` in SystemVerilog that receives an array of unsigned integers as input, sorts them using the bubble sort algorithm, and then provides the sorted array as output. The module should be driven by a clock, have a reset mechanism, and provide a control signal to indicate when sorting is complete. Sorting should arrange the elements of the array in ascending order, such that the smallest element is at index 0 and the largest element is at index N−1.
+
+Bubble sort is a straightforward sorting algorithm that works by repeatedly comparing adjacent elements in an array and swapping them if they are out of order. Through multiple passes over the array, larger values "bubble" up toward the end of the array, while smaller values move toward the beginning. Eventually, after enough passes, the entire array becomes sorted. For this implementation perform (N)*(N-1) passes to sort the array of N elements. 
+
+**Parameters**
+- `N`  (Default is 8, Greater than 0): Number of elements to sort
+- `WIDTH`(Default is 8, Greater than 0): Bit-width of each input element
+
+**Port List**
+| Port Name               | Direction | Width          | Description                                                                                                                                                                                                                                                              |
+|-------------------------|-----------|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `clk`                   | input     | 1 bit          | Main clock input. All operations occur on the rising edge of this signal.                                                                                                                                                                                                |
+| `rst`                   | input     | 1 bit          | Active high, asynchronous reset. When asserted, resets the internal state machine and registers to their initial states.                                                                                                                                                 |
+| `start`                 | input     | 1 bit          | Active high, pulse start signal to indicate that the input data is valid and that sorting should begin on the next clock cycle.                                                                                                                                          |
+| `[N*WIDTH-1:0] in_data` | input     | N * WIDTH bits | Input data bus containing the entire unsorted array. Each element has WIDTH bits, and there are N elements.                                                                                                                                                              |
+| `done`                  | output    | 1 bit          | Active high pulse, asserted for 1 clock cycle when the sorting is complete, indicating that `out_data` is now valid and stable. It will be set to 0 in case of a reset.                                                                                                  |
+| `[N*WIDTH-1:0] out_data`| output    | N * WIDTH bits | Output data bus containing the sorted array. This is to be left uninitialized at reset and updated only when sorting a valid input is complete. Valid once `done` is asserted, and maintains previous values until the update from the next sorting operation completes. |
+
+Create the design using a state machine with `IDLE`, `SORTING`, and `DONE` states. The FSM transitions from `IDLE` to `SORTING` when the start signal is asserted, cycles through the comparisons and swaps, and eventually moves to `DONE` when sorting is complete.
+
+- **Latency and Timing**: Each comparison and potential swap will take one clock cycle. Bubble sort in hardware will, by default, consume multiple cycles, as it effectively simulates the step-by-step iterative nature of the algorithm. Ensure that the design handles the expected cycle counts. The done signal should be asserted only after the last pass is complete. Latency should be equal to (N)*(N-1)+2 for an array with `N` elements.
+  
+- **Output**: Once the sorting finishes, present the sorted array at the output port. This involves placing the sorted values back onto an output bus.
+
+- Assume that all the numbers will be non negative integers.
+```

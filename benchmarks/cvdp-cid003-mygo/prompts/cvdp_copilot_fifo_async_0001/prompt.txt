@@ -1,0 +1,85 @@
+You are generating Go source code for MyGO, a Go-to-RTL compiler.
+Return exactly one Go program that implements the requested RTL module.
+
+Required MyGO shape:
+1. Start with `package main`.
+2. Implement the hardware entry function using exactly the CVDP TOPLEVEL name specified below.
+3. Inputs are ordinary hardware entry function parameters.
+4. Outputs are package-level globals whose names start with `out_`.
+5. Assign outputs by writing directly to those `out_*` globals.
+6. End with `func main() {}`.
+
+Important constraints:
+- Do not return outputs from the hardware entry function.
+- Do not use pointer outputs such as `*bool` or `*uint8`.
+- Avoid structs, interfaces, maps, select, recursion, dynamic goroutines, channels, slices, and heap allocation.
+- Prefer bool for 1-bit signals.
+- Prefer uint8, uint16, uint32, uint64 for packed vectors.
+- Use fixed-size arrays only when a vector is wider than scalar integer types.
+- For vectors represented as arrays, index 0 should represent the least significant bit unless the problem states otherwise.
+- Use only the Go standard language subset that is likely synthesizable by MyGO.
+- Preserve the CVDP module interface semantics in the hardware entry parameters and `out_*` globals.
+- Include helpful comments only where needed.
+
+Output format:
+- Return only Go code.
+- Do not wrap the answer in Markdown fences.
+
+
+CVDP case id: cvdp_copilot_fifo_async_0001
+Categories: ['cid003', 'medium']
+Expected RTL file(s) in original benchmark: ['rtl/fifo_async.sv']
+
+CVDP TOPLEVEL / required MyGO hardware entry function:
+`fifo_async`
+
+The Go program must define exactly this hardware entry function:
+`func fifo_async(...)`
+
+CVDP harness environment, including expected TOPLEVEL and VERILOG_SOURCES:
+```
+SIM             = icarus
+TOPLEVEL_LANG   = verilog
+VERILOG_SOURCES = /code/rtl/fifo_async.sv
+TOPLEVEL        = fifo_async
+MODULE          = tb
+PYTHONPATH      = /src
+HASH            = 1-rtl-implementation
+```
+
+Original CVDP problem statement:
+```
+Create an asynchronous FIFO module with configurable depth and data width. The FIFO should support asynchronous and simultaneous writes and reads between different clock domains. The module should have parameters for setting the depth and data width, along with outputs to indicate full and empty status.
+
+The module should have the following interface:
+
+**Parameters**
+
+- `DATA_WIDTH`: the width of the data bus
+- `DEPTH`: the number of data elements that can be stored in the FIFO
+
+**Inputs**
+
+- `w_clk`: clock signal for write data operations
+- `w_rst`: reset signal to reset the write pointer
+- `w_inc`: enable signal for write data operations
+- `w_data`: input containing the data to be stored into the FIFO
+- `r_clk`: clock signal for read data operations
+- `r_rst`: reset signal to reset the read pointer
+- `r_inc`: enable signal for read data operations
+
+**Outputs**
+
+- `w_full`: output flag indicating that the FIFO is full
+- `r_empty`: output flag indicating that the FIFO is empty
+- `r_data`: output containing the data read from the FIFO
+
+**Behavior**
+
+It is also important to implement an appropriate synchronization mechanism to handle metastability issues. To achieve this, implement write and read pointers using Gray counters to track the write/read positions in the FIFO. To determine if the FIFO is empty or full, use pointers with one extra bit to track overflow and compare both pointers. The empty and full flags should be asserted as follows:
+
+- **Empty flag**: If the write and read pointers have exactly the same value, the `empty` flag should be asserted.
+- **Full flag**: If the most significant bit (MSB) of the write and read pointers is different but all other bits are the same, the `full` flag should be asserted. This indicates that the write pointer has made a complete cycle and reached the same position as the read pointer, causing an overflow.
+
+Since the read and write clocks are in different domains, it is necessary to synchronize the clock domains to compare the pointers. To do this, use cross-clock synchronizers, consisting of two registers in series, to pass the read pointer from the read clock domain to the write clock domain and the write pointer from the write clock domain to the read clock domain.
+```

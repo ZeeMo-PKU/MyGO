@@ -1,0 +1,30 @@
+Design a **BCD to Excess-3 Code Converter** that translates a 4-bit Binary-Coded Decimal (BCD) input into a corresponding 4-bit Excess-3 output code. The module should identify invalid BCD inputs and assert an error flag when they occur. The converter must operate combinationally, updating the output immediately upon any change in the input.
+
+## Design Specification
+
+**Module Name**:  
+`bcd_to_excess_3`
+
+### Key Considerations
+- The converter accepts a 4-bit BCD input and provides a 4-bit Excess-3 output.
+- When the BCD input is invalid (values outside `0` to `9`), the module should set the output to `0` and assert an `error` flag.
+- The conversion and error-checking operations are combinational and do not depend on a clock signal.
+  
+### Interface
+
+**Inputs:**
+- `bcd` (4 bits, `[3:0]`): 4-bit BCD input, representing a decimal digit from `0` to `9`.
+
+**Outputs:**
+- `excess3` (4 bits, `[3:0]`): 4-bit Excess-3 output code, representing the decimal value of `BCD + 3`.
+- `error` (1 bit): A flag that is asserted (`1`) when the `bcd` input is outside the valid range (`10` to `15`), indicating an invalid input.
+
+### Functional Description
+
+- The module converts a 4-bit BCD input to an Excess-3 output by adding `3` to the decimal value represented by the BCD input. 
+- For invalid BCD values (`10` to `15`), the output `excess3` should default to `0`, and the `error` flag should be set to `1` to indicate invalid input.
+
+### Edge Cases
+
+- **Invalid Input**: If the `bcd` input is any binary value representing `10` to `15`, the module should set `excess3` to `0` and assert `error`.
+- **Valid Range Handling**: For BCD inputs within the valid range (`0` to `9`), the `error` flag should be cleared (`0`), and `excess3` should provide the correct Excess-3 code.

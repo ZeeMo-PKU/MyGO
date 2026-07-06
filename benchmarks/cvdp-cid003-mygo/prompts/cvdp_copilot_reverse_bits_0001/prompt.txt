@@ -1,0 +1,81 @@
+You are generating Go source code for MyGO, a Go-to-RTL compiler.
+Return exactly one Go program that implements the requested RTL module.
+
+Required MyGO shape:
+1. Start with `package main`.
+2. Implement the hardware entry function using exactly the CVDP TOPLEVEL name specified below.
+3. Inputs are ordinary hardware entry function parameters.
+4. Outputs are package-level globals whose names start with `out_`.
+5. Assign outputs by writing directly to those `out_*` globals.
+6. End with `func main() {}`.
+
+Important constraints:
+- Do not return outputs from the hardware entry function.
+- Do not use pointer outputs such as `*bool` or `*uint8`.
+- Avoid structs, interfaces, maps, select, recursion, dynamic goroutines, channels, slices, and heap allocation.
+- Prefer bool for 1-bit signals.
+- Prefer uint8, uint16, uint32, uint64 for packed vectors.
+- Use fixed-size arrays only when a vector is wider than scalar integer types.
+- For vectors represented as arrays, index 0 should represent the least significant bit unless the problem states otherwise.
+- Use only the Go standard language subset that is likely synthesizable by MyGO.
+- Preserve the CVDP module interface semantics in the hardware entry parameters and `out_*` globals.
+- Include helpful comments only where needed.
+
+Output format:
+- Return only Go code.
+- Do not wrap the answer in Markdown fences.
+
+
+CVDP case id: cvdp_copilot_reverse_bits_0001
+Categories: ['cid003', 'easy']
+Expected RTL file(s) in original benchmark: ['rtl/reverse_bits.v']
+
+CVDP TOPLEVEL / required MyGO hardware entry function:
+`reverse_bits`
+
+The Go program must define exactly this hardware entry function:
+`func reverse_bits(...)`
+
+CVDP harness environment, including expected TOPLEVEL and VERILOG_SOURCES:
+```
+SIM             = icarus
+WAVE            = False
+TOPLEVEL_LANG   = verilog
+VERILOG_SOURCES = /code/rtl/reverse_bits.v
+TOPLEVEL        = reverse_bits
+MODULE          = test_reverse_bits
+PYTHONPATH      = /src
+HASH            = 1-reverse-bits-of-a-32-bit-unsigned-number
+```
+
+Original CVDP problem statement:
+```
+## Problem Description
+Design a Verilog module named `reverse_bits` to reverse the bits of a 32-bit unsigned input number. The module should take a 32-bit input bus and produce a 32-bit output bus where the input bits are reversed. For example, if the input is `32'b00000000000000000000000000000001` (decimal 1), the output should be `32'b10000000000000000000000000000000`.
+
+## Specifications
+
+### Inputs
+- **`input [31:0] num_in`**: The 32-bit unsigned number to be reversed.
+
+### Outputs
+- **`output [31:0] num_out`**: The bit-reversed 32-bit number.
+
+## Behavioral Description
+The module should process the input `num_in` such that:
+- The least significant bit (LSB) of `num_in` becomes the most significant bit (MSB) of `num_out`.
+- The second least significant bit of `num_in` becomes the second most significant bit of `num_out`, and so on.
+
+### Constraints and Edge Cases
+- Ensure that all input bits are reversed correctly without errors.
+- Special cases to test include:
+  - **All bits set to `1`**: `32'b11111111111111111111111111111111`.
+  - **All bits set to `0`**: `32'b00000000000000000000000000000000`.
+  - **Alternating pattern**: `32'b10101010101010101010101010101010`.
+- Undefined or high-impedance inputs (`x` or `z`) are not considered valid and will not be given as input.
+
+## Implementation Guidelines
+- The module must be implemented in synthesizable Verilog.
+- The solution should be combinational and free of clocked elements and resets.
+- Clear comments and intuitive naming conventions should enhance readability and maintainability.
+```

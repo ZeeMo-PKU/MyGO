@@ -3,6 +3,8 @@ package ir
 import (
 	"fmt"
 	"go/token"
+
+	"golang.org/x/tools/go/ssa"
 )
 
 // Design is the top-level hardware description consisting of one or more modules.
@@ -13,20 +15,40 @@ type Design struct {
 
 // Module models a hardware module with ports, signals and processes.
 type Module struct {
-	Name      string
-	Ports     []Port
-	Signals   map[string]*Signal
-	Channels  map[string]*Channel
-	Processes []*Process
-	Source    token.Pos
+	Name       string
+	Parameters []*ModuleParameter
+	Ports      []Port
+	Signals    map[string]*Signal
+	Channels   map[string]*Channel
+	Processes  []*Process
+	MixedClock *MixedClockModuleSpec
+	Source     token.Pos
+}
+
+// ModuleParameter is a user-overridable hardware constant declared by an
+// exported package-level Go constant.
+type ModuleParameter struct {
+	Name    string
+	Type    *SignalType
+	Default interface{}
+	Source  token.Pos
+}
+
+// ParameterRef marks a constant-like signal whose value comes from a module
+// parameter rather than an MLIR hw.constant operation.
+type ParameterRef struct {
+	Name string
 }
 
 // Port represents a module IO port.
 type Port struct {
 	Name      string
+	Binding   string
 	Direction PortDirection
 	Type      *SignalType
 }
+
+type MixedClockModuleSpec struct{}
 
 // PortDirection enumerates supported port directions.
 type PortDirection int
@@ -48,19 +70,30 @@ type Signal struct {
 
 // Channel models a FIFO-style buffered channel between processes.
 type Channel struct {
-	Name      string
-	Type      *SignalType
-	Depth     int
-	Occupancy int
-	Source    token.Pos
-	Producers []*ChannelEndpoint
-	Consumers []*ChannelEndpoint
+	Name          string
+	Type          *SignalType
+	Depth         int
+	DeclaredDepth int
+	InferredDepth int
+	DepthReason   string
+	IsParameter   bool
+	Occupancy     int
+	Source        token.Pos
+	Producers     []*ChannelEndpoint
+	Consumers     []*ChannelEndpoint
+	Dependencies  []ChannelDependency
 }
 
 // ChannelEndpoint records how a process interacts with a channel.
 type ChannelEndpoint struct {
 	Process   *Process
 	Direction ChannelDirection
+}
+
+// ChannelDependency records producer-consumer relationships observed on a channel.
+type ChannelDependency struct {
+	Producer *Process
+	Consumer *Process
 }
 
 // ChannelDirection distinguishes send vs. receive endpoints.
@@ -188,6 +221,20 @@ func (c *Channel) AddEndpoint(proc *Process, dir ChannelDirection) {
 	if c == nil || proc == nil {
 		return
 	}
+	var endpoints []*ChannelEndpoint
+	switch dir {
+	case ChannelSend:
+		endpoints = c.Producers
+	case ChannelReceive:
+		endpoints = c.Consumers
+	default:
+		return
+	}
+	for _, endpoint := range endpoints {
+		if endpoint != nil && endpoint.Process == proc && endpoint.Direction == dir {
+			return
+		}
+	}
 	endpoint := &ChannelEndpoint{
 		Process:   proc,
 		Direction: dir,
@@ -211,10 +258,17 @@ const (
 
 // Process groups a sequence of operations under a specific clocking scheme.
 type Process struct {
-	Name        string
-	Sensitivity Sensitivity
-	Blocks      []*BasicBlock
-	Stage       int
+	Name         string
+	Source       token.Pos
+	Spawned      bool
+	Sensitivity  Sensitivity
+	Blocks       []*BasicBlock
+	Stage        int
+	Params       []*Signal   // Function parameters (for non-main processes)
+	SSAParams    []ssa.Value // Original SSA parameter values (for remapping during inlining)
+	Return       *Signal     // Return value signal (for non-main processes)
+	ReturnValues map[*BasicBlock]*Signal
+	Returns      []*Signal // Return value signals in function signature order.
 }
 
 // Sensitivity indicates whether process is combinational or sequential.
@@ -340,13 +394,17 @@ const (
 	PrintVerbDec PrintVerb = iota
 	PrintVerbHex
 	PrintVerbBin
+	PrintVerbFloat
+	PrintVerbBool
 )
 
 // PrintSegment represents either a literal chunk or a formatted value.
 type PrintSegment struct {
-	Text  string
-	Value *Signal
-	Verb  PrintVerb
+	Text    string
+	Value   *Signal
+	Verb    PrintVerb
+	Width   int
+	ZeroPad bool
 }
 
 // PrintOperation emits formatted text to the simulator console.
@@ -372,6 +430,15 @@ type RecvOperation struct {
 
 func (RecvOperation) isOperation() {}
 
+// CallOperation represents a non-inlined function call.
+type CallOperation struct {
+	Callee string
+	Args   []*Signal
+	Dest   *Signal
+}
+
+func (CallOperation) isOperation() {}
+
 // SpawnOperation represents a goroutine launch.
 type SpawnOperation struct {
 	Callee   *Process
@@ -388,6 +455,8 @@ const (
 	Add BinOp = iota
 	Sub
 	Mul
+	Div
+	Rem
 	And
 	Or
 	Xor

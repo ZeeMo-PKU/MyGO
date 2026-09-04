@@ -4,6 +4,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"mygo/internal/diag"
@@ -70,6 +71,145 @@ func writer(out chan<- int32) {
 func main() {
     ch0 := make(chan int32, 4)
     go writer(ch0)
+}
+`
+
+const dynamicIndexProgram = `
+package main
+
+func sink(v int32) {}
+
+func main() {
+    var arr [4]int32
+    var idx int
+    var out int32
+    arr[0] = 11
+    arr[1] = 22
+    arr[2] = 33
+    idx = 0
+    if arr[0] > 0 {
+        idx = 1
+    } else {
+        idx = 2
+    }
+    out = arr[idx]
+    sink(out)
+}
+`
+
+const constEvalCallProgram = `
+package main
+
+var result int
+
+func maxValue(a [8]int) int {
+	i := 0
+	max := a[0]
+	for i < 8 {
+		if a[i] > max {
+			max = a[i]
+		}
+		i++
+	}
+	return max
+}
+
+func main() {
+	a := [8]int{3, 7, 2, 9, 5, 8, 1, 4}
+	result = maxValue(a)
+}
+`
+
+const nestedGlobalArrayProgram = `
+package main
+
+var table = [2][3]int32{
+	{1, 2, 3},
+	{4, 5, 6},
+}
+
+var scratch [2][3]int32
+
+func sink(v int32) {}
+
+func main() {
+	var row int
+	var col int
+
+	row = 1
+	if table[0][0] > 0 {
+		col = 2
+	} else {
+		col = 1
+	}
+
+	scratch[0][1] = table[row][col]
+	sink(scratch[0][1])
+}
+`
+
+const dynamicGlobalWordProgram = `
+package main
+
+var arr [2]int
+var word [2][4]int
+
+func initword() {
+	for j := 0; j < 2; j++ {
+		word[0][j] = 0x39 + j
+		word[1][j] = 0x25 + j
+	}
+}
+
+func main() {
+	initword()
+	for j := 0; j < 2; j++ {
+		arr[j] = word[j][j]
+	}
+}
+`
+
+const sliceInlineProgram = `
+package main
+
+var result int
+
+func bump(v []int) {
+	v[1] = v[1] + 1
+}
+
+func update(a [2]int) ([2]int, int) {
+	row := a[:]
+	bump(row)
+	return a, row[1]
+}
+
+func main() {
+	arr := [2]int{1, 2}
+	arr, result = update(arr)
+	_ = arr
+}
+`
+
+const nestedSliceInlineProgram = `
+package main
+
+var result int
+
+func bump(v []int) {
+	v[1] = v[1] + 1
+}
+
+func update(a [2][2]int, s int) ([2][2]int, int) {
+	row := a[s][:]
+	bump(row)
+	return a, row[1]
+}
+
+func main() {
+	arr := [2][2]int{{1, 2}, {3, 4}}
+	arr, result = update(arr, 0)
+	_ = arr
 }
 `
 
@@ -159,6 +299,226 @@ func TestChannelOccupancyTracking(t *testing.T) {
 	}
 	if !foundNonZero {
 		t.Fatalf("expected at least one channel to record non-zero occupancy")
+	}
+}
+
+func TestDynamicIndexAddrLowering(t *testing.T) {
+	design := buildDesignFromSource(t, dynamicIndexProgram)
+	if design == nil || design.TopLevel == nil {
+		t.Fatalf("expected design")
+	}
+	idxCompareCount := 0
+	idxMuxCount := 0
+	idxExtractCount := 0
+	for _, proc := range design.TopLevel.Processes {
+		for _, block := range proc.Blocks {
+			for _, op := range block.Ops {
+				switch o := op.(type) {
+				case *CompareOperation:
+					if o.Dest != nil && strings.HasPrefix(o.Dest.Name, "idxeq_") {
+						idxCompareCount++
+					}
+				case *MuxOperation:
+					if o.Dest != nil && strings.HasPrefix(o.Dest.Name, "idxload_") {
+						idxMuxCount++
+					}
+				case *ConvertOperation:
+					if o.Dest != nil && strings.HasPrefix(o.Dest.Name, "idxextract_") {
+						idxExtractCount++
+					}
+				}
+			}
+		}
+	}
+	if idxExtractCount == 0 && (idxCompareCount == 0 || idxMuxCount == 0) {
+		t.Fatalf("expected dynamic index lowering ops, got idxeq=%d idxload=%d idxextract=%d", idxCompareCount, idxMuxCount, idxExtractCount)
+	}
+}
+
+func TestConstEvalLoopCallFallback(t *testing.T) {
+	design := buildDesignFromSource(t, constEvalCallProgram)
+	if design == nil || design.TopLevel == nil {
+		t.Fatalf("expected design")
+	}
+
+	callCount := 0
+	sawConstNineAssign := false
+
+	for _, proc := range design.TopLevel.Processes {
+		for _, block := range proc.Blocks {
+			for _, op := range block.Ops {
+				switch o := op.(type) {
+				case *CallOperation:
+					callCount++
+				case *AssignOperation:
+					if o == nil || o.Value == nil || o.Value.Kind != Const {
+						continue
+					}
+					switch v := o.Value.Value.(type) {
+					case int:
+						if v == 9 {
+							sawConstNineAssign = true
+						}
+					case int64:
+						if v == 9 {
+							sawConstNineAssign = true
+						}
+					case uint64:
+						if v == 9 {
+							sawConstNineAssign = true
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if callCount != 0 {
+		t.Fatalf("expected call to be eliminated, found %d call ops", callCount)
+	}
+	if !sawConstNineAssign {
+		t.Fatalf("expected folded constant assignment of 9 for call result")
+	}
+}
+
+func TestNestedGlobalArrayLowering(t *testing.T) {
+	design := buildDesignFromSource(t, nestedGlobalArrayProgram)
+	if design == nil || design.TopLevel == nil {
+		t.Fatalf("expected design")
+	}
+
+	for name, want := range map[string]int64{
+		"table_0": 1,
+		"table_1": 2,
+		"table_2": 3,
+		"table_3": 4,
+		"table_4": 5,
+		"table_5": 6,
+	} {
+		sig := design.TopLevel.Signals[name]
+		if sig == nil {
+			t.Fatalf("missing flattened signal %s", name)
+		}
+		got, ok := sig.Value.(int64)
+		if !ok {
+			t.Fatalf("signal %s init type = %T, want int64", name, sig.Value)
+		}
+		if got != want {
+			t.Fatalf("signal %s init = %d, want %d", name, got, want)
+		}
+	}
+
+	for _, name := range []string{"scratch_0", "scratch_1", "scratch_5"} {
+		if design.TopLevel.Signals[name] == nil {
+			t.Fatalf("missing flattened mutable signal %s", name)
+		}
+	}
+
+	sawIndexedAdd := false
+	sawIndexedLoad := false
+	sawIndexedExtract := false
+	for _, proc := range design.TopLevel.Processes {
+		for _, block := range proc.Blocks {
+			for _, op := range block.Ops {
+				switch o := op.(type) {
+				case *BinOperation:
+					if o.Dest != nil && strings.HasPrefix(o.Dest.Name, "idxadd_") {
+						sawIndexedAdd = true
+					}
+				case *MuxOperation:
+					if o.Dest != nil && strings.HasPrefix(o.Dest.Name, "idxload_") {
+						sawIndexedLoad = true
+					}
+				case *ConvertOperation:
+					if o.Dest != nil && strings.HasPrefix(o.Dest.Name, "idxextract_") {
+						sawIndexedExtract = true
+					}
+				}
+			}
+		}
+	}
+	if !sawIndexedAdd {
+		t.Fatalf("expected flattened nested index arithmetic")
+	}
+	if !sawIndexedLoad && !sawIndexedExtract {
+		t.Fatalf("expected flattened nested index load")
+	}
+}
+
+func TestDynamicGlobalWordCallIsNotDropped(t *testing.T) {
+	design := buildDesignFromSource(t, dynamicGlobalWordProgram)
+	if design == nil || design.TopLevel == nil {
+		t.Fatalf("expected design")
+	}
+
+	sawWordAssign := false
+	for _, proc := range design.TopLevel.Processes {
+		for _, block := range proc.Blocks {
+			for _, op := range block.Ops {
+				assign, ok := op.(*AssignOperation)
+				if !ok || assign == nil || assign.Dest == nil {
+					continue
+				}
+				if assign.Dest.Name == "word_0" || assign.Dest.Name == "word_1" || assign.Dest.Name == "word_4" || assign.Dest.Name == "word_5" {
+					sawWordAssign = true
+				}
+			}
+		}
+	}
+	if !sawWordAssign {
+		t.Fatalf("expected initword side effects to assign mutable word elements")
+	}
+}
+
+func TestSliceInlineMultiResultCallAssignsResult(t *testing.T) {
+	design := buildDesignFromSource(t, sliceInlineProgram)
+	if design == nil || design.TopLevel == nil {
+		t.Fatalf("expected design")
+	}
+
+	sawResultAssign := false
+	for _, proc := range design.TopLevel.Processes {
+		for _, block := range proc.Blocks {
+			for _, op := range block.Ops {
+				assign, ok := op.(*AssignOperation)
+				if !ok || assign == nil || assign.Dest == nil || assign.Value == nil {
+					continue
+				}
+				if assign.Dest.Name == "result" {
+					sawResultAssign = true
+				}
+			}
+		}
+	}
+
+	if !sawResultAssign {
+		t.Fatalf("expected slice-based multi-result inline call to assign result")
+	}
+}
+
+func TestNestedSliceInlineMultiResultCallAssignsResult(t *testing.T) {
+	design := buildDesignFromSource(t, nestedSliceInlineProgram)
+	if design == nil || design.TopLevel == nil {
+		t.Fatalf("expected design")
+	}
+
+	sawResultAssign := false
+	for _, proc := range design.TopLevel.Processes {
+		for _, block := range proc.Blocks {
+			for _, op := range block.Ops {
+				assign, ok := op.(*AssignOperation)
+				if !ok || assign == nil || assign.Dest == nil || assign.Value == nil {
+					continue
+				}
+				if assign.Dest.Name == "result" {
+					sawResultAssign = true
+				}
+			}
+		}
+	}
+
+	if !sawResultAssign {
+		t.Fatalf("expected nested slice-based multi-result inline call to assign result")
 	}
 }
 

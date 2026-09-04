@@ -8,6 +8,8 @@ import (
 	"runtime"
 	"sync"
 	"text/template"
+
+	"mygo/internal/constdata"
 )
 
 var (
@@ -21,19 +23,37 @@ var (
 )
 
 type verilatorDriverData struct {
-	MaxCycles   int
-	ResetCycles int
+	TopHeader         string
+	TopClass          string
+	MaxCycles         int
+	ResetCycles       int
+	HasClock          bool
+	ClockPort         string
+	HasReset          bool
+	ResetPort         string
+	ResetAssertValue  string
+	ResetReleaseValue string
+	Constants         []constdata.ArrayConstant
 }
 
-func renderVerilatorDriver(maxCycles, resetCycles int) (string, error) {
+func renderVerilatorDriver(maxCycles, resetCycles int, top verilatorTopInfo, constants []constdata.ArrayConstant) (string, error) {
 	tmpl, err := loadVerilatorTemplate()
 	if err != nil {
 		return "", err
 	}
 	var buf bytes.Buffer
 	data := verilatorDriverData{
-		MaxCycles:   maxCycles,
-		ResetCycles: resetCycles,
+		TopHeader:         "V" + top.ModuleName + ".h",
+		TopClass:          "V" + top.ModuleName,
+		MaxCycles:         maxCycles,
+		ResetCycles:       resetCycles,
+		HasClock:          top.ClockPort != "",
+		ClockPort:         top.ClockPort,
+		HasReset:          top.ResetPort != "",
+		ResetPort:         top.ResetPort,
+		ResetAssertValue:  top.ResetAssertValue(),
+		ResetReleaseValue: top.ResetReleaseValue(),
+		Constants:         constants,
 	}
 	if err := tmpl.Execute(&buf, data); err != nil {
 		return "", err

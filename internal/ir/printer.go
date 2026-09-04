@@ -126,20 +126,22 @@ func renderOp(op Operation) string {
 				parts = append(parts, fmt.Sprintf("%q", seg.Text))
 				continue
 			}
-			verb := "%d"
-			switch seg.Verb {
-			case PrintVerbHex:
-				verb = "%x"
-			case PrintVerbBin:
-				verb = "%b"
-			}
-			parts = append(parts, fmt.Sprintf(verb, signalName(seg.Value)))
+			parts = append(parts, fmt.Sprintf("%s(%s)", printVerbSpecifier(seg), signalName(seg.Value)))
 		}
 		return fmt.Sprintf("print %s", strings.Join(parts, ""))
 	case *SendOperation:
 		return fmt.Sprintf("send %s <- %s", o.Channel.Name, o.Value.Name)
 	case *RecvOperation:
 		return fmt.Sprintf("%s <- %s", o.Dest.Name, o.Channel.Name)
+	case *CallOperation:
+		args := make([]string, 0, len(o.Args))
+		for _, arg := range o.Args {
+			args = append(args, signalName(arg))
+		}
+		if o.Dest != nil {
+			return fmt.Sprintf("%s := call %s(%s)", o.Dest.Name, o.Callee, strings.Join(args, ", "))
+		}
+		return fmt.Sprintf("call %s(%s)", o.Callee, strings.Join(args, ", "))
 	case *SpawnOperation:
 		argNames := make([]string, 0, len(o.Args))
 		for _, arg := range o.Args {
@@ -168,6 +170,46 @@ func renderOp(op Operation) string {
 	}
 }
 
+func printVerbSpecifier(seg PrintSegment) string {
+	var builder strings.Builder
+	builder.WriteByte('%')
+	if seg.ZeroPad && seg.Width > 0 {
+		builder.WriteByte('0')
+	}
+	if seg.Width > 0 {
+		builder.WriteString(fmt.Sprintf("%d", seg.Width))
+	}
+	switch seg.Verb {
+	case PrintVerbHex:
+		if seg.Width == 0 {
+			builder.WriteString("0x")
+		} else {
+			builder.WriteByte('x')
+		}
+	case PrintVerbBin:
+		if seg.Width == 0 {
+			builder.WriteString("0b")
+		} else {
+			builder.WriteByte('b')
+		}
+	case PrintVerbFloat:
+		builder.WriteByte('f')
+	case PrintVerbBool:
+		if seg.Width == 0 {
+			builder.WriteString("0s")
+		} else {
+			builder.WriteByte('s')
+		}
+	default:
+		if seg.Width == 0 {
+			builder.WriteString("0d")
+		} else {
+			builder.WriteByte('d')
+		}
+	}
+	return builder.String()
+}
+
 func renderTerminator(term Terminator) string {
 	switch t := term.(type) {
 	case *BranchTerminator:
@@ -189,6 +231,10 @@ func binOpSymbol(op BinOp) string {
 		return "-"
 	case Mul:
 		return "*"
+	case Div:
+		return "/"
+	case Rem:
+		return "%"
 	case And:
 		return "&"
 	case Or:
